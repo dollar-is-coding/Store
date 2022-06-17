@@ -1,0 +1,11 @@
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\bin\Debug\JewelryBUS.dll
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\bin\Debug\JewelryBUS.pdb
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\bin\Debug\JewelryDAO.dll
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\bin\Debug\JewelryDTO.dll
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\bin\Debug\JewelryDAO.pdb
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\bin\Debug\JewelryDTO.pdb
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\obj\Debug\JewelryBUS.csproj.AssemblyReference.cache
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\obj\Debug\JewelryBUS.csproj.CoreCompileInputs.cache
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\obj\Debug\JewelryBUS.csproj.CopyComplete
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\obj\Debug\JewelryBUS.dll
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\obj\Debug\JewelryBUS.pdb

@@ -1,0 +1,9 @@
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDAO\bin\Debug\JewelryDAO.dll
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDAO\bin\Debug\JewelryDAO.pdb
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDAO\bin\Debug\JewelryDTO.dll
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDAO\bin\Debug\JewelryDTO.pdb
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDAO\obj\Debug\JewelryDAO.csproj.AssemblyReference.cache
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDAO\obj\Debug\JewelryDAO.csproj.CoreCompileInputs.cache
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDAO\obj\Debug\JewelryDAO.csproj.CopyComplete
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDAO\obj\Debug\JewelryDAO.dll
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDAO\obj\Debug\JewelryDAO.pdb

@@ -1,0 +1,6 @@
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDTO\bin\Debug\JewelryDTO.dll
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDTO\bin\Debug\JewelryDTO.pdb
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDTO\obj\Debug\JewelryDTO.csproj.AssemblyReference.cache
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDTO\obj\Debug\JewelryDTO.csproj.CoreCompileInputs.cache
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDTO\obj\Debug\JewelryDTO.dll
+D:\CDTH20D\C Sharp\Rainbow Store\JewelryDTO\obj\Debug\JewelryDTO.pdb
