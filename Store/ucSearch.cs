@@ -16,8 +16,6 @@ namespace Jewelry
     {
         CategoryBUS CBUS = new CategoryBUS();
         List<CategoryDTO> CLs;
-        ProductDetailBUS PDBUS = new ProductDetailBUS();
-        List<ProductDetailDTO> PDLs;
         public ucSearch()
         {
             InitializeComponent();
@@ -40,7 +38,6 @@ namespace Jewelry
         private void ucSearch_Load(object sender, EventArgs e)
         {
             LoadDanhMuc();
-            LoadChiTietSanPham();
         }
 
         private void LoadDanhMuc()
@@ -51,11 +48,5 @@ namespace Jewelry
             cboSearch.ValueMember = "idDanhMuc";
         }
 
-        private void LoadChiTietSanPham()
-        {
-            PDLs = PDBUS.LayTatCaChiTietSanPham();
-            dgvSearch.AutoGenerateColumns = false;
-            dgvSearch.DataSource = PDLs;
-        }
     }
 }
