@@ -8,7 +8,7 @@ Create table TaiKhoan (
 	hoTen nvarchar(30),
 	chucVu nvarchar(30),
 	ngaySinh date,
-	gioiTinh nvarchar(5),
+	gioiTinh nvarchar(10),
 	diaChi nvarchar(100),
 	soDienThoai varchar(15),
 	constraint pkTaiKhoan primary key (idTaiKhoan)
@@ -171,7 +171,7 @@ Begin
 		else if(@lasted >= 99 and @lasted <999)
 		update HDNhapHang set idHoaDon='HDN'+convert(varchar(10),@lasted+1) where idHoaDon =''
 	End
-End
+End 
 
 -- Trigger for inserting HDBanHang table
 Go
@@ -261,7 +261,6 @@ Insert into ChiTietSanPham values ('SP001',27,2500000,10,1)
 Insert into ChiTietSanPham values ('SP003',30,3000000,15,1)
 Insert into ChiTietSanPham values ('SP003',31,3500000,16,1)
 Select * from ChiTietSanPham
-Select SP.idSanPham,SP.tenSanPham,CTSP.size,CTSP.giaBan,SP.idDanhMuc,CTSP.soLuong,CTSP.TrangThai from SanPham SP,ChiTietSanPham CTSP where SP.idSanPham=CTSP.idSanPham and trangThai=1
 Insert into HDNhapHang(idHoaDon,idTaiKhoan) values ('','stf01')
 Insert into HDNhapHang(idHoaDon,idTaiKhoan) values ('','stf03')
 select * from HDNhapHang

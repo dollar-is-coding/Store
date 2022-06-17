@@ -46,7 +46,6 @@ namespace Jewelry
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cboSearch = new System.Windows.Forms.ComboBox();
             this.colProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +62,6 @@ namespace Jewelry
             this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProductID,
-            this.colProductName,
             this.colSize,
             this.colPrice,
             this.colQuantity});
@@ -250,20 +248,15 @@ namespace Jewelry
             // 
             // colProductID
             // 
+            this.colProductID.DataPropertyName = "idSanPham";
             this.colProductID.HeaderText = "Product ID";
             this.colProductID.MinimumWidth = 6;
             this.colProductID.Name = "colProductID";
             this.colProductID.Width = 125;
             // 
-            // colProductName
-            // 
-            this.colProductName.HeaderText = "Product Name";
-            this.colProductName.MinimumWidth = 6;
-            this.colProductName.Name = "colProductName";
-            this.colProductName.Width = 125;
-            // 
             // colSize
             // 
+            this.colSize.DataPropertyName = "size";
             this.colSize.HeaderText = "Size";
             this.colSize.MinimumWidth = 6;
             this.colSize.Name = "colSize";
@@ -271,6 +264,7 @@ namespace Jewelry
             // 
             // colPrice
             // 
+            this.colPrice.DataPropertyName = "giaBan";
             this.colPrice.HeaderText = "Price";
             this.colPrice.MinimumWidth = 6;
             this.colPrice.Name = "colPrice";
@@ -278,6 +272,7 @@ namespace Jewelry
             // 
             // colQuantity
             // 
+            this.colQuantity.DataPropertyName = "soLuong";
             this.colQuantity.HeaderText = "Quantity";
             this.colQuantity.MinimumWidth = 6;
             this.colQuantity.Name = "colQuantity";
@@ -323,7 +318,6 @@ namespace Jewelry
         private System.Windows.Forms.Label lbSize;
         private System.Windows.Forms.Button btnAddToCart;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;

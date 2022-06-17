@@ -14,6 +14,10 @@ namespace Jewelry
 {
     public partial class ucSearch : UserControl
     {
+        CategoryBUS CBUS = new CategoryBUS();
+        List<CategoryDTO> CLs;
+        ProductDetailBUS PDBUS = new ProductDetailBUS();
+        List<ProductDetailDTO> PDLs;
         public ucSearch()
         {
             InitializeComponent();
@@ -35,17 +39,23 @@ namespace Jewelry
 
         private void ucSearch_Load(object sender, EventArgs e)
         {
-           
             LoadDanhMuc();
+            LoadChiTietSanPham();
         }
 
         private void LoadDanhMuc()
         {
-            CategoryBUS category = new CategoryBUS();
-            List<CategoryDTO> categoryLs = category.LayTatCaDanhMuc();
-            cboSearch.DataSource = categoryLs;
+            CLs = CBUS.LayTatCaDanhMuc();
+            cboSearch.DataSource = CLs;
             cboSearch.DisplayMember = "tenDanhMuc";
             cboSearch.ValueMember = "idDanhMuc";
+        }
+
+        private void LoadChiTietSanPham()
+        {
+            PDLs = PDBUS.LayTatCaChiTietSanPham();
+            dgvSearch.AutoGenerateColumns = false;
+            dgvSearch.DataSource = PDLs;
         }
     }
 }
