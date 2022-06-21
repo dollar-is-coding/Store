@@ -9,7 +9,7 @@ namespace JewelryDAO
 {
     static public class DataProvider
     {
-        static private string strKetNoi = @"Data Source=MSI\SQLEXPRESS;Initial Catalog=QuanLyBanTrangSuc;Integrated Security=True";
+        static private string strKetNoi = @"Data Source=DOLLAR;Initial Catalog=QuanLyBanTrangSuc;Integrated Security=True";
 
         static public SqlConnection TaoKetNoi()
         {
