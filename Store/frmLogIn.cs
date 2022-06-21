@@ -17,6 +17,7 @@ namespace Jewelry
     {
         AccountBUS accountB = new AccountBUS();
         public static string chucVu;
+        public static string staff;
         public frmLogIn()
         {
             InitializeComponent();
@@ -101,6 +102,7 @@ namespace Jewelry
                 {
                     frmManager frm = new frmManager(account.hoTen,account.chucVu);
                     chucVu = account.chucVu;
+                    staff = account.hoTen;
                     frm.Show();
                     this.Hide();
                 }

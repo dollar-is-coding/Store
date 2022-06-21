@@ -21,12 +21,32 @@ namespace JewelryDAO
                 ImportInvoiceDTO hd = new ImportInvoiceDTO();
                 hd.idHoaDon = sdr["idHoaDon"].ToString();
                 hd.idTaiKhoan = sdr["idTaiKhoan"].ToString();
-                hd.ngayNhap = sdr["ngayNhap"].ToString();
+                hd.ngayNhap = DateTime.Parse(sdr["ngayNhap"].ToString()).Date;
                 lsInc.Add(hd);
             }
             sdr.Close();
             conn.Close();
             return lsInc;
+        }
+
+        public List<ImportInvoiceDTO> LayIDHoaDonLonNhat()
+        {
+            List<ImportInvoiceDTO> ls = new List<ImportInvoiceDTO>();
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            string strTruyVan = "select * from HDNhapHang where idHoaDon = (Select max(idHoaDon) from HDNhapHang)";
+            SqlDataReader sdr = DataProvider.TruyVan(strTruyVan, conn);
+            while (sdr.Read())
+            {
+                ImportInvoiceDTO HD = new ImportInvoiceDTO();
+            HD.idHoaDon = sdr["idHoaDon"].ToString();
+            HD.idTaiKhoan = sdr["idTaiKhoan"].ToString();
+            HD.ngayNhap = DateTime.Parse(sdr["ngayNhap"].ToString()).Date;
+                ls.Add(HD);
+            }
+            
+            sdr.Close();
+            conn.Close();
+            return ls;
         }
     }
 }

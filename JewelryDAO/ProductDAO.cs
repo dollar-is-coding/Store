@@ -28,5 +28,25 @@ namespace JewelryDAO
             conn.Close();
             return lsPro;
         }
+
+        public List<ProductDTO> LayDanhSachSanPham(string idDanhMuc)
+        {
+            List<ProductDTO> lsPro = new List<ProductDTO>();
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            string strTruyVan = "Select *from SanPham where idDanhMuc=@idDanhMuc";
+            SqlParameter par = new SqlParameter("idDanhMuc", idDanhMuc);
+            SqlDataReader sdr = DataProvider.TruyVan(strTruyVan, par, conn);
+            while (sdr.Read())
+            {
+                ProductDTO sp = new ProductDTO();
+                sp.idDanhMuc = sdr["idDanhMuc"].ToString();
+                sp.idSanPham = sdr["idSanPham"].ToString();
+                sp.tenSanPham = sdr["tenSanPham"].ToString();
+                lsPro.Add(sp);
+            }
+            sdr.Close();
+            conn.Close();
+            return lsPro;
+        }
     }
 }

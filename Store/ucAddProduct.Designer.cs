@@ -29,11 +29,14 @@ namespace Jewelry
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlAddProduct = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.picInvoiceID = new System.Windows.Forms.PictureBox();
+            this.picProduct = new System.Windows.Forms.PictureBox();
+            this.picCate = new System.Windows.Forms.PictureBox();
+            this.picSize = new System.Windows.Forms.PictureBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.nudQuantity = new System.Windows.Forms.NumericUpDown();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -48,21 +51,23 @@ namespace Jewelry
             this.txtImportPrice = new System.Windows.Forms.TextBox();
             this.cboSize = new System.Windows.Forms.ComboBox();
             this.cboProductName = new System.Windows.Forms.ComboBox();
-            this.cboCategoryName = new System.Windows.Forms.ComboBox();
-            this.cboInvoiceID = new System.Windows.Forms.ComboBox();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
             this.dgvAddProduct = new System.Windows.Forms.DataGridView();
-            this.column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInvoiceDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnRemove = new System.Windows.Forms.Button();
+            this.colImportPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboID = new System.Windows.Forms.ComboBox();
             this.pnlAddProduct.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInvoiceID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddProduct)).BeginInit();
             this.SuspendLayout();
@@ -70,11 +75,12 @@ namespace Jewelry
             // pnlAddProduct
             // 
             this.pnlAddProduct.BackColor = System.Drawing.Color.Transparent;
+            this.pnlAddProduct.Controls.Add(this.cboID);
             this.pnlAddProduct.Controls.Add(this.btnRemove);
-            this.pnlAddProduct.Controls.Add(this.pictureBox4);
-            this.pnlAddProduct.Controls.Add(this.pictureBox3);
-            this.pnlAddProduct.Controls.Add(this.pictureBox2);
-            this.pnlAddProduct.Controls.Add(this.pictureBox1);
+            this.pnlAddProduct.Controls.Add(this.picInvoiceID);
+            this.pnlAddProduct.Controls.Add(this.picProduct);
+            this.pnlAddProduct.Controls.Add(this.picCate);
+            this.pnlAddProduct.Controls.Add(this.picSize);
             this.pnlAddProduct.Controls.Add(this.btnEdit);
             this.pnlAddProduct.Controls.Add(this.nudQuantity);
             this.pnlAddProduct.Controls.Add(this.btnAdd);
@@ -89,52 +95,70 @@ namespace Jewelry
             this.pnlAddProduct.Controls.Add(this.txtImportPrice);
             this.pnlAddProduct.Controls.Add(this.cboSize);
             this.pnlAddProduct.Controls.Add(this.cboProductName);
-            this.pnlAddProduct.Controls.Add(this.cboCategoryName);
-            this.pnlAddProduct.Controls.Add(this.cboInvoiceID);
+            this.pnlAddProduct.Controls.Add(this.cboCategory);
             this.pnlAddProduct.Location = new System.Drawing.Point(790, 100);
             this.pnlAddProduct.Name = "pnlAddProduct";
             this.pnlAddProduct.Size = new System.Drawing.Size(360, 550);
             this.pnlAddProduct.TabIndex = 3;
+            this.pnlAddProduct.Click += new System.EventHandler(this.UC_Click);
             // 
-            // pictureBox4
+            // btnRemove
             // 
-            this.pictureBox4.Image = global::Jewelry.Properties.Resources.add__1_;
-            this.pictureBox4.Location = new System.Drawing.Point(334, 112);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 9;
-            this.pictureBox4.TabStop = false;
+            this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
+            this.btnRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
+            this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
+            this.btnRemove.Location = new System.Drawing.Point(257, 504);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(102, 46);
+            this.btnRemove.TabIndex = 10;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.MouseEnter += new System.EventHandler(this.btnRemove_MouseEnter);
+            this.btnRemove.MouseLeave += new System.EventHandler(this.btnRemove_MouseLeave);
             // 
-            // pictureBox3
+            // picInvoiceID
             // 
-            this.pictureBox3.Image = global::Jewelry.Properties.Resources.add__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(334, 166);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
+            this.picInvoiceID.Image = global::Jewelry.Properties.Resources.add__1_;
+            this.picInvoiceID.Location = new System.Drawing.Point(332, 30);
+            this.picInvoiceID.Name = "picInvoiceID";
+            this.picInvoiceID.Size = new System.Drawing.Size(25, 25);
+            this.picInvoiceID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picInvoiceID.TabIndex = 9;
+            this.picInvoiceID.TabStop = false;
+            this.picInvoiceID.Click += new System.EventHandler(this.picInvoiceID_Click);
             // 
-            // pictureBox2
+            // picProduct
             // 
-            this.pictureBox2.Image = global::Jewelry.Properties.Resources.add__1_;
-            this.pictureBox2.Location = new System.Drawing.Point(334, 58);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
+            this.picProduct.Image = global::Jewelry.Properties.Resources.add__1_;
+            this.picProduct.Location = new System.Drawing.Point(332, 168);
+            this.picProduct.Name = "picProduct";
+            this.picProduct.Size = new System.Drawing.Size(25, 25);
+            this.picProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picProduct.TabIndex = 9;
+            this.picProduct.TabStop = false;
             // 
-            // pictureBox1
+            // picCate
             // 
-            this.pictureBox1.Image = global::Jewelry.Properties.Resources.add__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(334, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.picCate.Image = global::Jewelry.Properties.Resources.add__1_;
+            this.picCate.Location = new System.Drawing.Point(332, 99);
+            this.picCate.Name = "picCate";
+            this.picCate.Size = new System.Drawing.Size(25, 25);
+            this.picCate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCate.TabIndex = 9;
+            this.picCate.TabStop = false;
+            // 
+            // picSize
+            // 
+            this.picSize.Image = global::Jewelry.Properties.Resources.add__1_;
+            this.picSize.Location = new System.Drawing.Point(332, 237);
+            this.picSize.Name = "picSize";
+            this.picSize.Size = new System.Drawing.Size(25, 25);
+            this.picSize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSize.TabIndex = 9;
+            this.picSize.TabStop = false;
             // 
             // btnEdit
             // 
@@ -144,11 +168,11 @@ namespace Jewelry
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
-            this.btnEdit.Location = new System.Drawing.Point(133, 504);
+            this.btnEdit.Location = new System.Drawing.Point(134, 504);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(88, 46);
+            this.btnEdit.Size = new System.Drawing.Size(98, 46);
             this.btnEdit.TabIndex = 8;
-            this.btnEdit.Text = "Edit";
+            this.btnEdit.Text = "Update";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.MouseEnter += new System.EventHandler(this.btnEdit_MouseEnter);
             this.btnEdit.MouseLeave += new System.EventHandler(this.btnEdit_MouseLeave);
@@ -156,9 +180,9 @@ namespace Jewelry
             // nudQuantity
             // 
             this.nudQuantity.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudQuantity.Location = new System.Drawing.Point(134, 216);
+            this.nudQuantity.Location = new System.Drawing.Point(7, 302);
             this.nudQuantity.Name = "nudQuantity";
-            this.nudQuantity.Size = new System.Drawing.Size(226, 28);
+            this.nudQuantity.Size = new System.Drawing.Size(353, 28);
             this.nudQuantity.TabIndex = 7;
             // 
             // btnAdd
@@ -183,7 +207,7 @@ namespace Jewelry
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(3, 326);
+            this.label7.Location = new System.Drawing.Point(5, 412);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 21);
             this.label7.TabIndex = 5;
@@ -194,7 +218,7 @@ namespace Jewelry
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 272);
+            this.label6.Location = new System.Drawing.Point(3, 344);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 21);
             this.label6.TabIndex = 5;
@@ -205,7 +229,7 @@ namespace Jewelry
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 218);
+            this.label5.Location = new System.Drawing.Point(3, 276);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 21);
             this.label5.TabIndex = 5;
@@ -216,7 +240,7 @@ namespace Jewelry
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 164);
+            this.label4.Location = new System.Drawing.Point(5, 207);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 21);
             this.label4.TabIndex = 5;
@@ -227,7 +251,7 @@ namespace Jewelry
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 110);
+            this.label3.Location = new System.Drawing.Point(3, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 21);
             this.label3.TabIndex = 5;
@@ -238,7 +262,7 @@ namespace Jewelry
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 56);
+            this.label2.Location = new System.Drawing.Point(3, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 21);
             this.label2.TabIndex = 5;
@@ -249,7 +273,7 @@ namespace Jewelry
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 2);
+            this.label1.Location = new System.Drawing.Point(5, 1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 21);
             this.label1.TabIndex = 4;
@@ -258,132 +282,184 @@ namespace Jewelry
             // txtSalesPrice
             // 
             this.txtSalesPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalesPrice.Location = new System.Drawing.Point(134, 323);
+            this.txtSalesPrice.Location = new System.Drawing.Point(7, 438);
             this.txtSalesPrice.Name = "txtSalesPrice";
-            this.txtSalesPrice.Size = new System.Drawing.Size(226, 28);
+            this.txtSalesPrice.Size = new System.Drawing.Size(353, 28);
             this.txtSalesPrice.TabIndex = 3;
             // 
             // txtImportPrice
             // 
             this.txtImportPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImportPrice.Location = new System.Drawing.Point(134, 269);
+            this.txtImportPrice.Location = new System.Drawing.Point(7, 370);
             this.txtImportPrice.Name = "txtImportPrice";
-            this.txtImportPrice.Size = new System.Drawing.Size(226, 28);
+            this.txtImportPrice.Size = new System.Drawing.Size(352, 28);
             this.txtImportPrice.TabIndex = 3;
             // 
             // cboSize
             // 
             this.cboSize.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSize.FormattingEnabled = true;
-            this.cboSize.Location = new System.Drawing.Point(134, 161);
+            this.cboSize.Location = new System.Drawing.Point(7, 233);
             this.cboSize.Name = "cboSize";
-            this.cboSize.Size = new System.Drawing.Size(190, 29);
+            this.cboSize.Size = new System.Drawing.Size(310, 29);
             this.cboSize.TabIndex = 2;
             // 
             // cboProductName
             // 
             this.cboProductName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProductName.FormattingEnabled = true;
-            this.cboProductName.Location = new System.Drawing.Point(134, 107);
+            this.cboProductName.Location = new System.Drawing.Point(7, 164);
             this.cboProductName.Name = "cboProductName";
-            this.cboProductName.Size = new System.Drawing.Size(190, 29);
+            this.cboProductName.Size = new System.Drawing.Size(310, 29);
             this.cboProductName.TabIndex = 2;
             // 
-            // cboCategoryName
+            // cboCategory
             // 
-            this.cboCategoryName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboCategoryName.FormattingEnabled = true;
-            this.cboCategoryName.Location = new System.Drawing.Point(134, 53);
-            this.cboCategoryName.Name = "cboCategoryName";
-            this.cboCategoryName.Size = new System.Drawing.Size(190, 29);
-            this.cboCategoryName.TabIndex = 1;
-            // 
-            // cboInvoiceID
-            // 
-            this.cboInvoiceID.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboInvoiceID.FormattingEnabled = true;
-            this.cboInvoiceID.Location = new System.Drawing.Point(134, -1);
-            this.cboInvoiceID.Name = "cboInvoiceID";
-            this.cboInvoiceID.Size = new System.Drawing.Size(190, 29);
-            this.cboInvoiceID.TabIndex = 0;
+            this.cboCategory.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Location = new System.Drawing.Point(7, 95);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(310, 29);
+            this.cboCategory.TabIndex = 1;
+            this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.cboCategory_SelectedIndexChanged);
             // 
             // dgvAddProduct
             // 
             this.dgvAddProduct.AllowUserToAddRows = false;
+            this.dgvAddProduct.AllowUserToResizeRows = false;
+            this.dgvAddProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvAddProduct.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.dgvAddProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAddProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAddProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.column2,
-            this.Column1,
-            this.Column3,
+            this.colInvoice,
+            this.colInvoiceDetail,
+            this.colCategory,
+            this.colProductID,
+            this.colProduct,
+            this.colSize,
             this.colQuantity,
-            this.Column4,
-            this.Column5});
+            this.colImportPrice,
+            this.colSalesPrice});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAddProduct.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAddProduct.Location = new System.Drawing.Point(50, 100);
+            this.dgvAddProduct.MultiSelect = false;
             this.dgvAddProduct.Name = "dgvAddProduct";
+            this.dgvAddProduct.ReadOnly = true;
             this.dgvAddProduct.RowHeadersVisible = false;
             this.dgvAddProduct.RowHeadersWidth = 51;
             this.dgvAddProduct.RowTemplate.Height = 24;
+            this.dgvAddProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAddProduct.Size = new System.Drawing.Size(720, 550);
             this.dgvAddProduct.TabIndex = 2;
             // 
-            // column2
+            // colInvoice
             // 
-            this.column2.HeaderText = "Category Name";
-            this.column2.MinimumWidth = 6;
-            this.column2.Name = "column2";
-            this.column2.Width = 125;
+            this.colInvoice.DataPropertyName = "idHoaDon";
+            this.colInvoice.HeaderText = "Invoice";
+            this.colInvoice.MinimumWidth = 6;
+            this.colInvoice.Name = "colInvoice";
+            this.colInvoice.ReadOnly = true;
+            this.colInvoice.Width = 87;
             // 
-            // Column1
+            // colInvoiceDetail
             // 
-            this.Column1.HeaderText = "Product Name";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
+            this.colInvoiceDetail.DataPropertyName = "idCTHD";
+            this.colInvoiceDetail.HeaderText = "Invoice Detail";
+            this.colInvoiceDetail.MinimumWidth = 6;
+            this.colInvoiceDetail.Name = "colInvoiceDetail";
+            this.colInvoiceDetail.ReadOnly = true;
+            this.colInvoiceDetail.Width = 120;
             // 
-            // Column3
+            // colCategory
             // 
-            this.Column3.HeaderText = "Size";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
+            this.colCategory.DataPropertyName = "idDanhMuc";
+            this.colCategory.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colCategory.HeaderText = "Category";
+            this.colCategory.MinimumWidth = 6;
+            this.colCategory.Name = "colCategory";
+            this.colCategory.ReadOnly = true;
+            this.colCategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colCategory.Width = 99;
+            // 
+            // colProductID
+            // 
+            this.colProductID.DataPropertyName = "idsanPham";
+            this.colProductID.HeaderText = "Product ID";
+            this.colProductID.MinimumWidth = 6;
+            this.colProductID.Name = "colProductID";
+            this.colProductID.ReadOnly = true;
+            this.colProductID.Width = 98;
+            // 
+            // colProduct
+            // 
+            this.colProduct.DataPropertyName = "tenSanPham";
+            this.colProduct.HeaderText = "Product";
+            this.colProduct.MinimumWidth = 6;
+            this.colProduct.Name = "colProduct";
+            this.colProduct.ReadOnly = true;
+            this.colProduct.Width = 88;
+            // 
+            // colSize
+            // 
+            this.colSize.DataPropertyName = "size";
+            this.colSize.HeaderText = "Size";
+            this.colSize.MinimumWidth = 6;
+            this.colSize.Name = "colSize";
+            this.colSize.ReadOnly = true;
+            this.colSize.Width = 63;
             // 
             // colQuantity
             // 
+            this.colQuantity.DataPropertyName = "soLuong";
             this.colQuantity.HeaderText = "Quantity";
             this.colQuantity.MinimumWidth = 6;
             this.colQuantity.Name = "colQuantity";
-            this.colQuantity.Width = 125;
+            this.colQuantity.ReadOnly = true;
+            this.colQuantity.Width = 93;
             // 
-            // Column4
+            // colImportPrice
             // 
-            this.Column4.HeaderText = "Import-Price";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
+            this.colImportPrice.DataPropertyName = "giaNhap";
+            this.colImportPrice.HeaderText = "Import-Price";
+            this.colImportPrice.MinimumWidth = 6;
+            this.colImportPrice.Name = "colImportPrice";
+            this.colImportPrice.ReadOnly = true;
+            this.colImportPrice.Width = 121;
             // 
-            // Column5
+            // colSalesPrice
             // 
-            this.Column5.HeaderText = "Sales-Price";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
+            this.colSalesPrice.DataPropertyName = "giaBan";
+            this.colSalesPrice.HeaderText = "Sales-Price";
+            this.colSalesPrice.MinimumWidth = 6;
+            this.colSalesPrice.Name = "colSalesPrice";
+            this.colSalesPrice.ReadOnly = true;
+            this.colSalesPrice.Width = 112;
             // 
-            // btnRemove
+            // cboID
             // 
-            this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
-            this.btnRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
-            this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
-            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
-            this.btnRemove.Location = new System.Drawing.Point(245, 504);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(114, 46);
-            this.btnRemove.TabIndex = 10;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
+            this.cboID.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboID.FormattingEnabled = true;
+            this.cboID.Location = new System.Drawing.Point(7, 26);
+            this.cboID.Name = "cboID";
+            this.cboID.Size = new System.Drawing.Size(310, 29);
+            this.cboID.TabIndex = 11;
             // 
             // ucAddProduct
             // 
@@ -395,12 +471,13 @@ namespace Jewelry
             this.Name = "ucAddProduct";
             this.Size = new System.Drawing.Size(1200, 700);
             this.Load += new System.EventHandler(this.ucAddProduct_Load);
+            this.Click += new System.EventHandler(this.UC_Click);
             this.pnlAddProduct.ResumeLayout(false);
             this.pnlAddProduct.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInvoiceID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddProduct)).EndInit();
             this.ResumeLayout(false);
@@ -414,8 +491,7 @@ namespace Jewelry
         private System.Windows.Forms.TextBox txtImportPrice;
         private System.Windows.Forms.ComboBox cboSize;
         private System.Windows.Forms.ComboBox cboProductName;
-        private System.Windows.Forms.ComboBox cboCategoryName;
-        private System.Windows.Forms.ComboBox cboInvoiceID;
+        private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -425,18 +501,22 @@ namespace Jewelry
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSalesPrice;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.NumericUpDown nudQuantity;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picProduct;
+        private System.Windows.Forms.PictureBox picSize;
+        private System.Windows.Forms.PictureBox picCate;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceDetail;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colImportPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesPrice;
+        private System.Windows.Forms.PictureBox picInvoiceID;
+        private System.Windows.Forms.ComboBox cboID;
     }
 }

@@ -29,70 +29,97 @@ namespace Jewelry
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSearch = new System.Windows.Forms.DataGridView();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.btnAddToCart = new System.Windows.Forms.Button();
-            this.lbQuantity = new System.Windows.Forms.Label();
-            this.lbCategoryname = new System.Windows.Forms.Label();
-            this.lbPrice = new System.Windows.Forms.Label();
-            this.lbSize = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblSize = new System.Windows.Forms.Label();
+            this.nudChoose = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cboSearch = new System.Windows.Forms.ComboBox();
+            this.radAll = new System.Windows.Forms.RadioButton();
+            this.radChoose = new System.Windows.Forms.RadioButton();
             this.colProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.pnlSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChoose)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSearch
             // 
             this.dgvSearch.AllowUserToAddRows = false;
+            this.dgvSearch.AllowUserToResizeRows = false;
+            this.dgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.dgvSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProductID,
+            this.colProductName,
             this.colSize,
             this.colPrice,
+            this.colCategory,
             this.colQuantity});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearch.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSearch.Location = new System.Drawing.Point(50, 100);
             this.dgvSearch.MultiSelect = false;
             this.dgvSearch.Name = "dgvSearch";
+            this.dgvSearch.ReadOnly = true;
             this.dgvSearch.RowHeadersVisible = false;
             this.dgvSearch.RowHeadersWidth = 51;
             this.dgvSearch.RowTemplate.Height = 24;
+            this.dgvSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSearch.Size = new System.Drawing.Size(720, 550);
             this.dgvSearch.TabIndex = 0;
+            this.dgvSearch.SelectionChanged += new System.EventHandler(this.dgvSearch_SelectionChanged);
             // 
             // pnlSearch
             // 
             this.pnlSearch.BackColor = System.Drawing.Color.Transparent;
             this.pnlSearch.Controls.Add(this.btnAddToCart);
-            this.pnlSearch.Controls.Add(this.lbQuantity);
-            this.pnlSearch.Controls.Add(this.lbCategoryname);
-            this.pnlSearch.Controls.Add(this.lbPrice);
-            this.pnlSearch.Controls.Add(this.lbSize);
-            this.pnlSearch.Controls.Add(this.numericUpDown2);
+            this.pnlSearch.Controls.Add(this.lblQuantity);
+            this.pnlSearch.Controls.Add(this.lblPrice);
+            this.pnlSearch.Controls.Add(this.lblSize);
+            this.pnlSearch.Controls.Add(this.nudChoose);
             this.pnlSearch.Controls.Add(this.label6);
             this.pnlSearch.Controls.Add(this.label5);
-            this.pnlSearch.Controls.Add(this.label4);
             this.pnlSearch.Controls.Add(this.label3);
             this.pnlSearch.Controls.Add(this.label2);
-            this.pnlSearch.Controls.Add(this.label1);
+            this.pnlSearch.Controls.Add(this.lblName);
             this.pnlSearch.Location = new System.Drawing.Point(790, 100);
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(360, 550);
             this.pnlSearch.TabIndex = 1;
+            this.pnlSearch.Click += new System.EventHandler(this.pnlSearch_Click);
             // 
             // btnAddToCart
             // 
@@ -111,64 +138,64 @@ namespace Jewelry
             this.btnAddToCart.MouseEnter += new System.EventHandler(this.btnAddToCart_MouseEnter);
             this.btnAddToCart.MouseLeave += new System.EventHandler(this.btnAddToCart_MouseLeave);
             // 
-            // lbQuantity
+            // lblQuantity
             // 
-            this.lbQuantity.AutoSize = true;
-            this.lbQuantity.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQuantity.ForeColor = System.Drawing.Color.White;
-            this.lbQuantity.Location = new System.Drawing.Point(217, 213);
-            this.lbQuantity.Name = "lbQuantity";
-            this.lbQuantity.Size = new System.Drawing.Size(97, 21);
-            this.lbQuantity.TabIndex = 4;
-            this.lbQuantity.Text = "lbQuantity";
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.ForeColor = System.Drawing.Color.White;
+            this.lblQuantity.Location = new System.Drawing.Point(167, 149);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(91, 19);
+            this.lblQuantity.TabIndex = 4;
+            this.lblQuantity.Text = "lbQuantity";
             // 
-            // lbCategoryname
+            // lblPrice
             // 
-            this.lbCategoryname.AutoSize = true;
-            this.lbCategoryname.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCategoryname.ForeColor = System.Drawing.Color.White;
-            this.lbCategoryname.Location = new System.Drawing.Point(221, 161);
-            this.lbCategoryname.Name = "lbCategoryname";
-            this.lbCategoryname.Size = new System.Drawing.Size(70, 21);
-            this.lbCategoryname.TabIndex = 4;
-            this.lbCategoryname.Text = "lbCata";
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.ForeColor = System.Drawing.Color.White;
+            this.lblPrice.Location = new System.Drawing.Point(171, 101);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(65, 19);
+            this.lblPrice.TabIndex = 4;
+            this.lblPrice.Text = "lbPrice";
             // 
-            // lbPrice
+            // lblSize
             // 
-            this.lbPrice.AutoSize = true;
-            this.lbPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrice.ForeColor = System.Drawing.Color.White;
-            this.lbPrice.Location = new System.Drawing.Point(221, 109);
-            this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(65, 21);
-            this.lbPrice.TabIndex = 4;
-            this.lbPrice.Text = "lbPrice";
+            this.lblSize.AutoSize = true;
+            this.lblSize.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSize.ForeColor = System.Drawing.Color.White;
+            this.lblSize.Location = new System.Drawing.Point(171, 53);
+            this.lblSize.Name = "lblSize";
+            this.lblSize.Size = new System.Drawing.Size(56, 19);
+            this.lblSize.TabIndex = 4;
+            this.lblSize.Text = "lbSize";
             // 
-            // lbSize
+            // nudChoose
             // 
-            this.lbSize.AutoSize = true;
-            this.lbSize.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSize.ForeColor = System.Drawing.Color.White;
-            this.lbSize.Location = new System.Drawing.Point(221, 57);
-            this.lbSize.Name = "lbSize";
-            this.lbSize.Size = new System.Drawing.Size(54, 21);
-            this.lbSize.TabIndex = 4;
-            this.lbSize.Text = "lbSize";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown2.Location = new System.Drawing.Point(221, 263);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(138, 28);
-            this.numericUpDown2.TabIndex = 3;
+            this.nudChoose.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudChoose.Location = new System.Drawing.Point(171, 195);
+            this.nudChoose.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudChoose.Name = "nudChoose";
+            this.nudChoose.Size = new System.Drawing.Size(189, 28);
+            this.nudChoose.TabIndex = 3;
+            this.nudChoose.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudChoose.Click += new System.EventHandler(this.nudChoose_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 265);
+            this.label6.Location = new System.Drawing.Point(3, 197);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(133, 21);
             this.label6.TabIndex = 1;
@@ -179,29 +206,18 @@ namespace Jewelry
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 213);
+            this.label5.Location = new System.Drawing.Point(3, 149);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 21);
             this.label5.TabIndex = 0;
             this.label5.Text = "Quantity:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 161);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 21);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Category Name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 109);
+            this.label3.Location = new System.Drawing.Point(3, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 21);
             this.label3.TabIndex = 0;
@@ -212,39 +228,69 @@ namespace Jewelry
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 57);
+            this.label2.Location = new System.Drawing.Point(3, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Size:";
             // 
-            // label1
+            // lblName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Product Name";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(3, 3);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(143, 23);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Product Name\r\n";
             // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(355, 41);
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(126)))), ((int)(((byte)(120)))));
+            this.txtSearch.Location = new System.Drawing.Point(481, 40);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(415, 28);
+            this.txtSearch.Size = new System.Drawing.Size(244, 28);
             this.txtSearch.TabIndex = 2;
+            this.txtSearch.Text = "Search Product ID...";
+            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // cboSearch
             // 
             this.cboSearch.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSearch.FormattingEnabled = true;
-            this.cboSearch.Location = new System.Drawing.Point(50, 40);
+            this.cboSearch.Location = new System.Drawing.Point(163, 38);
             this.cboSearch.Name = "cboSearch";
-            this.cboSearch.Size = new System.Drawing.Size(282, 29);
+            this.cboSearch.Size = new System.Drawing.Size(200, 29);
             this.cboSearch.TabIndex = 3;
+            this.cboSearch.SelectedValueChanged += new System.EventHandler(this.cboSearch_SelectedValueChanged);
+            // 
+            // radAll
+            // 
+            this.radAll.AutoSize = true;
+            this.radAll.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAll.ForeColor = System.Drawing.Color.White;
+            this.radAll.Location = new System.Drawing.Point(50, 40);
+            this.radAll.Name = "radAll";
+            this.radAll.Size = new System.Drawing.Size(60, 25);
+            this.radAll.TabIndex = 4;
+            this.radAll.TabStop = true;
+            this.radAll.Text = "ALL";
+            this.radAll.UseVisualStyleBackColor = true;
+            this.radAll.CheckedChanged += new System.EventHandler(this.rad_CheckedChanged);
+            // 
+            // radChoose
+            // 
+            this.radChoose.AutoSize = true;
+            this.radChoose.Location = new System.Drawing.Point(137, 44);
+            this.radChoose.Name = "radChoose";
+            this.radChoose.Size = new System.Drawing.Size(17, 16);
+            this.radChoose.TabIndex = 5;
+            this.radChoose.TabStop = true;
+            this.radChoose.UseVisualStyleBackColor = true;
+            this.radChoose.CheckedChanged += new System.EventHandler(this.rad_CheckedChanged);
             // 
             // colProductID
             // 
@@ -252,7 +298,17 @@ namespace Jewelry
             this.colProductID.HeaderText = "Product ID";
             this.colProductID.MinimumWidth = 6;
             this.colProductID.Name = "colProductID";
-            this.colProductID.Width = 125;
+            this.colProductID.ReadOnly = true;
+            this.colProductID.Width = 98;
+            // 
+            // colProductName
+            // 
+            this.colProductName.DataPropertyName = "tenSanPham";
+            this.colProductName.HeaderText = "Product Name";
+            this.colProductName.MinimumWidth = 6;
+            this.colProductName.Name = "colProductName";
+            this.colProductName.ReadOnly = true;
+            this.colProductName.Width = 123;
             // 
             // colSize
             // 
@@ -260,7 +316,8 @@ namespace Jewelry
             this.colSize.HeaderText = "Size";
             this.colSize.MinimumWidth = 6;
             this.colSize.Name = "colSize";
-            this.colSize.Width = 125;
+            this.colSize.ReadOnly = true;
+            this.colSize.Width = 63;
             // 
             // colPrice
             // 
@@ -268,7 +325,20 @@ namespace Jewelry
             this.colPrice.HeaderText = "Price";
             this.colPrice.MinimumWidth = 6;
             this.colPrice.Name = "colPrice";
-            this.colPrice.Width = 125;
+            this.colPrice.ReadOnly = true;
+            this.colPrice.Width = 71;
+            // 
+            // colCategory
+            // 
+            this.colCategory.DataPropertyName = "idDanhMuc";
+            this.colCategory.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colCategory.HeaderText = "Category";
+            this.colCategory.MinimumWidth = 6;
+            this.colCategory.Name = "colCategory";
+            this.colCategory.ReadOnly = true;
+            this.colCategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colCategory.Width = 99;
             // 
             // colQuantity
             // 
@@ -276,24 +346,44 @@ namespace Jewelry
             this.colQuantity.HeaderText = "Quantity";
             this.colQuantity.MinimumWidth = 6;
             this.colQuantity.Name = "colQuantity";
-            this.colQuantity.Width = 125;
+            this.colQuantity.ReadOnly = true;
+            this.colQuantity.Width = 93;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Image = global::Jewelry.Properties.Resources.search;
+            this.btnSearch.Location = new System.Drawing.Point(733, 38);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(34, 30);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // ucSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.Controls.Add(this.radChoose);
+            this.Controls.Add(this.radAll);
             this.Controls.Add(this.cboSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.dgvSearch);
+            this.Controls.Add(this.btnSearch);
             this.Name = "ucSearch";
             this.Size = new System.Drawing.Size(1200, 700);
             this.Load += new System.EventHandler(this.ucSearch_Load);
+            this.Click += new System.EventHandler(this.ucSearch_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChoose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,21 +395,24 @@ namespace Jewelry
         private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox cboSearch;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nudChoose;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbQuantity;
-        private System.Windows.Forms.Label lbCategoryname;
-        private System.Windows.Forms.Label lbPrice;
-        private System.Windows.Forms.Label lbSize;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblQuantity;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.Button btnAddToCart;
+        private System.Windows.Forms.RadioButton radAll;
+        private System.Windows.Forms.RadioButton radChoose;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

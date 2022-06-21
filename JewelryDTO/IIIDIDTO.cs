@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace JewelryDTO
 {
-    public class ImportInvoiceDTO
+    public class IIIDIDTO
     {
         public string idHoaDon { get; set; }
+        public string idCTHD { get; set; }
         public string idTaiKhoan { get; set; }
+        public string idSanPham { get; set; }
+        public float size { get; set; }
+        public int soLuong { get; set; }
+        public decimal giaNhap { get; set; }
         public DateTime ngayNhap { get; set; }
+
     }
 }

@@ -13,7 +13,7 @@ namespace JewelryDAO
         public AccountDTO TimTaiKhoan(string username)
         {
             AccountDTO account = null;
-            string strTruyVan = "Select * from TaiKhoan where trangThai = 1 and idTaiKhoan = @username";
+            string strTruyVan = "Select * from TaiKhoan where idTaiKhoan = @username";
             SqlConnection connect = DataProvider.TaoKetNoi();
             SqlParameter par = new SqlParameter("username", username);
             SqlDataReader sdr = DataProvider.TruyVan(strTruyVan, par, connect);
@@ -24,15 +24,39 @@ namespace JewelryDAO
                 account.matKhau = sdr["matKhau"].ToString();
                 account.hoTen = sdr["hoTen"].ToString();
                 account.chucVu = sdr["chucVu"].ToString();
-                account.ngaySinh = sdr["ngaySinh"].ToString();
+                account.ngaySinh = DateTime.Parse(sdr["ngaySinh"].ToString()).Date;
                 account.gioiTinh = sdr["gioiTinh"].ToString();
                 account.diaChi = sdr["diaChi"].ToString();
                 account.soDienThoai = sdr["soDienThoai"].ToString();
-                account.trangThai = int.Parse(sdr["trangThai"].ToString());
+                
             }
             sdr.Close();
             connect.Close();
             return account;
+        }
+
+        public List<AccountDTO> LayDanhSachTaiKhoan()
+        {
+            List<AccountDTO> ls = new List<AccountDTO>();
+            SqlConnection connect = DataProvider.TaoKetNoi();
+            string query = "Select * from TaiKhoan";
+            SqlDataReader sdr = DataProvider.TruyVan(query, connect);
+            while (sdr.Read())
+            {
+                AccountDTO account = new AccountDTO();
+                account.idTaiKhoan = sdr["idTaiKhoan"].ToString();
+                account.matKhau = sdr["matKhau"].ToString();
+                account.hoTen = sdr["hoTen"].ToString();
+                account.chucVu = sdr["chucVu"].ToString();
+                account.ngaySinh = DateTime.Parse(sdr["ngaySinh"].ToString()).Date;
+                account.gioiTinh = sdr["gioiTinh"].ToString();
+                account.diaChi = sdr["diaChi"].ToString();
+                account.soDienThoai = sdr["soDienThoai"].ToString();
+                ls.Add(account);
+            }
+            sdr.Close();
+            connect.Close();
+            return ls;
         }
     }
 }

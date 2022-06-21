@@ -15,5 +15,11 @@ namespace JewelryBUS
             AccountDAO account = new AccountDAO();
             return account.TimTaiKhoan(username);
         }
+
+        public List<AccountDTO> LayTatCaTaiKhoan()
+        {
+            AccountDAO account = new AccountDAO();
+            return account.LayDanhSachTaiKhoan();
+        }
     }
 }

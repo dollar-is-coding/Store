@@ -15,5 +15,11 @@ namespace JewelryBUS
             ProductDAO spDAO = new ProductDAO();
             return spDAO.LayDanhSachSanPham();
         }
+
+        public List<ProductDTO> LayDanhSachSanPham(string idDanhMuc)
+        {
+            ProductDAO spDAO = new ProductDAO();
+            return spDAO.LayDanhSachSanPham(idDanhMuc);
+        }
     }
 }

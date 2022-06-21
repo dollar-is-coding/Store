@@ -43,6 +43,10 @@
   <ItemGroup>
     <Compile Include="CategoryDTO.cs" />
     <Compile Include="AccountDTO.cs" />
+    <Compile Include="NewAProductDTO.cs" />
+    <Compile Include="PPDDTO.cs" />
+    <Compile Include="SISDIDTO.cs" />
+    <Compile Include="IIIDIDTO.cs" />
     <Compile Include="SalesDetailInvoiceDTO.cs" />
     <Compile Include="ImportDetailInvoiceDTO.cs" />
     <Compile Include="SalesInvoiceDTO.cs" />

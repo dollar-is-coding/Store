@@ -40,5 +40,41 @@ namespace Jewelry
             a.ForeColor = Color.FromArgb(255, 1, 243);
             a.FlatAppearance.BorderColor = Color.FromArgb(255, 1, 243);
         }
+
+        private void ucCart_Load(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Today.ToShortDateString();
+            lblStaffName.Text = frmLogIn.staff;
+        }
+
+        private void txtCustomer_Click(object sender, EventArgs e)
+        {
+            txtCustomer.SelectAll();
+        }
+
+        private void txtPhone_Click(object sender, EventArgs e)
+        {
+            txtPhone.SelectAll();
+        }
+
+        private void txtCustomer_TextChanged(object sender, EventArgs e)
+        {
+            txtCustomer.ForeColor = Color.Black;
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+            txtPhone.ForeColor = Color.Black;
+        }
+
+        private void ucCart_Click(object sender, EventArgs e)
+        {
+            lblStaffName.Focus();
+        }
+
+        private void pnlCart_Click(object sender, EventArgs e)
+        {
+            lblStaffName.Focus();
+        }
     }
 }

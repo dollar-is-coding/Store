@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace JewelryDTO
 {
-    public class ProductDetailDTO
+    public class PPDDTO
     {
         public string idSanPham { get; set; }
-        public float size { get; set; } 
+        public string tenSanPham { get; set; }
+        public string idDanhMuc { get; set; }
+        public float size { get; set; }
         public decimal giaBan { get; set; }
         public int soLuong { get; set; }
-        public int trangThai { get; set; }
+
     }
 }

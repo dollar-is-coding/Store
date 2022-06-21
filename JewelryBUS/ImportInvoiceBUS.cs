@@ -15,6 +15,11 @@ namespace JewelryBUS
             ImportInvoiceDAO IncDAO = new ImportInvoiceDAO();
             return IncDAO.LayDanhSachHoaDon();
         }
+        public List<ImportInvoiceDTO> LayHoaDonLonNhat()
+        {
+            ImportInvoiceDAO dao = new ImportInvoiceDAO();
+            return dao.LayIDHoaDonLonNhat();
+        }
 
     }
 }
