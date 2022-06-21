@@ -16,12 +16,14 @@ namespace Jewelry
     {
         List<ProductDTO> lsPro;
         List<CategoryDTO> categoryLs;
+        List<ProductDetailDTO> PDLs;
         
 
         CategoryBUS category = new CategoryBUS();
         ProductBUS ProBUS = new ProductBUS();
         ImportInvoiceBUS Inc = new ImportInvoiceBUS();
         NewAProductBUS NBUS = new NewAProductBUS();
+        ProductDetailBUS PDBUS = new ProductDetailBUS();
 
         
 
@@ -73,8 +75,10 @@ namespace Jewelry
             cboID.DataSource = ls;
             cboID.ValueMember = "idHoaDon";
             cboID.DisplayMember = "idHoaDon";
-           
-            
+
+            LoadDanhMuc();
+            LoadProduct();
+            LoadSize();
         }
 
         private void LoadDanhMuc()
@@ -93,6 +97,14 @@ namespace Jewelry
             cboProductName.ValueMember = "idSanPham";
         }
 
+        private void LoadSize()
+        {
+            PDLs = PDBUS.LayTatCaPD(cboProductName.SelectedValue.ToString());
+            cboSize.DataSource = PDLs;
+            cboSize.DisplayMember = "size";
+            cboSize.ValueMember = "size";
+        }
+
         private void btnRemove_MouseEnter(object sender, EventArgs e)
         {
             btn_MouseEnter(btnRemove);
@@ -108,15 +120,15 @@ namespace Jewelry
             label1.Focus();
         }
 
-        private void picInvoiceID_Click(object sender, EventArgs e)
-        {
-            LoadDanhMuc();
-            LoadProduct();
-        }
 
         private void cboCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadProduct();
+        }
+
+        private void cboProductName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadSize();
         }
     }
 }

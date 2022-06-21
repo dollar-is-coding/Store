@@ -32,6 +32,7 @@ namespace Jewelry
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlAddProduct = new System.Windows.Forms.Panel();
+            this.cboID = new System.Windows.Forms.ComboBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.picInvoiceID = new System.Windows.Forms.PictureBox();
             this.picProduct = new System.Windows.Forms.PictureBox();
@@ -62,7 +63,6 @@ namespace Jewelry
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colImportPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSalesPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboID = new System.Windows.Forms.ComboBox();
             this.pnlAddProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picInvoiceID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
@@ -102,6 +102,17 @@ namespace Jewelry
             this.pnlAddProduct.TabIndex = 3;
             this.pnlAddProduct.Click += new System.EventHandler(this.UC_Click);
             // 
+            // cboID
+            // 
+            this.cboID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cboID.Enabled = false;
+            this.cboID.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboID.FormattingEnabled = true;
+            this.cboID.Location = new System.Drawing.Point(7, 26);
+            this.cboID.Name = "cboID";
+            this.cboID.Size = new System.Drawing.Size(310, 29);
+            this.cboID.TabIndex = 11;
+            // 
             // btnRemove
             // 
             this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
@@ -128,7 +139,6 @@ namespace Jewelry
             this.picInvoiceID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picInvoiceID.TabIndex = 9;
             this.picInvoiceID.TabStop = false;
-            this.picInvoiceID.Click += new System.EventHandler(this.picInvoiceID_Click);
             // 
             // picProduct
             // 
@@ -312,6 +322,7 @@ namespace Jewelry
             this.cboProductName.Name = "cboProductName";
             this.cboProductName.Size = new System.Drawing.Size(310, 29);
             this.cboProductName.TabIndex = 2;
+            this.cboProductName.SelectedIndexChanged += new System.EventHandler(this.cboProductName_SelectedIndexChanged);
             // 
             // cboCategory
             // 
@@ -451,15 +462,6 @@ namespace Jewelry
             this.colSalesPrice.Name = "colSalesPrice";
             this.colSalesPrice.ReadOnly = true;
             this.colSalesPrice.Width = 112;
-            // 
-            // cboID
-            // 
-            this.cboID.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboID.FormattingEnabled = true;
-            this.cboID.Location = new System.Drawing.Point(7, 26);
-            this.cboID.Name = "cboID";
-            this.cboID.Size = new System.Drawing.Size(310, 29);
-            this.cboID.TabIndex = 11;
             // 
             // ucAddProduct
             // 
