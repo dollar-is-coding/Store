@@ -27,5 +27,22 @@ namespace JewelryDAO
             connect.Close();
             return categoryLs;
         }
+        public bool ThemDanhMucMoi(string tenDanhMuc)
+        {
+            try
+            {
+                string strIns = "Insert into DanhMuc(idDanhMuc,tenDanhMuc) values ('',@tenDanhMuc)";
+                SqlParameter parr = new SqlParameter("tenDanhMuc",tenDanhMuc);
+
+                SqlConnection conn = DataProvider.TaoKetNoi();
+                bool kq = DataProvider.ThucThi(strIns, parr, conn);
+                conn.Close();
+                return kq;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

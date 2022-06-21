@@ -20,6 +20,11 @@ namespace JewelryBUS
             ImportInvoiceDAO dao = new ImportInvoiceDAO();
             return dao.LayIDHoaDonLonNhat();
         }
+        public bool ThemHDMoi(string idTaiKhoan)
+        {
+            ImportInvoiceDAO hddao = new ImportInvoiceDAO();
+            return hddao.ThemHoaDonNhap(idTaiKhoan);
+        }
 
     }
 }

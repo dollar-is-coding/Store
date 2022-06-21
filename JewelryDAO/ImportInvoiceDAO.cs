@@ -47,5 +47,21 @@ namespace JewelryDAO
             conn.Close();
             return ls;
         }
+        public bool  ThemHoaDonNhap(string idTaiKhoan)
+        {
+            try
+            {
+                string strIns = "insert into HDNhapHang(idHoaDon,idTaiKhoan) values ('',@idTaiKhoan)";
+                SqlParameter par = new SqlParameter("idTaiKhoan", idTaiKhoan);
+                SqlConnection connect = DataProvider.TaoKetNoi();
+                bool kq = DataProvider.ThucThi(strIns, par, connect);
+                connect.Close();
+                return kq;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

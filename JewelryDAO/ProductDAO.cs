@@ -48,5 +48,23 @@ namespace JewelryDAO
             conn.Close();
             return lsPro;
         }
+        public bool LayDanhSachSanPham(string idDanhMuc, string tenSanPham)
+        {
+            try
+            {
+                string strPro = "Insert into SanPham(idDanhMuc,idSanPham,tenSanPham) values (@idDanhMuc,'',@tenSanPham)";
+                SqlParameter[] parr = new SqlParameter[2];
+                parr[0] = new SqlParameter("idDanhMuc", idDanhMuc);
+                parr[1] = new SqlParameter("tenSanPham", tenSanPham);
+                SqlConnection conn = DataProvider.TaoKetNoi();
+                bool kq = DataProvider.ThucThi(strPro, parr, conn);
+                conn.Close();
+                return kq;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

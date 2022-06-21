@@ -15,5 +15,10 @@ namespace JewelryBUS
             CategoryDAO category = new CategoryDAO();
             return category.LayDanhSachDanhMuc();
         }
+        public bool ThemDanhMucMoi(string tenDanhMuc)
+        {
+            CategoryDAO dmdao = new CategoryDAO();
+            return dmdao.ThemDanhMucMoi(tenDanhMuc);
+        }
     }
 }

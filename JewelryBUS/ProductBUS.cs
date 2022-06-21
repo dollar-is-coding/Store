@@ -21,5 +21,10 @@ namespace JewelryBUS
             ProductDAO spDAO = new ProductDAO();
             return spDAO.LayDanhSachSanPham(idDanhMuc);
         }
+        public bool ThemDanhSanPhamMoi(string idDanhMuc,string tenSanPham)
+        {
+            ProductDAO prodao = new ProductDAO();
+            return prodao.LayDanhSachSanPham(idDanhMuc, tenSanPham);
+        }
     }
 }
