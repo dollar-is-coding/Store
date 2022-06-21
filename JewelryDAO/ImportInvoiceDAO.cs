@@ -43,7 +43,6 @@ namespace JewelryDAO
             HD.ngayNhap = DateTime.Parse(sdr["ngayNhap"].ToString()).Date;
                 ls.Add(HD);
             }
-            
             sdr.Close();
             conn.Close();
             return ls;
