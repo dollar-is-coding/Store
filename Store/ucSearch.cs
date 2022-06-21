@@ -78,7 +78,7 @@ namespace Jewelry
             }
             else
             {
-                item = null;
+                item = null; 
             }
             BindingItem();
         }
