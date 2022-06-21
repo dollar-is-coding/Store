@@ -7,3 +7,12 @@ D:\CDTH20D\C Sharp\Rainbow Store\JewelryDAO\obj\Debug\JewelryDAO.csproj.CoreComp
 D:\CDTH20D\C Sharp\Rainbow Store\JewelryDAO\obj\Debug\JewelryDAO.csproj.CopyComplete
 D:\CDTH20D\C Sharp\Rainbow Store\JewelryDAO\obj\Debug\JewelryDAO.dll
 D:\CDTH20D\C Sharp\Rainbow Store\JewelryDAO\obj\Debug\JewelryDAO.pdb
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDAO\bin\Debug\JewelryDAO.dll
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDAO\bin\Debug\JewelryDAO.pdb
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDAO\bin\Debug\JewelryDTO.dll
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDAO\bin\Debug\JewelryDTO.pdb
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDAO\obj\Debug\JewelryDAO.csproj.AssemblyReference.cache
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDAO\obj\Debug\JewelryDAO.csproj.CoreCompileInputs.cache
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDAO\obj\Debug\JewelryDAO.csproj.CopyComplete
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDAO\obj\Debug\JewelryDAO.dll
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDAO\obj\Debug\JewelryDAO.pdb
