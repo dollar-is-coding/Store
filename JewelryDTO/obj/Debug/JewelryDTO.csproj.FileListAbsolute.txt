@@ -4,3 +4,9 @@ D:\CDTH20D\C Sharp\Rainbow Store\JewelryDTO\obj\Debug\JewelryDTO.csproj.Assembly
 D:\CDTH20D\C Sharp\Rainbow Store\JewelryDTO\obj\Debug\JewelryDTO.csproj.CoreCompileInputs.cache
 D:\CDTH20D\C Sharp\Rainbow Store\JewelryDTO\obj\Debug\JewelryDTO.dll
 D:\CDTH20D\C Sharp\Rainbow Store\JewelryDTO\obj\Debug\JewelryDTO.pdb
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDTO\bin\Debug\JewelryDTO.dll
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDTO\bin\Debug\JewelryDTO.pdb
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDTO\obj\Debug\JewelryDTO.csproj.AssemblyReference.cache
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDTO\obj\Debug\JewelryDTO.csproj.CoreCompileInputs.cache
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDTO\obj\Debug\JewelryDTO.dll
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryDTO\obj\Debug\JewelryDTO.pdb

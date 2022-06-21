@@ -9,3 +9,14 @@ D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\obj\Debug\JewelryBUS.csproj.CoreComp
 D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\obj\Debug\JewelryBUS.csproj.CopyComplete
 D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\obj\Debug\JewelryBUS.dll
 D:\CDTH20D\C Sharp\Rainbow Store\JewelryBUS\obj\Debug\JewelryBUS.pdb
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryBUS\bin\Debug\JewelryBUS.dll
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryBUS\bin\Debug\JewelryBUS.pdb
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryBUS\bin\Debug\JewelryDAO.dll
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryBUS\bin\Debug\JewelryDTO.dll
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryBUS\bin\Debug\JewelryDAO.pdb
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryBUS\bin\Debug\JewelryDTO.pdb
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryBUS\obj\Debug\JewelryBUS.csproj.AssemblyReference.cache
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryBUS\obj\Debug\JewelryBUS.csproj.CoreCompileInputs.cache
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryBUS\obj\Debug\JewelryBUS.csproj.CopyComplete
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryBUS\obj\Debug\JewelryBUS.dll
+C:\Users\Vinh\source\repos\QuanLyBanTrangSuc\Store\JewelryBUS\obj\Debug\JewelryBUS.pdb

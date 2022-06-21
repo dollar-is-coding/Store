@@ -17,7 +17,7 @@ namespace Jewelry
         List<ProductDTO> lsPro;
         List<CategoryDTO> categoryLs;
         List<ProductDetailDTO> PDLs;
-        
+        ProductDetailDTO item;
 
         CategoryBUS category = new CategoryBUS();
         ProductBUS ProBUS = new ProductBUS();
@@ -75,7 +75,6 @@ namespace Jewelry
             cboID.DataSource = ls;
             cboID.ValueMember = "idHoaDon";
             cboID.DisplayMember = "idHoaDon";
-
             LoadDanhMuc();
             LoadProduct();
             LoadSize();
@@ -129,6 +128,19 @@ namespace Jewelry
         private void cboProductName_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadSize();
+        }
+
+        private void txtImportPrice_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtImportPrice.Text))
+            {
+                decimal a = decimal.Parse(txtImportPrice.Text) + (decimal.Parse(txtImportPrice.Text) / 100 * 20);
+                txtSalesPrice.Text = a.ToString();
+            }
+            else
+            {
+                txtSalesPrice.Text = null;
+            }
         }
     }
 }

@@ -304,6 +304,7 @@ namespace Jewelry
             this.txtImportPrice.Name = "txtImportPrice";
             this.txtImportPrice.Size = new System.Drawing.Size(352, 28);
             this.txtImportPrice.TabIndex = 3;
+            this.txtImportPrice.TextChanged += new System.EventHandler(this.txtImportPrice_TextChanged);
             // 
             // cboSize
             // 
