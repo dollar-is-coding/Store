@@ -38,14 +38,30 @@ namespace JewelryDAO
             while (sdr.Read())
             {
                 ImportInvoiceDTO HD = new ImportInvoiceDTO();
-            HD.idHoaDon = sdr["idHoaDon"].ToString();
-            HD.idTaiKhoan = sdr["idTaiKhoan"].ToString();
-            HD.ngayNhap = DateTime.Parse(sdr["ngayNhap"].ToString()).Date;
+                HD.idHoaDon = sdr["idHoaDon"].ToString();
+                HD.idTaiKhoan = sdr["idTaiKhoan"].ToString();
+                HD.ngayNhap = DateTime.Parse(sdr["ngayNhap"].ToString()).Date;
                 ls.Add(HD);
             }
             sdr.Close();
             conn.Close();
             return ls;
+        }
+        public bool  ThemHoaDonNhap(string idTaiKhoan)
+        {
+            try
+            {
+                string strIns = "insert into HDNhapHang(idHoaDon,idTaiKhoan) values ('',@idTaiKhoan)";
+                SqlParameter par = new SqlParameter("idTaiKhoan", idTaiKhoan);
+                SqlConnection connect = DataProvider.TaoKetNoi();
+                bool kq = DataProvider.ThucThi(strIns, par, connect);
+                connect.Close();
+                return kq;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

@@ -17,7 +17,6 @@ namespace Jewelry
         List<ProductDTO> lsPro;
         List<CategoryDTO> categoryLs;
         List<ProductDetailDTO> PDLs;
-        ProductDetailDTO item;
 
         CategoryBUS category = new CategoryBUS();
         ProductBUS ProBUS = new ProductBUS();
@@ -69,17 +68,19 @@ namespace Jewelry
 
         private void ucAddProduct_Load(object sender, EventArgs e)
         {
-            
+            LoadHoaDonMoiNhat();
+            LoadDanhMuc();
+            LoadProduct();
+            //LoadSize();
+        }
+        private void LoadHoaDonMoiNhat()
+        {
             List<ImportInvoiceDTO> ls = new List<ImportInvoiceDTO>();
             ls = Inc.LayHoaDonLonNhat();
             cboID.DataSource = ls;
             cboID.ValueMember = "idHoaDon";
             cboID.DisplayMember = "idHoaDon";
-            LoadDanhMuc();
-            LoadProduct();
-            LoadSize();
         }
-
         private void LoadDanhMuc()
         {
             categoryLs = category.LayTatCaDanhMuc();
@@ -96,13 +97,13 @@ namespace Jewelry
             cboProductName.ValueMember = "idSanPham";
         }
 
-        private void LoadSize()
-        {
-            PDLs = PDBUS.LayTatCaPD(cboProductName.SelectedValue.ToString());
-            cboSize.DataSource = PDLs;
-            cboSize.DisplayMember = "size";
-            cboSize.ValueMember = "size";
-        }
+        //private void LoadSize()
+        //{
+        //    PDLs = PDBUS.LayTatCaPD(cboProductName.SelectedValue.ToString());
+        //    cboSize.DataSource = PDLs;
+        //    cboSize.DisplayMember = "size";
+        //    cboSize.ValueMember = "size";
+        //}
 
         private void btnRemove_MouseEnter(object sender, EventArgs e)
         {
@@ -125,10 +126,10 @@ namespace Jewelry
             LoadProduct();
         }
 
-        private void cboProductName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadSize();
-        }
+        //private void cboProductName_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    LoadSize();
+        //}
 
         private void txtImportPrice_TextChanged(object sender, EventArgs e)
         {
@@ -142,5 +143,38 @@ namespace Jewelry
                 txtSalesPrice.Text = null;
             }
         }
+
+        private void picInvoiceID_Click(object sender, EventArgs e)
+        {
+            if (Inc.ThemHDMoi(frmLogIn.id))
+            {
+                LoadHoaDonMoiNhat();
+            }
+            else
+                MessageBox.Show("Them moi khong thanh cong");
+        }
+
+        private void picCate_Click(object sender, EventArgs e)
+        {
+            if (category.ThemDanhMucMoi(cboCategory.Text))
+                LoadDanhMuc();
+            else
+                MessageBox.Show("Them danh muc moi khong thanh cong");
+        }
+
+        private void picProduct_Click(object sender, EventArgs e)
+        {
+            if (ProBUS.ThemDanhSanPhamMoi(cboCategory.SelectedValue.ToString(), cboProductName.Text))
+            {
+                LoadProduct();
+                //LoadSize();
+            }
+            else
+            {
+                MessageBox.Show("Them san pham moi khong thanh cong");
+            }
+        }
+
+        
     }
 }

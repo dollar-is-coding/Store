@@ -99,5 +99,24 @@ namespace JewelryDAO
                 throw new Exception("Loi ket noi");
             }
         }
+
+        static public bool ThucThi(string strLenh, SqlParameter par, SqlConnection conn)
+        {
+            try
+            {
+                SqlCommand com = new SqlCommand(strLenh, conn);
+                com.Parameters.Add(par);
+                int kq = com.ExecuteNonQuery();
+                if (kq > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                throw new Exception("Loi ket noi");
+            }
+        }
     }
 }

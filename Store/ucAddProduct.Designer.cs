@@ -29,15 +29,16 @@ namespace Jewelry
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAddProduct));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlAddProduct = new System.Windows.Forms.Panel();
+            this.nudSize = new System.Windows.Forms.NumericUpDown();
             this.cboID = new System.Windows.Forms.ComboBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.picInvoiceID = new System.Windows.Forms.PictureBox();
             this.picProduct = new System.Windows.Forms.PictureBox();
             this.picCate = new System.Windows.Forms.PictureBox();
-            this.picSize = new System.Windows.Forms.PictureBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.nudQuantity = new System.Windows.Forms.NumericUpDown();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@ namespace Jewelry
             this.label1 = new System.Windows.Forms.Label();
             this.txtSalesPrice = new System.Windows.Forms.TextBox();
             this.txtImportPrice = new System.Windows.Forms.TextBox();
-            this.cboSize = new System.Windows.Forms.ComboBox();
             this.cboProductName = new System.Windows.Forms.ComboBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.dgvAddProduct = new System.Windows.Forms.DataGridView();
@@ -64,10 +64,10 @@ namespace Jewelry
             this.colImportPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSalesPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlAddProduct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInvoiceID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddProduct)).BeginInit();
             this.SuspendLayout();
@@ -75,12 +75,12 @@ namespace Jewelry
             // pnlAddProduct
             // 
             this.pnlAddProduct.BackColor = System.Drawing.Color.Transparent;
+            this.pnlAddProduct.Controls.Add(this.nudSize);
             this.pnlAddProduct.Controls.Add(this.cboID);
             this.pnlAddProduct.Controls.Add(this.btnRemove);
             this.pnlAddProduct.Controls.Add(this.picInvoiceID);
             this.pnlAddProduct.Controls.Add(this.picProduct);
             this.pnlAddProduct.Controls.Add(this.picCate);
-            this.pnlAddProduct.Controls.Add(this.picSize);
             this.pnlAddProduct.Controls.Add(this.btnEdit);
             this.pnlAddProduct.Controls.Add(this.nudQuantity);
             this.pnlAddProduct.Controls.Add(this.btnAdd);
@@ -93,7 +93,6 @@ namespace Jewelry
             this.pnlAddProduct.Controls.Add(this.label1);
             this.pnlAddProduct.Controls.Add(this.txtSalesPrice);
             this.pnlAddProduct.Controls.Add(this.txtImportPrice);
-            this.pnlAddProduct.Controls.Add(this.cboSize);
             this.pnlAddProduct.Controls.Add(this.cboProductName);
             this.pnlAddProduct.Controls.Add(this.cboCategory);
             this.pnlAddProduct.Location = new System.Drawing.Point(790, 100);
@@ -101,6 +100,29 @@ namespace Jewelry
             this.pnlAddProduct.Size = new System.Drawing.Size(360, 550);
             this.pnlAddProduct.TabIndex = 3;
             this.pnlAddProduct.Click += new System.EventHandler(this.UC_Click);
+            // 
+            // nudSize
+            // 
+            this.nudSize.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudSize.Location = new System.Drawing.Point(7, 233);
+            this.nudSize.Maximum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            this.nudSize.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudSize.Name = "nudSize";
+            this.nudSize.Size = new System.Drawing.Size(353, 28);
+            this.nudSize.TabIndex = 12;
+            this.nudSize.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // cboID
             // 
@@ -132,43 +154,36 @@ namespace Jewelry
             // 
             // picInvoiceID
             // 
-            this.picInvoiceID.Image = global::Jewelry.Properties.Resources.add__1_;
+            this.picInvoiceID.Image = ((System.Drawing.Image)(resources.GetObject("picInvoiceID.Image")));
             this.picInvoiceID.Location = new System.Drawing.Point(332, 30);
             this.picInvoiceID.Name = "picInvoiceID";
             this.picInvoiceID.Size = new System.Drawing.Size(25, 25);
             this.picInvoiceID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picInvoiceID.TabIndex = 9;
             this.picInvoiceID.TabStop = false;
+            this.picInvoiceID.Click += new System.EventHandler(this.picInvoiceID_Click);
             // 
             // picProduct
             // 
-            this.picProduct.Image = global::Jewelry.Properties.Resources.add__1_;
+            this.picProduct.Image = ((System.Drawing.Image)(resources.GetObject("picProduct.Image")));
             this.picProduct.Location = new System.Drawing.Point(332, 168);
             this.picProduct.Name = "picProduct";
             this.picProduct.Size = new System.Drawing.Size(25, 25);
             this.picProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picProduct.TabIndex = 9;
             this.picProduct.TabStop = false;
+            this.picProduct.Click += new System.EventHandler(this.picProduct_Click);
             // 
             // picCate
             // 
-            this.picCate.Image = global::Jewelry.Properties.Resources.add__1_;
+            this.picCate.Image = ((System.Drawing.Image)(resources.GetObject("picCate.Image")));
             this.picCate.Location = new System.Drawing.Point(332, 99);
             this.picCate.Name = "picCate";
             this.picCate.Size = new System.Drawing.Size(25, 25);
             this.picCate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCate.TabIndex = 9;
             this.picCate.TabStop = false;
-            // 
-            // picSize
-            // 
-            this.picSize.Image = global::Jewelry.Properties.Resources.add__1_;
-            this.picSize.Location = new System.Drawing.Point(332, 237);
-            this.picSize.Name = "picSize";
-            this.picSize.Size = new System.Drawing.Size(25, 25);
-            this.picSize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSize.TabIndex = 9;
-            this.picSize.TabStop = false;
+            this.picCate.Click += new System.EventHandler(this.picCate_Click);
             // 
             // btnEdit
             // 
@@ -191,9 +206,19 @@ namespace Jewelry
             // 
             this.nudQuantity.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudQuantity.Location = new System.Drawing.Point(7, 302);
+            this.nudQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudQuantity.Name = "nudQuantity";
             this.nudQuantity.Size = new System.Drawing.Size(353, 28);
             this.nudQuantity.TabIndex = 7;
+            this.nudQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnAdd
             // 
@@ -304,16 +329,8 @@ namespace Jewelry
             this.txtImportPrice.Name = "txtImportPrice";
             this.txtImportPrice.Size = new System.Drawing.Size(352, 28);
             this.txtImportPrice.TabIndex = 3;
+            this.txtImportPrice.Text = " ";
             this.txtImportPrice.TextChanged += new System.EventHandler(this.txtImportPrice_TextChanged);
-            // 
-            // cboSize
-            // 
-            this.cboSize.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSize.FormattingEnabled = true;
-            this.cboSize.Location = new System.Drawing.Point(7, 233);
-            this.cboSize.Name = "cboSize";
-            this.cboSize.Size = new System.Drawing.Size(310, 29);
-            this.cboSize.TabIndex = 2;
             // 
             // cboProductName
             // 
@@ -323,7 +340,6 @@ namespace Jewelry
             this.cboProductName.Name = "cboProductName";
             this.cboProductName.Size = new System.Drawing.Size(310, 29);
             this.cboProductName.TabIndex = 2;
-            this.cboProductName.SelectedIndexChanged += new System.EventHandler(this.cboProductName_SelectedIndexChanged);
             // 
             // cboCategory
             // 
@@ -477,10 +493,10 @@ namespace Jewelry
             this.Click += new System.EventHandler(this.UC_Click);
             this.pnlAddProduct.ResumeLayout(false);
             this.pnlAddProduct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInvoiceID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddProduct)).EndInit();
             this.ResumeLayout(false);
@@ -492,7 +508,6 @@ namespace Jewelry
         private System.Windows.Forms.Panel pnlAddProduct;
         private System.Windows.Forms.DataGridView dgvAddProduct;
         private System.Windows.Forms.TextBox txtImportPrice;
-        private System.Windows.Forms.ComboBox cboSize;
         private System.Windows.Forms.ComboBox cboProductName;
         private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.Label label7;
@@ -507,7 +522,6 @@ namespace Jewelry
         private System.Windows.Forms.NumericUpDown nudQuantity;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.PictureBox picProduct;
-        private System.Windows.Forms.PictureBox picSize;
         private System.Windows.Forms.PictureBox picCate;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInvoice;
@@ -521,5 +535,6 @@ namespace Jewelry
         private System.Windows.Forms.DataGridViewTextBoxColumn colSalesPrice;
         private System.Windows.Forms.PictureBox picInvoiceID;
         private System.Windows.Forms.ComboBox cboID;
+        private System.Windows.Forms.NumericUpDown nudSize;
     }
 }
