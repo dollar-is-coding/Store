@@ -20,5 +20,10 @@ namespace JewelryBUS
             SISDIDAO SISD = new SISDIDAO();
             return SISD.LayDanhSachCTHDBanHang(idHoaDon);
         }
+        public List<SISDIDTO> LayCTSPTuHDBHLonNhat(string idHoaDon)
+        {
+            SISDIDAO SISDI = new SISDIDAO();
+            return SISDI.LayCTSPTheoHDBHLonNhat(idHoaDon);
+        }
     }
 }

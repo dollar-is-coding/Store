@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="AccountBUS.cs" />
     <Compile Include="CategoryBUS.cs" />
+    <Compile Include="SalesDetailInvoiceBUS.cs" />
+    <Compile Include="ImportDetailInvoiceBUS.cs" />
+    <Compile Include="InsertInvoiceBUS.cs" />
     <Compile Include="ProductDetailBUS.cs" />
     <Compile Include="NewAProductBUS.cs" />
     <Compile Include="PPDBUS.cs" />

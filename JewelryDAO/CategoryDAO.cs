@@ -35,7 +35,6 @@ namespace JewelryDAO
                 SqlConnection conn = DataProvider.TaoKetNoi();
                 string strIns = "Insert into DanhMuc(idDanhMuc,tenDanhMuc) values ('',@tenDanhMuc)";
                 SqlParameter parr = new SqlParameter("tenDanhMuc",tenDanhMuc);
-                
                 bool kq = DataProvider.ThucThi(strIns, parr, conn);
                 conn.Close();
                 return kq;

@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JewelryDTO;
 
 namespace JewelryDAO
 {
@@ -57,6 +58,24 @@ namespace JewelryDAO
                 SqlCommand com = new SqlCommand(strTruyVan, conn);
                 com.Parameters.AddRange(pars);
                 return com.ExecuteReader();
+            }
+            catch
+            {
+                throw new Exception("Loi ket noi");
+            }
+        }
+        static public bool KiemTraTruyVan(string strLenh, SqlParameter[] pars, SqlConnection conn)
+        {
+            try
+            {
+                SqlCommand com = new SqlCommand(strLenh, conn);
+                com.Parameters.AddRange(pars);
+                string s = (string)com.ExecuteScalar();
+                if (s != null)
+                {
+                    return true;
+                }
+                return false;
             }
             catch
             {

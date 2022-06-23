@@ -220,5 +220,8 @@
   <ItemGroup>
     <None Include="Resources\searching-bar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time-past.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

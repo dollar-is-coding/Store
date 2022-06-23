@@ -15,5 +15,11 @@ namespace JewelryBUS
             ProductDetailDAO PD = new ProductDetailDAO();
             return PD.LayDanhSachKichCo(idSanPham);
         }
+
+        public bool ThemChiTietSanPhamMoi(ProductDetailDTO PD)
+        {
+            ProductDetailDAO dao = new ProductDetailDAO();
+            return dao.ThemMotChiTietSanPhamMoi(PD);
+        }
     }
 }

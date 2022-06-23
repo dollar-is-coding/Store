@@ -16,15 +16,19 @@ namespace Jewelry
     {
         List<ProductDTO> lsPro;
         List<CategoryDTO> categoryLs;
-        List<ProductDetailDTO> PDLs;
+        //List<ProductDetailDTO> PDLs;
+        List<InsertInvoiceDTO> IILs;
 
         CategoryBUS category = new CategoryBUS();
         ProductBUS ProBUS = new ProductBUS();
         ImportInvoiceBUS Inc = new ImportInvoiceBUS();
         NewAProductBUS NBUS = new NewAProductBUS();
         ProductDetailBUS PDBUS = new ProductDetailBUS();
+        InsertInvoiceBUS IIBUS = new InsertInvoiceBUS();
+        ImportDetailInvoiceBUS IDIBUS = new ImportDetailInvoiceBUS();
 
-        
+        ProductDetailDTO PD;
+        ImportDetailInvoiceDTO IDI;
 
         public ucAddProduct()
         {
@@ -71,7 +75,7 @@ namespace Jewelry
             LoadHoaDonMoiNhat();
             LoadDanhMuc();
             LoadProduct();
-            //LoadSize();
+            LoadDGV();
         }
         private void LoadHoaDonMoiNhat()
         {
@@ -97,13 +101,11 @@ namespace Jewelry
             cboProductName.ValueMember = "idSanPham";
         }
 
-        //private void LoadSize()
-        //{
-        //    PDLs = PDBUS.LayTatCaPD(cboProductName.SelectedValue.ToString());
-        //    cboSize.DataSource = PDLs;
-        //    cboSize.DisplayMember = "size";
-        //    cboSize.ValueMember = "size";
-        //}
+        private void LoadDGV()
+        {
+            IILs = IIBUS.LayTatCaHoaDonNhap(cboID.Text);
+            dgvAddProduct.DataSource = IILs;
+        }
 
         private void btnRemove_MouseEnter(object sender, EventArgs e)
         {
@@ -120,16 +122,30 @@ namespace Jewelry
             label1.Focus();
         }
 
-
         private void cboCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadProduct();
         }
 
-        //private void cboProductName_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    LoadSize();
-        //}
+        private void LayThongChiTietSanPham()
+        {
+            PD = new ProductDetailDTO();
+            PD.idSanPham = cboProductName.SelectedValue.ToString();
+            PD.size = float.Parse(nudSize.Value.ToString());
+            PD.giaBan = decimal.Parse(txtSalesPrice.Text);
+            PD.soLuong = int.Parse(nudQuantity.Value.ToString());
+            PD.trangThai = 1;
+        }
+
+        private void LayThongTinChiTietHD()
+        {
+            IDI = new ImportDetailInvoiceDTO();
+            IDI.idHoaDon = cboID.SelectedValue.ToString();
+            IDI.idSanPham = cboProductName.SelectedValue.ToString();
+            IDI.size = float.Parse(nudSize.Value.ToString());
+            IDI.soLuong = int.Parse(nudQuantity.Value.ToString());
+            IDI.giaNhap = decimal.Parse(txtImportPrice.Text);
+        }
 
         private void txtImportPrice_TextChanged(object sender, EventArgs e)
         {
@@ -167,7 +183,6 @@ namespace Jewelry
             if (ProBUS.ThemDanhSanPhamMoi(cboCategory.SelectedValue.ToString(), cboProductName.Text))
             {
                 LoadProduct();
-                //LoadSize();
             }
             else
             {
@@ -175,6 +190,27 @@ namespace Jewelry
             }
         }
 
-        
+        private void cboID_SelectedValueChanged(object sender, EventArgs e)
+        {
+            LoadDGV();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtImportPrice.Text) || string.IsNullOrWhiteSpace(txtSalesPrice.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập đủ thông tin!");
+                return;
+            }
+            LayThongChiTietSanPham();
+            LayThongTinChiTietHD();
+            if (PDBUS.ThemChiTietSanPhamMoi(PD)&& IDIBUS.ThemMotChiTietHoaDonMoi(IDI))
+            {
+                MessageBox.Show("Thêm mới thành công");
+                LoadDGV();
+            }
+            else
+                MessageBox.Show("Thêm không thành công!");
+        }
     }
 }
