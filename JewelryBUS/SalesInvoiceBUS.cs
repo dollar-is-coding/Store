@@ -15,5 +15,21 @@ namespace JewelryBUS
             SalesInvoiceDAO hdDAO = new SalesInvoiceDAO();
             return hdDAO.LayDanhSachHoaDonBanHang();
         }
+        public bool ThemHoaDonMoi()
+        {
+            SalesInvoiceDAO sadao = new SalesInvoiceDAO();
+            return sadao.ThemMoiMotHoaDon();
+        }
+        public SalesInvoiceDTO LayHDLonNhat()
+        {
+            SalesInvoiceDAO dao = new SalesInvoiceDAO();
+            return dao.LayMaHDLonNhat();
+        }
+
+        public bool CapNhatHDBH(SalesInvoiceDTO SI)
+        {
+            SalesInvoiceDAO dao = new SalesInvoiceDAO();
+            return dao.CapNhatHDBanHang(SI);
+        }
     }
 }

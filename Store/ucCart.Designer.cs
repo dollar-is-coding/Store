@@ -29,9 +29,9 @@ namespace Jewelry
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlCart = new System.Windows.Forms.Panel();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtCustomer = new System.Windows.Forms.TextBox();
@@ -46,12 +46,14 @@ namespace Jewelry
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCart = new System.Windows.Forms.DataGridView();
             this.colProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProduct = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.picReload = new System.Windows.Forms.PictureBox();
             this.pnlCart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCart
@@ -112,6 +114,7 @@ namespace Jewelry
             this.btnThanhToan.TabIndex = 2;
             this.btnThanhToan.Text = "Pay";
             this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             this.btnThanhToan.MouseEnter += new System.EventHandler(this.btThanhToan_MouseEnter);
             this.btnThanhToan.MouseLeave += new System.EventHandler(this.btnThanhToan_MouseLeave);
             // 
@@ -207,19 +210,19 @@ namespace Jewelry
             // 
             this.dgvCart.AllowUserToAddRows = false;
             this.dgvCart.AllowUserToResizeRows = false;
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
-            this.dgvCart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.dgvCart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvCart.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.dgvCart.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProductID,
@@ -227,14 +230,14 @@ namespace Jewelry
             this.colSize,
             this.colPrice,
             this.colQuantity});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCart.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCart.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCart.Location = new System.Drawing.Point(50, 100);
             this.dgvCart.MultiSelect = false;
             this.dgvCart.Name = "dgvCart";
@@ -242,27 +245,34 @@ namespace Jewelry
             this.dgvCart.RowHeadersVisible = false;
             this.dgvCart.RowHeadersWidth = 51;
             this.dgvCart.RowTemplate.Height = 24;
+            this.dgvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCart.Size = new System.Drawing.Size(720, 550);
             this.dgvCart.TabIndex = 2;
             // 
             // colProductID
             // 
+            this.colProductID.DataPropertyName = "idSanPham";
             this.colProductID.HeaderText = "Product ID";
             this.colProductID.MinimumWidth = 6;
             this.colProductID.Name = "colProductID";
             this.colProductID.ReadOnly = true;
-            this.colProductID.Width = 106;
+            this.colProductID.Width = 98;
             // 
             // colProduct
             // 
+            this.colProduct.DataPropertyName = "idSanPham";
+            this.colProduct.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.colProduct.HeaderText = "Product Name";
             this.colProduct.MinimumWidth = 6;
             this.colProduct.Name = "colProduct";
             this.colProduct.ReadOnly = true;
+            this.colProduct.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colProduct.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colProduct.Width = 123;
             // 
             // colSize
             // 
+            this.colSize.DataPropertyName = "size";
             this.colSize.HeaderText = "Size";
             this.colSize.MinimumWidth = 6;
             this.colSize.Name = "colSize";
@@ -271,6 +281,7 @@ namespace Jewelry
             // 
             // colPrice
             // 
+            this.colPrice.DataPropertyName = "giaBan";
             this.colPrice.HeaderText = "Price";
             this.colPrice.MinimumWidth = 6;
             this.colPrice.Name = "colPrice";
@@ -279,26 +290,41 @@ namespace Jewelry
             // 
             // colQuantity
             // 
+            this.colQuantity.DataPropertyName = "soLuong";
             this.colQuantity.HeaderText = "Quantity";
             this.colQuantity.MinimumWidth = 6;
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.ReadOnly = true;
             this.colQuantity.Width = 93;
             // 
+            // picReload
+            // 
+            this.picReload.Image = global::Jewelry.Properties.Resources.time_past;
+            this.picReload.Location = new System.Drawing.Point(745, 69);
+            this.picReload.Name = "picReload";
+            this.picReload.Size = new System.Drawing.Size(20, 20);
+            this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picReload.TabIndex = 4;
+            this.picReload.TabStop = false;
+            this.picReload.Click += new System.EventHandler(this.picReload_Click);
+            // 
             // ucCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.Controls.Add(this.picReload);
             this.Controls.Add(this.pnlCart);
             this.Controls.Add(this.dgvCart);
             this.Name = "ucCart";
             this.Size = new System.Drawing.Size(1200, 700);
             this.Load += new System.EventHandler(this.ucCart_Load);
             this.Click += new System.EventHandler(this.ucCart_Click);
+            this.DoubleClick += new System.EventHandler(this.ucCart_DoubleClick);
             this.pnlCart.ResumeLayout(false);
             this.pnlCart.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReload)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,9 +345,10 @@ namespace Jewelry
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProduct;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
+        private System.Windows.Forms.PictureBox picReload;
     }
 }

@@ -21,5 +21,20 @@ namespace JewelryBUS
             AccountDAO account = new AccountDAO();
             return account.LayDanhSachTaiKhoan();
         }
+        public bool ThemTaiKhoan(AccountDTO acc)
+        {
+            AccountDAO accdao = new AccountDAO();
+            return accdao.ThemTaiKhoanMoi(acc);
+        }
+        public bool CapNhatTaiKhoan(AccountDTO acc)
+        {
+            AccountDAO accdao = new AccountDAO();
+            return accdao.CapNhatTaiKhoan(acc);
+        }
+        //public bool XoaTaiKhoan(string idTaiKhoan)
+        //{
+        //    AccountDAO accdao = new AccountDAO();
+        //    return accdao.XoaTaiKhoan(idTaiKhoan);
+        //}
     }
 }

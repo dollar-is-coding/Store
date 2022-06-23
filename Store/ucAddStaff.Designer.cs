@@ -105,6 +105,7 @@ namespace Jewelry
             this.btnRemove.TabIndex = 12;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             this.btnRemove.MouseEnter += new System.EventHandler(this.btnRemove_MouseEnter);
             this.btnRemove.MouseLeave += new System.EventHandler(this.btnRemove_MouseLeave);
             // 
@@ -122,6 +123,7 @@ namespace Jewelry
             this.btnEdit.TabIndex = 11;
             this.btnEdit.Text = "Update";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             this.btnEdit.MouseEnter += new System.EventHandler(this.btnEdit_MouseEnter);
             this.btnEdit.MouseLeave += new System.EventHandler(this.btnEdit_MouseLeave);
             // 
@@ -139,6 +141,7 @@ namespace Jewelry
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             this.btnAdd.MouseEnter += new System.EventHandler(this.btnAdd_MouseEnter);
             this.btnAdd.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
             // 

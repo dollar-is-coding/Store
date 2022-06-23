@@ -14,7 +14,7 @@ namespace JewelryDAO
         {
             List<ProductDTO> lsPro = new List<ProductDTO>();
             SqlConnection conn = DataProvider.TaoKetNoi();
-            string strTruyVan = "Select *from SanPham";
+            string strTruyVan = "Select * from SanPham";
             SqlDataReader sdr = DataProvider.TruyVan(strTruyVan, conn);
             while (sdr.Read())
             {

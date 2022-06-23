@@ -104,11 +104,69 @@ namespace Jewelry
                 txtUserName.Text = person.idTaiKhoan;
                 txtPassword.Text = person.matKhau;
                 cboPosition.Text = person.chucVu;
-                dtpDateofBirth.Value = person.ngaySinh;
+                dtpDateofBirth.Text = person.ngaySinh;
                 cboGender.Text = person.gioiTinh;
                 txtPhone.Text = person.soDienThoai;
                 txtAddress.Text = person.diaChi;
             }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        { 
+            LayThongTinNhanVien();
+            if (ABUS.ThemTaiKhoan(person))
+            {
+                MessageBox.Show("Add Thanh Cong");
+                LoadTaiKhoan();
+            }
+            else
+            {
+                MessageBox.Show("Add Khong Thanh Cong");
+            }
+        }
+
+        private void LayThongTinNhanVien()
+        {
+            person.hoTen = txtStaffName.Text;
+            person.idTaiKhoan = txtUserName.Text;
+            person.matKhau = txtPassword.Text;
+            person.chucVu = cboPosition.Text;
+            //person.ngaySinh = dtpDateofBirth.Text;
+            string[] item = dtpDateofBirth.Text.ToString().Split('/');
+            person.ngaySinh = item[2] + "/" + item[0] + "/" + item[1];
+            person.gioiTinh = cboGender.Text;
+            person.diaChi = txtAddress.Text;
+            person.soDienThoai = txtPhone.Text;
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+                LayThongTinNhanVien();
+                if (ABUS.CapNhatTaiKhoan(person))
+                {
+                    MessageBox.Show("Update Thanh Cong");
+                    LoadTaiKhoan();
+                }
+                else
+                {
+                    MessageBox.Show("Update Khong Thanh Cong");
+                }
+        }
+
+        //private void btnRemove_Click(object sender, EventArgs e)
+        //{
+        //    LayThongTinNhanVien();
+        //    if (ABUS.XoaTaiKhoan(person.idTaiKhoan))
+        //    {
+        //        MessageBox.Show("Xoa tai khoan thanh cong");
+        //        LoadTaiKhoan();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Xoa khong thanh cong");
+        //    }
+
+        //}
     }
 }

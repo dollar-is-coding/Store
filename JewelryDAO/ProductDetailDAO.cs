@@ -30,5 +30,53 @@ namespace JewelryDAO
             connect.Close();
             return ls;
         }
+
+        public bool ThemMotChiTietSanPhamMoi(ProductDetailDTO DP)
+        {
+            string query = "select * from ChiTietSanPham where idSanPham = @idSanPham and size = @size";
+            SqlConnection connect = DataProvider.TaoKetNoi();
+            SqlParameter[] pars = new SqlParameter[2];
+            pars[0] = new SqlParameter("idSanPham", DP.idSanPham);
+            pars[1] = new SqlParameter("size", DP.size);
+            bool kq = DataProvider.KiemTraTruyVan(query, pars, connect);
+            if (kq == true)
+            {
+                try
+                {
+                    string strupdate = "update ChiTietSanPham set giaban=@giaBan, soluong+=@soLuong where idsanpham = @idSanPham and size = @size";
+                    SqlParameter[] pars2 = new SqlParameter[4];
+                    pars2[0] = new SqlParameter("giaBan", DP.giaBan);
+                    pars2[1] = new SqlParameter("soLuong", DP.soLuong);
+                    pars2[2] = new SqlParameter("idSanPham", DP.idSanPham);
+                    pars2[3] = new SqlParameter("size", DP.size);
+                    bool update = DataProvider.ThucThi(strupdate, pars2, connect);
+                    connect.Close();
+                    return update;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                try
+                {
+                    string strinsert = "insert into ChiTietSanPham values (@idSanPham,@size,@giaBan,@soLuong,1)";
+                    SqlParameter[] pars3 = new SqlParameter[4];
+                    pars3[2] = new SqlParameter("idSanPham", DP.idSanPham);
+                    pars3[3] = new SqlParameter("size", DP.size);
+                    pars3[0] = new SqlParameter("giaBan", DP.giaBan);
+                    pars3[1] = new SqlParameter("soLuong", DP.soLuong);
+                    bool insert = DataProvider.ThucThi(strinsert, pars3, connect);
+                    connect.Close();
+                    return insert;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
     }
 }
