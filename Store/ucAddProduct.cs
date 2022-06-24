@@ -29,6 +29,7 @@ namespace Jewelry
 
         ProductDetailDTO PD;
         ImportDetailInvoiceDTO IDI;
+        InsertInvoiceDTO II;
 
         public ucAddProduct()
         {
@@ -72,8 +73,8 @@ namespace Jewelry
 
         private void ucAddProduct_Load(object sender, EventArgs e)
         {
-            LoadHoaDonMoiNhat();
             LoadDanhMuc();
+            LoadHoaDonMoiNhat();
             LoadProduct();
             LoadDGV();
         }
@@ -88,7 +89,11 @@ namespace Jewelry
         private void LoadDanhMuc()
         {
             categoryLs = category.LayTatCaDanhMuc();
-            cboCategory.DataSource = categoryLs;
+            colCategory.DataSource = categoryLs;
+            colCategory.ValueMember = "idDanhMuc";
+            colCategory.DisplayMember = "tenDanhMuc";
+
+            cboCategory.DataSource = new List<CategoryDTO>(categoryLs);
             cboCategory.DisplayMember = "tenDanhMuc";
             cboCategory.ValueMember = "idDanhMuc";
         }
@@ -109,12 +114,12 @@ namespace Jewelry
 
         private void btnRemove_MouseEnter(object sender, EventArgs e)
         {
-            btn_MouseEnter(btnRemove);
+            btn_MouseEnter(btnRefresh);
         }
 
         private void btnRemove_MouseLeave(object sender, EventArgs e)
         {
-            btn_MouseLeave(btnRemove);
+            btn_MouseLeave(btnRefresh);
         }
 
         private void UC_Click(object sender, EventArgs e)
@@ -135,6 +140,18 @@ namespace Jewelry
             PD.giaBan = decimal.Parse(txtSalesPrice.Text);
             PD.soLuong = int.Parse(nudQuantity.Value.ToString());
             PD.trangThai = 1;
+        }
+        private void BindingDGV()
+        {
+            if (II != null)
+            {
+                cboCategory.SelectedValue = II.idDanhMuc;
+                cboProductName.SelectedValue = II.idSanPham;
+                nudSize.Value = decimal.Parse(II.size.ToString());
+                nudQuantity.Value = decimal.Parse(II.soLuong.ToString());
+                txtImportPrice.Text = II.giaNhap.ToString();
+                txtSalesPrice.Text = II.giaBan.ToString();
+            }
         }
 
         private void LayThongTinChiTietHD()
@@ -211,6 +228,27 @@ namespace Jewelry
             }
             else
                 MessageBox.Show("Thêm không thành công!");
+        }
+
+        private void dgvAddProduct_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvAddProduct.SelectedRows.Count > 0)
+            {
+                II = (InsertInvoiceDTO)dgvAddProduct.SelectedRows[0].DataBoundItem;
+            }
+            else
+                II = null;
+            BindingDGV();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadDanhMuc();
+            LoadProduct();
+            nudSize.Value = 1;
+            nudQuantity.Value = 1;
+            txtImportPrice.Text = null;
+            txtSalesPrice.Text = null;
         }
     }
 }

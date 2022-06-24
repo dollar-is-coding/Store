@@ -30,12 +30,12 @@ namespace Jewelry
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAddProduct));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlAddProduct = new System.Windows.Forms.Panel();
             this.nudSize = new System.Windows.Forms.NumericUpDown();
             this.cboID = new System.Windows.Forms.ComboBox();
-            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.picInvoiceID = new System.Windows.Forms.PictureBox();
             this.picProduct = new System.Windows.Forms.PictureBox();
             this.picCate = new System.Windows.Forms.PictureBox();
@@ -56,7 +56,7 @@ namespace Jewelry
             this.dgvAddProduct = new System.Windows.Forms.DataGridView();
             this.colInvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInvoiceDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,7 +77,7 @@ namespace Jewelry
             this.pnlAddProduct.BackColor = System.Drawing.Color.Transparent;
             this.pnlAddProduct.Controls.Add(this.nudSize);
             this.pnlAddProduct.Controls.Add(this.cboID);
-            this.pnlAddProduct.Controls.Add(this.btnRemove);
+            this.pnlAddProduct.Controls.Add(this.btnRefresh);
             this.pnlAddProduct.Controls.Add(this.picInvoiceID);
             this.pnlAddProduct.Controls.Add(this.picProduct);
             this.pnlAddProduct.Controls.Add(this.picCate);
@@ -136,22 +136,23 @@ namespace Jewelry
             this.cboID.TabIndex = 11;
             this.cboID.SelectedValueChanged += new System.EventHandler(this.cboID_SelectedValueChanged);
             // 
-            // btnRemove
+            // btnRefresh
             // 
-            this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
-            this.btnRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
-            this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
-            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
-            this.btnRemove.Location = new System.Drawing.Point(257, 504);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(102, 46);
-            this.btnRemove.TabIndex = 10;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.MouseEnter += new System.EventHandler(this.btnRemove_MouseEnter);
-            this.btnRemove.MouseLeave += new System.EventHandler(this.btnRemove_MouseLeave);
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
+            this.btnRefresh.Location = new System.Drawing.Point(257, 504);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(102, 46);
+            this.btnRefresh.TabIndex = 10;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.btnRefresh.MouseEnter += new System.EventHandler(this.btnRemove_MouseEnter);
+            this.btnRefresh.MouseLeave += new System.EventHandler(this.btnRemove_MouseLeave);
             // 
             // picInvoiceID
             // 
@@ -198,7 +199,7 @@ namespace Jewelry
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(98, 46);
             this.btnEdit.TabIndex = 8;
-            this.btnEdit.Text = "Update";
+            this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.MouseEnter += new System.EventHandler(this.btnEdit_MouseEnter);
             this.btnEdit.MouseLeave += new System.EventHandler(this.btnEdit_MouseLeave);
@@ -331,7 +332,6 @@ namespace Jewelry
             this.txtImportPrice.Name = "txtImportPrice";
             this.txtImportPrice.Size = new System.Drawing.Size(352, 28);
             this.txtImportPrice.TabIndex = 3;
-            this.txtImportPrice.Text = " ";
             this.txtImportPrice.TextChanged += new System.EventHandler(this.txtImportPrice_TextChanged);
             // 
             // cboProductName
@@ -360,14 +360,14 @@ namespace Jewelry
             this.dgvAddProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvAddProduct.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.dgvAddProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAddProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAddProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAddProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colInvoice,
@@ -379,14 +379,14 @@ namespace Jewelry
             this.colQuantity,
             this.colImportPrice,
             this.colSalesPrice});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAddProduct.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAddProduct.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAddProduct.Location = new System.Drawing.Point(50, 100);
             this.dgvAddProduct.MultiSelect = false;
             this.dgvAddProduct.Name = "dgvAddProduct";
@@ -397,6 +397,7 @@ namespace Jewelry
             this.dgvAddProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAddProduct.Size = new System.Drawing.Size(720, 550);
             this.dgvAddProduct.TabIndex = 2;
+            this.dgvAddProduct.SelectionChanged += new System.EventHandler(this.dgvAddProduct_SelectionChanged);
             // 
             // colInvoice
             // 
@@ -419,11 +420,13 @@ namespace Jewelry
             // colCategory
             // 
             this.colCategory.DataPropertyName = "idDanhMuc";
+            this.colCategory.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.colCategory.HeaderText = "Category";
             this.colCategory.MinimumWidth = 6;
             this.colCategory.Name = "colCategory";
             this.colCategory.ReadOnly = true;
             this.colCategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colCategory.Width = 99;
             // 
             // colProductID
@@ -523,13 +526,13 @@ namespace Jewelry
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.PictureBox picProduct;
         private System.Windows.Forms.PictureBox picCate;
-        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.PictureBox picInvoiceID;
         private System.Windows.Forms.ComboBox cboID;
         private System.Windows.Forms.NumericUpDown nudSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceDetail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCategory;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSize;

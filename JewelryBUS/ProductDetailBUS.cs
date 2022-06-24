@@ -21,5 +21,11 @@ namespace JewelryBUS
             ProductDetailDAO dao = new ProductDetailDAO();
             return dao.ThemMotChiTietSanPhamMoi(PD);
         }
+
+        public bool CapNhatChiTietSanPham(ProductDetailDTO PD)
+        {
+            ProductDetailDAO dao = new ProductDetailDAO();
+            return dao.CapNhatChiTietSanPham(PD);
+        }
     }
 }

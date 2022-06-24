@@ -139,28 +139,20 @@ namespace Jewelry
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (dgvCart.RowCount > 0)
+            if (dgvCart.RowCount > 0 &&!string.IsNullOrWhiteSpace(txtCustomer.Text)&&txtCustomer.Text!= "Insert customer name..."&&!string.IsNullOrWhiteSpace(txtPhone.Text)&&txtPhone.Text!= "Insert phone number...")
             {
                 LayThongTinKhachHang();
-                if (CBUS.ThemKhachHangMoi(customer))
-                {
-                    MessageBox.Show("Thêm khách hàng thành công!");
-                }
-                else
-                    MessageBox.Show("Khách hàng đã tồn tại!");
+                CBUS.ThemKhachHangMoi(customer);
                 LayThongTinHD();
                 if (SIBUS.CapNhatHDBH(SI))
                 {
-                    MessageBox.Show("Cập nhật hoá đơn thành công!");
+                    MessageBox.Show("Thêm HD thành công!");
                 }
                 else
-                    MessageBox.Show("Cập nhật HD không thành công!");
-                if (SIBUS.ThemHoaDonMoi())
-                {
-                    MessageBox.Show("Thêm hoá đơn mới thành công!");
-                }
-                else
-                    MessageBox.Show("Thêm KHÔNG thành công!");
+                    MessageBox.Show("Thêm HD KHÔNG thành công!");
+                SIBUS.ThemHoaDonMoi();
+                LoadTenSanPham();
+                LoadDGV();
             }
             else
                 MessageBox.Show("Không có sản phẩm!");
@@ -174,24 +166,6 @@ namespace Jewelry
             lblTotal.Text = string.Format("{0:0,0 vnđ}", LoadTotal()).ToString();
         }
 
-        private void ucCart_DoubleClick(object sender, EventArgs e)
-        {
-            LayThongTinKhachHang();
-            if (CBUS.ThemKhachHangMoi(customer))
-            {
-                MessageBox.Show("Thêm khách hàng thành công!");
-                LayThongTinHD();
-                if (SIBUS.CapNhatHDBH(SI))
-                {
-                    MessageBox.Show("Cập nhật hoá đơn thành công!");
-                }
-                else
-                    MessageBox.Show("Cập nhật HD không thành công!");
-                label1.Text = SIBUS.LayHDLonNhat().idHoaDon.ToString();
-                label2.Text = frmLogIn.id.ToString();
-                label3.Text = lblDate.Text;
-                label4.Text = CBUS.LayIDKhachHang(txtCustomer.Text, txtPhone.Text).idKhachHang.ToString();
-            }
-        }
+        
     }
 }

@@ -78,5 +78,25 @@ namespace JewelryDAO
                 }
             }
         }
+        public bool CapNhatChiTietSanPham(ProductDetailDTO PD)
+        {
+            try
+            {
+                string update = "Update ChiTietSanPham set soLuong-=@soLuong where idSanPham=@idSanPham and size=@size";
+                SqlConnection connect = DataProvider.TaoKetNoi();
+                SqlParameter[] pars = new SqlParameter[3];
+                pars[0] = new SqlParameter("soLuong", PD.soLuong);
+                pars[1] = new SqlParameter("idSanPham", PD.idSanPham);
+                pars[2] = new SqlParameter("size", PD.size);
+                bool kq = DataProvider.ThucThi(update, pars, connect);
+                connect.Close();
+                return kq;
+            }
+            catch 
+            {
+                return false;
+            }
+
+        }
     }
 }

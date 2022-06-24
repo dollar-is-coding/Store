@@ -19,11 +19,13 @@ namespace Jewelry
         List<CategoryDTO> CLs;
         List<PPDDTO> PPDLs;
         PPDDTO item;
+        ProductDetailBUS PDBUS = new ProductDetailBUS();
         public static SalesDetailInvoiceDTO SDI;
         SalesDetailInvoiceBUS SDIBUS = new SalesDetailInvoiceBUS();
 
         SalesInvoiceDTO SI;
         SalesInvoiceBUS SIBUS = new SalesInvoiceBUS();
+        ProductDetailDTO PD;
         public ucSearch()
         {
             InitializeComponent();
@@ -157,7 +159,14 @@ namespace Jewelry
             SDI.idSanPham = dgvSearch.Rows[dgvSearch.SelectedRows[0].Index].Cells[0].FormattedValue.ToString();
             SDI.size = float.Parse(lblSize.Text);
             SDI.soLuong = int.Parse(nudChoose.Value.ToString());
+        }
 
+        private void LayThongTinCTSP()
+        {
+            PD = new ProductDetailDTO();
+            PD.idSanPham = dgvSearch.SelectedRows[0].Cells[0].Value.ToString();
+            PD.size = float.Parse(lblSize.Text);
+            PD.soLuong = int.Parse(nudChoose.Value.ToString());
         }
 
         private void ucSearch_Click(object sender, EventArgs e)
@@ -168,12 +177,19 @@ namespace Jewelry
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
             LayThongTinCTBH();
-            if (SDIBUS.ThemMotHDBanHangMoi(SDI))
+            LayThongTinCTSP();
+            if (SDIBUS.ThemMotHDBanHangMoi(SDI)&& PDBUS.CapNhatChiTietSanPham(PD))
             {
                 MessageBox.Show("Thêm thành công!");
+                LoadDanhMuc();
+                dgvSearch.AutoGenerateColumns = false;
+                radAll.Checked = true;
+                cboSearch.Enabled = false;
+                LoadChiTietSanPham();
             }
             else
                 MessageBox.Show("thêm không thành công");
+
         }
     }
 }

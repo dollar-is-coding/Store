@@ -320,7 +320,6 @@ namespace Jewelry
             this.Size = new System.Drawing.Size(1200, 700);
             this.Load += new System.EventHandler(this.ucCart_Load);
             this.Click += new System.EventHandler(this.ucCart_Click);
-            this.DoubleClick += new System.EventHandler(this.ucCart_DoubleClick);
             this.pnlCart.ResumeLayout(false);
             this.pnlCart.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
