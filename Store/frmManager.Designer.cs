@@ -29,6 +29,7 @@ namespace Jewelry
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.pnlClose = new System.Windows.Forms.Panel();
             this.picClose = new System.Windows.Forms.PictureBox();
@@ -155,7 +156,7 @@ namespace Jewelry
             this.btnReport.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnReport.Size = new System.Drawing.Size(240, 54);
             this.btnReport.TabIndex = 3;
-            this.btnReport.Text = "    Report";
+            this.btnReport.Text = "    Analystics";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReport.UseVisualStyleBackColor = false;
@@ -213,7 +214,7 @@ namespace Jewelry
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Image = global::Jewelry.Properties.Resources.search;
+            this.btnSearch.Image = global::Jewelry.Properties.Resources.search_interface_symbol;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.Location = new System.Drawing.Point(0, 176);
             this.btnSearch.Name = "btnSearch";
@@ -360,9 +361,10 @@ namespace Jewelry
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.frmManager_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlClose.ResumeLayout(false);

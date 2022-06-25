@@ -34,15 +34,6 @@ namespace Jewelry
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSalesInvoice = new System.Windows.Forms.DataGridView();
-            this.colInvoiceIDSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomer = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colStaffSale = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colProductSale = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colSizeSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPriceSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuantitySale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDateSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.radSales = new System.Windows.Forms.RadioButton();
             this.radImport = new System.Windows.Forms.RadioButton();
             this.dgvImportInvoice = new System.Windows.Forms.DataGridView();
@@ -59,6 +50,15 @@ namespace Jewelry
             this.cboReport = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.colInvoiceIDSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInvoiceDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStaffSale = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colProductSale = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colSizeSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPriceSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantitySale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDateSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportInvoice)).BeginInit();
             this.panel1.SuspendLayout();
@@ -109,96 +109,6 @@ namespace Jewelry
             this.dgvSalesInvoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSalesInvoice.Size = new System.Drawing.Size(1100, 550);
             this.dgvSalesInvoice.TabIndex = 6;
-            // 
-            // colInvoiceIDSale
-            // 
-            this.colInvoiceIDSale.DataPropertyName = "idHoaDon";
-            this.colInvoiceIDSale.HeaderText = "Invoice";
-            this.colInvoiceIDSale.MinimumWidth = 6;
-            this.colInvoiceIDSale.Name = "colInvoiceIDSale";
-            this.colInvoiceIDSale.ReadOnly = true;
-            this.colInvoiceIDSale.Width = 87;
-            // 
-            // colInvoiceDetail
-            // 
-            this.colInvoiceDetail.DataPropertyName = "idCTHD";
-            this.colInvoiceDetail.HeaderText = "Invoice Detail";
-            this.colInvoiceDetail.MinimumWidth = 6;
-            this.colInvoiceDetail.Name = "colInvoiceDetail";
-            this.colInvoiceDetail.ReadOnly = true;
-            this.colInvoiceDetail.Width = 120;
-            // 
-            // colCustomer
-            // 
-            this.colCustomer.DataPropertyName = "idKhachHang";
-            this.colCustomer.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colCustomer.HeaderText = "Customer";
-            this.colCustomer.MinimumWidth = 6;
-            this.colCustomer.Name = "colCustomer";
-            this.colCustomer.ReadOnly = true;
-            this.colCustomer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCustomer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colCustomer.Width = 102;
-            // 
-            // colStaffSale
-            // 
-            this.colStaffSale.DataPropertyName = "idTaiKhoan";
-            this.colStaffSale.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colStaffSale.HeaderText = "Staff";
-            this.colStaffSale.MinimumWidth = 6;
-            this.colStaffSale.Name = "colStaffSale";
-            this.colStaffSale.ReadOnly = true;
-            this.colStaffSale.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colStaffSale.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colStaffSale.Width = 65;
-            // 
-            // colProductSale
-            // 
-            this.colProductSale.DataPropertyName = "idSanPham";
-            this.colProductSale.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colProductSale.HeaderText = "Product";
-            this.colProductSale.MinimumWidth = 6;
-            this.colProductSale.Name = "colProductSale";
-            this.colProductSale.ReadOnly = true;
-            this.colProductSale.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colProductSale.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colProductSale.Width = 88;
-            // 
-            // colSizeSale
-            // 
-            this.colSizeSale.DataPropertyName = "size";
-            this.colSizeSale.HeaderText = "Size";
-            this.colSizeSale.MinimumWidth = 6;
-            this.colSizeSale.Name = "colSizeSale";
-            this.colSizeSale.ReadOnly = true;
-            this.colSizeSale.Width = 63;
-            // 
-            // colPriceSale
-            // 
-            this.colPriceSale.DataPropertyName = "giaBan";
-            this.colPriceSale.HeaderText = "Price";
-            this.colPriceSale.MinimumWidth = 6;
-            this.colPriceSale.Name = "colPriceSale";
-            this.colPriceSale.ReadOnly = true;
-            this.colPriceSale.Width = 71;
-            // 
-            // colQuantitySale
-            // 
-            this.colQuantitySale.DataPropertyName = "soLuong";
-            this.colQuantitySale.HeaderText = "Quantity";
-            this.colQuantitySale.MinimumWidth = 6;
-            this.colQuantitySale.Name = "colQuantitySale";
-            this.colQuantitySale.ReadOnly = true;
-            this.colQuantitySale.Width = 93;
-            // 
-            // colDateSale
-            // 
-            this.colDateSale.DataPropertyName = "ngayBan";
-            this.colDateSale.HeaderText = "Date";
-            this.colDateSale.MinimumWidth = 6;
-            this.colDateSale.Name = "colDateSale";
-            this.colDateSale.ReadOnly = true;
-            this.colDateSale.Width = 69;
             // 
             // radSales
             // 
@@ -355,7 +265,7 @@ namespace Jewelry
             this.radAll.AutoSize = true;
             this.radAll.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radAll.ForeColor = System.Drawing.Color.White;
-            this.radAll.Location = new System.Drawing.Point(166, 5);
+            this.radAll.Location = new System.Drawing.Point(16, 3);
             this.radAll.Name = "radAll";
             this.radAll.Size = new System.Drawing.Size(60, 25);
             this.radAll.TabIndex = 10;
@@ -367,7 +277,7 @@ namespace Jewelry
             // radChoose
             // 
             this.radChoose.AutoSize = true;
-            this.radChoose.Location = new System.Drawing.Point(261, 10);
+            this.radChoose.Location = new System.Drawing.Point(111, 8);
             this.radChoose.Name = "radChoose";
             this.radChoose.Size = new System.Drawing.Size(17, 16);
             this.radChoose.TabIndex = 11;
@@ -380,7 +290,7 @@ namespace Jewelry
             this.cboReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboReport.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboReport.FormattingEnabled = true;
-            this.cboReport.Location = new System.Drawing.Point(289, 4);
+            this.cboReport.Location = new System.Drawing.Point(139, 2);
             this.cboReport.Name = "cboReport";
             this.cboReport.Size = new System.Drawing.Size(200, 29);
             this.cboReport.TabIndex = 9;
@@ -392,7 +302,7 @@ namespace Jewelry
             this.panel1.Controls.Add(this.radSales);
             this.panel1.Location = new System.Drawing.Point(50, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(492, 50);
+            this.panel1.Size = new System.Drawing.Size(342, 50);
             this.panel1.TabIndex = 12;
             // 
             // panel2
@@ -400,10 +310,98 @@ namespace Jewelry
             this.panel2.Controls.Add(this.cboReport);
             this.panel2.Controls.Add(this.radAll);
             this.panel2.Controls.Add(this.radChoose);
-            this.panel2.Location = new System.Drawing.Point(658, 40);
+            this.panel2.Location = new System.Drawing.Point(811, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(492, 50);
+            this.panel2.Size = new System.Drawing.Size(339, 50);
             this.panel2.TabIndex = 13;
+            // 
+            // colInvoiceIDSale
+            // 
+            this.colInvoiceIDSale.DataPropertyName = "idHoaDon";
+            this.colInvoiceIDSale.HeaderText = "Invoice";
+            this.colInvoiceIDSale.MinimumWidth = 6;
+            this.colInvoiceIDSale.Name = "colInvoiceIDSale";
+            this.colInvoiceIDSale.ReadOnly = true;
+            this.colInvoiceIDSale.Width = 87;
+            // 
+            // colInvoiceDetail
+            // 
+            this.colInvoiceDetail.DataPropertyName = "idCTHD";
+            this.colInvoiceDetail.HeaderText = "Invoice Detail";
+            this.colInvoiceDetail.MinimumWidth = 6;
+            this.colInvoiceDetail.Name = "colInvoiceDetail";
+            this.colInvoiceDetail.ReadOnly = true;
+            this.colInvoiceDetail.Width = 120;
+            // 
+            // colCustomer
+            // 
+            this.colCustomer.DataPropertyName = "hoTen";
+            this.colCustomer.HeaderText = "Customer";
+            this.colCustomer.MinimumWidth = 6;
+            this.colCustomer.Name = "colCustomer";
+            this.colCustomer.ReadOnly = true;
+            this.colCustomer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCustomer.Width = 102;
+            // 
+            // colStaffSale
+            // 
+            this.colStaffSale.DataPropertyName = "idTaiKhoan";
+            this.colStaffSale.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colStaffSale.HeaderText = "Staff";
+            this.colStaffSale.MinimumWidth = 6;
+            this.colStaffSale.Name = "colStaffSale";
+            this.colStaffSale.ReadOnly = true;
+            this.colStaffSale.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colStaffSale.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colStaffSale.Width = 65;
+            // 
+            // colProductSale
+            // 
+            this.colProductSale.DataPropertyName = "idSanPham";
+            this.colProductSale.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colProductSale.HeaderText = "Product";
+            this.colProductSale.MinimumWidth = 6;
+            this.colProductSale.Name = "colProductSale";
+            this.colProductSale.ReadOnly = true;
+            this.colProductSale.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colProductSale.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colProductSale.Width = 88;
+            // 
+            // colSizeSale
+            // 
+            this.colSizeSale.DataPropertyName = "size";
+            this.colSizeSale.HeaderText = "Size";
+            this.colSizeSale.MinimumWidth = 6;
+            this.colSizeSale.Name = "colSizeSale";
+            this.colSizeSale.ReadOnly = true;
+            this.colSizeSale.Width = 63;
+            // 
+            // colPriceSale
+            // 
+            this.colPriceSale.DataPropertyName = "giaBan";
+            this.colPriceSale.HeaderText = "Price";
+            this.colPriceSale.MinimumWidth = 6;
+            this.colPriceSale.Name = "colPriceSale";
+            this.colPriceSale.ReadOnly = true;
+            this.colPriceSale.Width = 71;
+            // 
+            // colQuantitySale
+            // 
+            this.colQuantitySale.DataPropertyName = "soLuong";
+            this.colQuantitySale.HeaderText = "Quantity";
+            this.colQuantitySale.MinimumWidth = 6;
+            this.colQuantitySale.Name = "colQuantitySale";
+            this.colQuantitySale.ReadOnly = true;
+            this.colQuantitySale.Width = 93;
+            // 
+            // colDateSale
+            // 
+            this.colDateSale.DataPropertyName = "ngayBan";
+            this.colDateSale.HeaderText = "Date";
+            this.colDateSale.MinimumWidth = 6;
+            this.colDateSale.Name = "colDateSale";
+            this.colDateSale.ReadOnly = true;
+            this.colDateSale.Width = 69;
             // 
             // ucReport
             // 
@@ -412,11 +410,12 @@ namespace Jewelry
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvImportInvoice);
             this.Controls.Add(this.dgvSalesInvoice);
+            this.Controls.Add(this.dgvImportInvoice);
             this.Name = "ucReport";
             this.Size = new System.Drawing.Size(1200, 700);
             this.Load += new System.EventHandler(this.ucReport_Load);
+            this.Click += new System.EventHandler(this.ucReport_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportInvoice)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -432,15 +431,6 @@ namespace Jewelry
         private System.Windows.Forms.RadioButton radSales;
         private System.Windows.Forms.RadioButton radImport;
         private System.Windows.Forms.DataGridView dgvImportInvoice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceIDSale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceDetail;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colCustomer;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colStaffSale;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colProductSale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSizeSale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPriceSale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantitySale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDateSale;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceDetailID;
         private System.Windows.Forms.DataGridViewComboBoxColumn colStaffImport;
@@ -454,5 +444,14 @@ namespace Jewelry
         private System.Windows.Forms.ComboBox cboReport;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceIDSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCustomer;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colStaffSale;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colProductSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSizeSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPriceSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantitySale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDateSale;
     }
 }

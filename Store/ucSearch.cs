@@ -118,13 +118,11 @@ namespace Jewelry
             if (radAll.Checked)
             {
                 cboSearch.Enabled = false;
-                txtSearch.Enabled = false;
                 LoadChiTietSanPham();
             }
             if (radChoose.Checked)
             {
                 cboSearch.Enabled = true;
-                txtSearch.Enabled = true;
                 LoadChiTietSanPhamforChoose();
                 
             }
@@ -147,7 +145,7 @@ namespace Jewelry
             if (txtSearch.Text != "Search Product ID..." || !string.IsNullOrWhiteSpace(txtSearch.Text))
             {
                 List<PPDDTO> PPD = new List<PPDDTO>();
-                PPD = PPDBUS.LayTatCaChiTietSanPham(cboSearch.SelectedValue.ToString(), txtSearch.Text);
+                PPD = PPDBUS.TimKiem(txtSearch.Text);
                 dgvSearch.DataSource = PPD;
             }
         }

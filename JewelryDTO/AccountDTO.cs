@@ -12,7 +12,7 @@ namespace JewelryDTO
         public string matKhau { get; set; }
         public string hoTen { get; set; }
         public string chucVu { get; set; }
-        public DateTime ngaySinh { get; set; }
+        public string ngaySinh { get; set; }
         public string gioiTinh { get; set; }
         public string diaChi { get; set; }
         public string soDienThoai { get; set; }

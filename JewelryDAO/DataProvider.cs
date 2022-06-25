@@ -13,7 +13,7 @@ namespace JewelryDAO
         static private string strKetNoi = @"Data Source=DOLLAR;Initial Catalog=QuanLyBanTrangSuc;Integrated Security=True";
 
         static public SqlConnection TaoKetNoi()
-        {
+         {
             try
             {
                 SqlConnection conn = new SqlConnection(strKetNoi);

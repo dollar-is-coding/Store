@@ -17,9 +17,9 @@ namespace Jewelry
         List<ImportInvoiceDTO> lsHDN;
         List<SalesInvoiceDTO> lsHDB;
         List<IIIDIDTO> lsIDID;
-        List<SISDIDTO> lsSISD;
+        
         List<ProductDTO> PLs;
-        List<CustomerDTO> CLs;
+        List<SISDIDTO> lsSISD;
         List<AccountDTO> ALs;
 
         ImportInvoiceBUS HDNBUS = new ImportInvoiceBUS();
@@ -42,6 +42,7 @@ namespace Jewelry
         }
         private void rad_CheckedChanged(object sender, EventArgs e)
         {
+            
             if (frmLogIn.chucVu == "Staff")
             {
                 radImport.Enabled = false;
@@ -54,9 +55,8 @@ namespace Jewelry
             {
                 dgvSalesInvoice.BringToFront();
                 dgvImportInvoice.SendToBack();
-                if(radAll.Checked)
-                    LoadCTHDBanHangforAll();
-                else if (radChoose.Checked)
+                LoadCTHDBanHangforAll();
+                if (radChoose.Checked)
                 {
                     LoadcboHDB();
                     LoadTaiKhoanforSale();
@@ -68,9 +68,8 @@ namespace Jewelry
             {
                 dgvImportInvoice.BringToFront();
                 dgvSalesInvoice.SendToBack();
-                if (radAll.Checked)
-                    LoadCTHDNhapHangforAll();
-                else if (radChoose.Checked)
+                LoadCTHDNhapHangforAll();
+                if (radChoose.Checked)
                 {
                     LoadcboHDN();
                     LoadTaiKhoanforImport();
@@ -94,13 +93,14 @@ namespace Jewelry
             cboReport.DisplayMember = "idHoaDon";
             cboReport.ValueMember = "idHoaDon";
         }
-        private void LoadKhachHang()
-        {
-            CLs = CBUS.LayTatCaKhachHang();
-            colCustomer.DataSource = CLs;
-            colCustomer.ValueMember = "idKhachHang";
-            colCustomer.DisplayMember = "hoTen";
-        }
+        //private void LoadKhachHang()
+        //{
+        //    List<CustomerDTO> CLs;
+        //    CLs = CBUS.LayTatCaKhachHang();
+        //    colCustomer.DataSource = CLs;
+        //    colCustomer.ValueMember = "idKhachHang";
+        //    colCustomer.DisplayMember = "hoTen";
+        //}
 
         private void LoadTaiKhoanforSale()
         {
@@ -137,7 +137,7 @@ namespace Jewelry
         }
         private void LoadCTHDBanHangforAll()
         {
-            LoadKhachHang();
+            dgvSalesInvoice.AutoGenerateColumns = false;
             LoadTaiKhoanforSale();
             LoadTenSanPhamforSales();
             lsSISD = HDSISD.LayTatCaDanhSachCTHDBanHang();
@@ -161,6 +161,18 @@ namespace Jewelry
                 LoadCTHDNhapHangforChoose();
             if (radSales.Checked && radChoose.Checked)
                 LoadCTHDBanHangforChoose();
+        }
+
+        private void btnReFresh_Click(object sender, EventArgs e)
+        {
+            radImport.Enabled = radSales.Enabled = radAll.Enabled = radChoose.Enabled = true;
+            radSales.Checked = radAll.Checked = true;
+            LoadCTHDBanHangforAll();
+        }
+
+        private void ucReport_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

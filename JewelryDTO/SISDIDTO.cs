@@ -11,6 +11,7 @@ namespace JewelryDTO
         public string idHoaDon { get; set; }
         public string idCTHD { get; set; }
         public string idKhachHang { get; set; }
+        public string hoTen { get; set; }
         public string idTaiKhoan { get; set; }
         public string idSanPham { get; set; }
         public float size { get; set; }

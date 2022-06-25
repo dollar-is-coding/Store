@@ -14,7 +14,7 @@ namespace JewelryDAO
         {
             List<PPDDTO> ls = new List<PPDDTO>();
             SqlConnection connect = DataProvider.TaoKetNoi();
-            string query = "Select SP.idSanPham,tenSanPham,idDanhMuc,size,giaBan,soLuong from SanPham SP, ChiTietSanPham CTSP where SP.idSanPham=CTSP.idSanPham and trangThai=1";
+            string query = "Select SP.idSanPham,tenSanPham,idDanhMuc,size,giaBan,soLuong from SanPham SP, ChiTietSanPham CTSP where SP.idSanPham=CTSP.idSanPham and trangThai=1 and soLuong>0";
             SqlDataReader sdr = DataProvider.TruyVan(query, connect);
             while (sdr.Read())
             {
@@ -36,7 +36,7 @@ namespace JewelryDAO
         {
             List<PPDDTO> ls = new List<PPDDTO>();
             SqlConnection connect = DataProvider.TaoKetNoi();
-            string query = "Select SP.idSanPham,tenSanPham,idDanhMuc,size,giaBan,soLuong from SanPham SP, ChiTietSanPham CTSP where SP.idSanPham=CTSP.idSanPham and trangThai=1 and idDanhMuc=@idDanhMuc";
+            string query = "Select SP.idSanPham,tenSanPham,idDanhMuc,size,giaBan,soLuong from SanPham SP, ChiTietSanPham CTSP where SP.idSanPham=CTSP.idSanPham and trangThai=1 and idDanhMuc=@idDanhMuc and soLuong>0";
             SqlParameter par = new SqlParameter("idDanhMuc", idDanhMuc);
             SqlDataReader sdr = DataProvider.TruyVan(query, par, connect);
             while (sdr.Read())
@@ -55,15 +55,13 @@ namespace JewelryDAO
             return ls;
         }
 
-        public List<PPDDTO> LayDanhSachChiTietSanPham(string idDanhMuc,string idSanPham)
+        public List<PPDDTO> LaySanPhamTheoID(string idSanPham)
         {
             List<PPDDTO> ls = new List<PPDDTO>();
             SqlConnection connect = DataProvider.TaoKetNoi();
-            string query = "Select SP.idSanPham,tenSanPham,idDanhMuc,size,giaBan,soLuong from SanPham SP, ChiTietSanPham CTSP where SP.idSanPham=CTSP.idSanPham and trangThai=1 and idDanhMuc=@idDanhMuc and SP.idSanPham like '%'+@idSanPham+'%'";
-            SqlParameter[] pars = new SqlParameter[2];
-            pars[0] = new SqlParameter("idDanhMuc", idDanhMuc);
-            pars[1] = new SqlParameter("idSanPham", idSanPham);
-            SqlDataReader sdr = DataProvider.TruyVan(query, pars, connect);
+            string query = "Select SP.idSanPham,tenSanPham,idDanhMuc,size,giaBan,soLuong from SanPham SP, ChiTietSanPham CTSP where SP.idSanPham=CTSP.idSanPham and trangThai=1 and SP.idSanPham like '%'+@idSanPham+'%'";
+            SqlParameter par = new SqlParameter("idSanPham", idSanPham);
+            SqlDataReader sdr = DataProvider.TruyVan(query, par, connect);
             while (sdr.Read())
             {
                 PPDDTO PPD = new PPDDTO();

@@ -29,9 +29,10 @@ namespace Jewelry
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucCart));
             this.pnlCart = new System.Windows.Forms.Panel();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtCustomer = new System.Windows.Forms.TextBox();
@@ -50,15 +51,19 @@ namespace Jewelry
             this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.picReload = new System.Windows.Forms.PictureBox();
+            this.btnReFresh = new System.Windows.Forms.Button();
+            this.lblInvalidName = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
             this.pnlCart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCart
             // 
             this.pnlCart.BackColor = System.Drawing.Color.Transparent;
+            this.pnlCart.Controls.Add(this.lblPhone);
+            this.pnlCart.Controls.Add(this.lblInvalidName);
+            this.pnlCart.Controls.Add(this.btnReFresh);
             this.pnlCart.Controls.Add(this.txtPhone);
             this.pnlCart.Controls.Add(this.txtCustomer);
             this.pnlCart.Controls.Add(this.btnThanhToan);
@@ -84,9 +89,10 @@ namespace Jewelry
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(220, 28);
             this.txtPhone.TabIndex = 3;
-            this.txtPhone.Text = "Insert phone number...";
+            this.txtPhone.Text = "Phone Number";
             this.txtPhone.Click += new System.EventHandler(this.txtPhone_Click);
             this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtCustomer
             // 
@@ -96,7 +102,7 @@ namespace Jewelry
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(220, 28);
             this.txtCustomer.TabIndex = 3;
-            this.txtCustomer.Text = "Insert customer name...";
+            this.txtCustomer.Text = "Customer Name";
             this.txtCustomer.Click += new System.EventHandler(this.txtCustomer_Click);
             this.txtCustomer.TextChanged += new System.EventHandler(this.txtCustomer_TextChanged);
             // 
@@ -110,7 +116,7 @@ namespace Jewelry
             this.btnThanhToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
             this.btnThanhToan.Location = new System.Drawing.Point(7, 504);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(353, 46);
+            this.btnThanhToan.Size = new System.Drawing.Size(284, 46);
             this.btnThanhToan.TabIndex = 2;
             this.btnThanhToan.Text = "Pay";
             this.btnThanhToan.UseVisualStyleBackColor = true;
@@ -210,19 +216,19 @@ namespace Jewelry
             // 
             this.dgvCart.AllowUserToAddRows = false;
             this.dgvCart.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.dgvCart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.dgvCart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvCart.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.dgvCart.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProductID,
@@ -230,14 +236,14 @@ namespace Jewelry
             this.colSize,
             this.colPrice,
             this.colQuantity});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCart.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCart.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvCart.Location = new System.Drawing.Point(50, 100);
             this.dgvCart.MultiSelect = false;
             this.dgvCart.Name = "dgvCart";
@@ -297,23 +303,51 @@ namespace Jewelry
             this.colQuantity.ReadOnly = true;
             this.colQuantity.Width = 93;
             // 
-            // picReload
+            // btnReFresh
             // 
-            this.picReload.Image = global::Jewelry.Properties.Resources.time_past;
-            this.picReload.Location = new System.Drawing.Point(745, 69);
-            this.picReload.Name = "picReload";
-            this.picReload.Size = new System.Drawing.Size(20, 20);
-            this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picReload.TabIndex = 4;
-            this.picReload.TabStop = false;
-            this.picReload.Click += new System.EventHandler(this.picReload_Click);
+            this.btnReFresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
+            this.btnReFresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnReFresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnReFresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReFresh.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReFresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(243)))));
+            this.btnReFresh.Image = ((System.Drawing.Image)(resources.GetObject("btnReFresh.Image")));
+            this.btnReFresh.Location = new System.Drawing.Point(306, 504);
+            this.btnReFresh.Name = "btnReFresh";
+            this.btnReFresh.Size = new System.Drawing.Size(54, 46);
+            this.btnReFresh.TabIndex = 4;
+            this.btnReFresh.UseVisualStyleBackColor = true;
+            this.btnReFresh.Click += new System.EventHandler(this.picReload_Click);
+            // 
+            // lblInvalidName
+            // 
+            this.lblInvalidName.AutoSize = true;
+            this.lblInvalidName.BackColor = System.Drawing.Color.Transparent;
+            this.lblInvalidName.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvalidName.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidName.Location = new System.Drawing.Point(138, 31);
+            this.lblInvalidName.Name = "lblInvalidName";
+            this.lblInvalidName.Size = new System.Drawing.Size(70, 17);
+            this.lblInvalidName.TabIndex = 5;
+            this.lblInvalidName.Text = "Required";
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.BackColor = System.Drawing.Color.Transparent;
+            this.lblPhone.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.ForeColor = System.Drawing.Color.Red;
+            this.lblPhone.Location = new System.Drawing.Point(137, 88);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(70, 17);
+            this.lblPhone.TabIndex = 5;
+            this.lblPhone.Text = "Required";
             // 
             // ucCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.Controls.Add(this.picReload);
             this.Controls.Add(this.pnlCart);
             this.Controls.Add(this.dgvCart);
             this.Name = "ucCart";
@@ -323,7 +357,6 @@ namespace Jewelry
             this.pnlCart.ResumeLayout(false);
             this.pnlCart.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picReload)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -348,6 +381,8 @@ namespace Jewelry
         private System.Windows.Forms.DataGridViewTextBoxColumn colSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
-        private System.Windows.Forms.PictureBox picReload;
+        private System.Windows.Forms.Button btnReFresh;
+        private System.Windows.Forms.Label lblInvalidName;
+        private System.Windows.Forms.Label lblPhone;
     }
 }

@@ -42,10 +42,7 @@ namespace Jewelry
         }
         
 
-        private void btnEdit_MouseEnter(object sender, EventArgs e)
-        {
-            btn_MouseEnter(btnEdit);
-        }
+        
 
         private void btn_MouseEnter(Button a)
         {
@@ -66,13 +63,10 @@ namespace Jewelry
             btn_MouseLeave(btnAdd);
         }
 
-        private void btnEdit_MouseLeave(object sender, EventArgs e)
-        {
-            btn_MouseLeave(btnEdit);
-        }
-
         private void ucAddProduct_Load(object sender, EventArgs e)
         {
+            lblImportPrice.Visible = false;
+            lblSalesPrice.Visible = false;
             LoadDanhMuc();
             LoadHoaDonMoiNhat();
             LoadProduct();
@@ -112,15 +106,7 @@ namespace Jewelry
             dgvAddProduct.DataSource = IILs;
         }
 
-        private void btnRemove_MouseEnter(object sender, EventArgs e)
-        {
-            btn_MouseEnter(btnRefresh);
-        }
-
-        private void btnRemove_MouseLeave(object sender, EventArgs e)
-        {
-            btn_MouseLeave(btnRefresh);
-        }
+        
 
         private void UC_Click(object sender, EventArgs e)
         {
@@ -170,6 +156,7 @@ namespace Jewelry
             {
                 decimal a = decimal.Parse(txtImportPrice.Text) + (decimal.Parse(txtImportPrice.Text) / 100 * 20);
                 txtSalesPrice.Text = a.ToString();
+                lblImportPrice.Visible = false;
             }
             else
             {
@@ -183,16 +170,12 @@ namespace Jewelry
             {
                 LoadHoaDonMoiNhat();
             }
-            else
-                MessageBox.Show("Them moi khong thanh cong");
         }
 
         private void picCate_Click(object sender, EventArgs e)
         {
             if (category.ThemDanhMucMoi(cboCategory.Text))
                 LoadDanhMuc();
-            else
-                MessageBox.Show("Them danh muc moi khong thanh cong");
         }
 
         private void picProduct_Click(object sender, EventArgs e)
@@ -200,10 +183,6 @@ namespace Jewelry
             if (ProBUS.ThemDanhSanPhamMoi(cboCategory.SelectedValue.ToString(), cboProductName.Text))
             {
                 LoadProduct();
-            }
-            else
-            {
-                MessageBox.Show("Them san pham moi khong thanh cong");
             }
         }
 
@@ -214,11 +193,20 @@ namespace Jewelry
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtImportPrice.Text) || string.IsNullOrWhiteSpace(txtSalesPrice.Text))
+            if (string.IsNullOrWhiteSpace(txtImportPrice.Text))
             {
-                MessageBox.Show("Bạn chưa nhập đủ thông tin!");
+                lblImportPrice.Visible = true;
                 return;
             }
+            else
+                lblImportPrice.Visible = false;
+            if (string.IsNullOrWhiteSpace(txtSalesPrice.Text))
+            {
+                lblSalesPrice.Visible = true;
+                return;
+            }
+            else
+                lblImportPrice.Visible = false;
             LayThongChiTietSanPham();
             LayThongTinChiTietHD();
             if (PDBUS.ThemChiTietSanPhamMoi(PD)&& IDIBUS.ThemMotChiTietHoaDonMoi(IDI))
@@ -249,6 +237,24 @@ namespace Jewelry
             nudQuantity.Value = 1;
             txtImportPrice.Text = null;
             txtSalesPrice.Text = null;
+            lblImportPrice.Visible = false;
+            lblSalesPrice.Visible = false;
+        }
+
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar)||char.IsWhiteSpace(e.KeyChar)||char.IsPunctuation(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtImportPrice_Click(object sender, EventArgs e)
+        {
+            txtImportPrice.SelectAll();
+        }
+
+        private void txtSalesPrice_Click(object sender, EventArgs e)
+        {
+            txtSalesPrice.SelectAll();
         }
     }
 }

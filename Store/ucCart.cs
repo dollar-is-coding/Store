@@ -57,6 +57,7 @@ namespace Jewelry
 
         private void ucCart_Load(object sender, EventArgs e)
         {
+            lblInvalidName.Visible = lblPhone.Visible = false;
             lblDate.Text = DateTime.Today.ToShortDateString();
             lblStaffName.Text = frmLogIn.staff;
             LoadTenSanPham();
@@ -81,14 +82,12 @@ namespace Jewelry
             SISDILs = BUS.LayCTSPTuHDBHLonNhat(SIBUS.LayHDLonNhat().idHoaDon.ToString());
             dgvCart.DataSource = SISDILs;
         }
-
         private void LayThongTinKhachHang()
         {
             customer = new CustomerDTO();
             customer.hoTen = txtCustomer.Text;
             customer.soDienThoai = txtPhone.Text;
         }
-
         private void LayThongTinHD()
         {
             
@@ -136,36 +135,54 @@ namespace Jewelry
         {
             lblStaffName.Focus();
         }
-
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (dgvCart.RowCount > 0 &&!string.IsNullOrWhiteSpace(txtCustomer.Text)&&txtCustomer.Text!= "Insert customer name..."&&!string.IsNullOrWhiteSpace(txtPhone.Text)&&txtPhone.Text!= "Insert phone number...")
+            if (dgvCart.RowCount > 0)
             {
+                if (string.IsNullOrWhiteSpace(txtCustomer.Text) || txtCustomer.Text == "Customer Name")
+                {
+                    lblInvalidName.Visible = true;
+                    return;
+                }
+                else if (!string.IsNullOrWhiteSpace(txtCustomer.Text) && txtCustomer.Text != "Customer Name")
+                    lblInvalidName.Visible = false;
+                if (string.IsNullOrWhiteSpace(txtPhone.Text) || txtPhone.Text == "Phone Number")
+                {
+                    lblPhone.Visible = true;
+                    return;
+                }
+                else if (!string.IsNullOrWhiteSpace(txtPhone.Text) && txtPhone.Text != "Phone Number")
+                    lblPhone.Visible = false;
                 LayThongTinKhachHang();
                 CBUS.ThemKhachHangMoi(customer);
                 LayThongTinHD();
                 if (SIBUS.CapNhatHDBH(SI))
                 {
-                    MessageBox.Show("Thêm HD thành công!");
+                    MessageBox.Show("New invoice is created !", "Create invoice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
-                    MessageBox.Show("Thêm HD KHÔNG thành công!");
                 SIBUS.ThemHoaDonMoi();
                 LoadTenSanPham();
                 LoadDGV();
             }
             else
-                MessageBox.Show("Không có sản phẩm!");
-
+                MessageBox.Show("There is nothing in your cart !", "Create invoice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void picReload_Click(object sender, EventArgs e)
         {
+            txtCustomer.Text = "Customer Name";
+            txtCustomer.ForeColor = Color.FromArgb(128, 126, 120);
+            txtPhone.Text = "Phone Number";
+            txtPhone.ForeColor=Color.FromArgb(128, 126, 120);
             LoadTenSanPham();
             LoadDGV();
             lblTotal.Text = string.Format("{0:0,0 vnđ}", LoadTotal()).ToString();
         }
 
-        
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

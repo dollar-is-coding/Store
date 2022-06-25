@@ -201,45 +201,45 @@ namespace Jewelry
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.Color.White;
-            this.lblQuantity.Location = new System.Drawing.Point(167, 149);
+            this.lblQuantity.Location = new System.Drawing.Point(185, 149);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(91, 19);
+            this.lblQuantity.Size = new System.Drawing.Size(19, 19);
             this.lblQuantity.TabIndex = 4;
-            this.lblQuantity.Text = "lbQuantity";
+            this.lblQuantity.Text = "0";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(171, 101);
+            this.lblPrice.Location = new System.Drawing.Point(185, 101);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(65, 19);
+            this.lblPrice.Size = new System.Drawing.Size(19, 19);
             this.lblPrice.TabIndex = 4;
-            this.lblPrice.Text = "lbPrice";
+            this.lblPrice.Text = "0";
             // 
             // lblSize
             // 
             this.lblSize.AutoSize = true;
             this.lblSize.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSize.ForeColor = System.Drawing.Color.White;
-            this.lblSize.Location = new System.Drawing.Point(171, 53);
+            this.lblSize.Location = new System.Drawing.Point(185, 53);
             this.lblSize.Name = "lblSize";
-            this.lblSize.Size = new System.Drawing.Size(56, 19);
+            this.lblSize.Size = new System.Drawing.Size(19, 19);
             this.lblSize.TabIndex = 4;
-            this.lblSize.Text = "lbSize";
+            this.lblSize.Text = "0";
             // 
             // nudChoose
             // 
             this.nudChoose.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudChoose.Location = new System.Drawing.Point(171, 195);
+            this.nudChoose.Location = new System.Drawing.Point(189, 195);
             this.nudChoose.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudChoose.Name = "nudChoose";
-            this.nudChoose.Size = new System.Drawing.Size(189, 28);
+            this.nudChoose.Size = new System.Drawing.Size(171, 28);
             this.nudChoose.TabIndex = 3;
             this.nudChoose.Value = new decimal(new int[] {
             1,

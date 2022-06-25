@@ -21,10 +21,10 @@ namespace JewelryBUS
             return PPD.LayDanhSachChiTietSanPham(idDanhMuc);
         }
 
-        public List<PPDDTO> LayTatCaChiTietSanPham(string idDanhMuc,string idSanPham)
+        public List<PPDDTO> TimKiem(string idSanPham)
         {
             PPDDAO PPD = new PPDDAO();
-            return PPD.LayDanhSachChiTietSanPham(idDanhMuc,idSanPham);
+            return PPD.LaySanPhamTheoID(idSanPham);
         }
     }
 }
