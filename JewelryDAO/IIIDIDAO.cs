@@ -20,7 +20,6 @@ namespace JewelryDAO
             {
                 IIIDIDTO IDID = new IIIDIDTO();
                 IDID.idHoaDon = sdr["idHoaDon"].ToString();
-                IDID.idCTHD = sdr["idCTHD"].ToString();
                 IDID.idTaiKhoan = sdr["idTaiKhoan"].ToString();
                 IDID.idSanPham = sdr["idSanPham"].ToString();
                 IDID.size =float.Parse(sdr["size"].ToString());
@@ -45,7 +44,6 @@ namespace JewelryDAO
             {
                 IIIDIDTO IDID = new IIIDIDTO();
                 IDID.idHoaDon = sdr["idHoaDon"].ToString();
-                IDID.idCTHD = sdr["idCTHD"].ToString();
                 IDID.idTaiKhoan = sdr["idTaiKhoan"].ToString();
                 IDID.idSanPham = sdr["idSanPham"].ToString();
                 IDID.size = float.Parse(sdr["size"].ToString());

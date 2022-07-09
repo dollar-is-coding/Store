@@ -293,5 +293,10 @@ namespace Jewelry
         {
             label1.Focus();
         }
+
+        private void ucAddStaff_DoubleClick(object sender, EventArgs e)
+        {
+            dgvAddStaff.Refresh();
+        }
     }
 }

@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="AccountDAO.cs" />
     <Compile Include="CategoryDAO.cs" />
+    <Compile Include="Product4ReportDAO.cs" />
+    <Compile Include="Sales4ReportDAO.cs" />
+    <Compile Include="Import4ReportDAO.cs" />
     <Compile Include="SalesDetailInvoiceDAO.cs" />
     <Compile Include="ImportDetailInvoiceDAO.cs" />
     <Compile Include="InsertInvoiceDAO.cs" />

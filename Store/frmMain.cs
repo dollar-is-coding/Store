@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Jewelry
 {
-    public partial class frmManager : Form
+    public partial class frmMain : Form
     {
-        public frmManager()
+        public frmMain()
         {
             InitializeComponent();
         }
 
-        public frmManager(string username, string position)
+        public frmMain(string username, string position)
         {
             InitializeComponent();
             lblUserName.Text = username;
@@ -33,48 +33,47 @@ namespace Jewelry
             btnSearch.BackColor = Color.FromArgb(30, 30, 30);
             ucSearch1.BringToFront();
             lblTitle.Text = btnSearch.Text.Trim().ToUpper();
-            
         }
 
-        private void click(Button main, Button btn1,Button btn2,Button btn3,Button btn4)
+        private void click(Button main, Button btn1,Button btn2,Button btn3,Button btn4,Button btn5)
         {
             main.BackColor= Color.FromArgb(30, 30, 30);
-            btn1.BackColor = btn2.BackColor = btn3.BackColor = btn4.BackColor = Color.FromArgb(28, 40, 60);
+            btn1.BackColor = btn2.BackColor = btn3.BackColor = btn4.BackColor =btn5.BackColor= Color.FromArgb(28, 40, 60);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            click(btnSearch, btnCart, btnProduct, btnStaff, btnReport);
+            click(btnSearch, btnCart, btnProduct, btnStaff, btnInvoice, btnReport);
             ucSearch1.BringToFront();
             lblTitle.Text = btnSearch.Text.Trim().ToUpper();
         }
 
         private void btnCart_Click(object sender, EventArgs e)
         {
-            click( btnCart, btnSearch, btnProduct, btnStaff, btnReport);
+            click( btnCart, btnSearch, btnProduct, btnStaff, btnInvoice, btnReport);
             ucCart1.BringToFront();
             lblTitle.Text = btnCart.Text.Trim().ToUpper();
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            click(btnProduct, btnSearch, btnCart,  btnStaff, btnReport);
+            click(btnProduct, btnSearch, btnCart,  btnStaff, btnInvoice, btnReport);
             ucAddProduct1.BringToFront();
             lblTitle.Text = btnProduct.Text.Trim().ToUpper();
         }
 
         private void btnStaff_Click(object sender, EventArgs e)
         {
-            click(btnStaff, btnSearch, btnCart, btnProduct,  btnReport);
+            click(btnStaff, btnSearch, btnCart, btnProduct,  btnInvoice, btnReport);
             ucAddStaff1.BringToFront();
             lblTitle.Text = btnStaff.Text.Trim().ToUpper();
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            click(btnReport,btnSearch, btnCart, btnProduct, btnStaff);
+            click(btnInvoice,btnSearch, btnCart, btnProduct, btnStaff, btnReport);
             ucReport1.BringToFront();
-            lblTitle.Text = btnReport.Text.Trim().ToUpper();
+            lblTitle.Text = btnInvoice.Text.Trim().ToUpper();
         }
 
         private void btnSignOut_Click(object sender, EventArgs e)
@@ -107,6 +106,13 @@ namespace Jewelry
                 Application.Exit();
             }
             
+        }
+
+        private void btnReport_Click_1(object sender, EventArgs e)
+        {
+            click(btnReport,btnInvoice, btnSearch, btnCart, btnProduct, btnStaff);
+            ucReport2.BringToFront();
+            lblTitle.Text = btnReport.Text.Trim().ToUpper();
         }
     }
 }

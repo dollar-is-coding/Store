@@ -1,7 +1,7 @@
 ﻿
 namespace Jewelry
 {
-    partial class frmManager
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,15 @@ namespace Jewelry
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.pnlClose = new System.Windows.Forms.Panel();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnReport = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSignOut = new System.Windows.Forms.Button();
-            this.btnReport = new System.Windows.Forms.Button();
+            this.btnInvoice = new System.Windows.Forms.Button();
             this.btnStaff = new System.Windows.Forms.Button();
             this.btnCart = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -46,7 +47,8 @@ namespace Jewelry
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.ucReport1 = new Jewelry.ucReport();
+            this.ucReport2 = new Jewelry.ucReport();
+            this.ucReport1 = new Jewelry.ucInvoice();
             this.ucAddStaff1 = new Jewelry.ucAddStaff();
             this.ucAddProduct1 = new Jewelry.ucAddProduct();
             this.ucCart1 = new Jewelry.ucCart();
@@ -97,9 +99,10 @@ namespace Jewelry
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.pnlMenu.Controls.Add(this.btnReport);
             this.pnlMenu.Controls.Add(this.pictureBox1);
             this.pnlMenu.Controls.Add(this.btnSignOut);
-            this.pnlMenu.Controls.Add(this.btnReport);
+            this.pnlMenu.Controls.Add(this.btnInvoice);
             this.pnlMenu.Controls.Add(this.btnStaff);
             this.pnlMenu.Controls.Add(this.btnCart);
             this.pnlMenu.Controls.Add(this.btnSearch);
@@ -109,6 +112,28 @@ namespace Jewelry
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(240, 778);
             this.pnlMenu.TabIndex = 2;
+            // 
+            // btnReport
+            // 
+            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnReport.FlatAppearance.BorderSize = 0;
+            this.btnReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.ForeColor = System.Drawing.Color.White;
+            this.btnReport.Image = global::Jewelry.Properties.Resources.chart_histogram;
+            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReport.Location = new System.Drawing.Point(0, 446);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnReport.Size = new System.Drawing.Size(240, 54);
+            this.btnReport.TabIndex = 7;
+            this.btnReport.Text = "    Report";
+            this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click_1);
             // 
             // pictureBox1
             // 
@@ -130,7 +155,7 @@ namespace Jewelry
             this.btnSignOut.ForeColor = System.Drawing.Color.White;
             this.btnSignOut.Image = global::Jewelry.Properties.Resources.sign_out;
             this.btnSignOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSignOut.Location = new System.Drawing.Point(0, 446);
+            this.btnSignOut.Location = new System.Drawing.Point(0, 500);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnSignOut.Size = new System.Drawing.Size(240, 54);
@@ -140,27 +165,27 @@ namespace Jewelry
             this.btnSignOut.UseVisualStyleBackColor = true;
             this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
-            // btnReport
+            // btnInvoice
             // 
-            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnReport.FlatAppearance.BorderSize = 0;
-            this.btnReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReport.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReport.ForeColor = System.Drawing.Color.White;
-            this.btnReport.Image = global::Jewelry.Properties.Resources.chart_histogram;
-            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(0, 392);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnReport.Size = new System.Drawing.Size(240, 54);
-            this.btnReport.TabIndex = 3;
-            this.btnReport.Text = "    Report";
-            this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReport.UseVisualStyleBackColor = false;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            this.btnInvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnInvoice.FlatAppearance.BorderSize = 0;
+            this.btnInvoice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnInvoice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInvoice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvoice.ForeColor = System.Drawing.Color.White;
+            this.btnInvoice.Image = global::Jewelry.Properties.Resources.document;
+            this.btnInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInvoice.Location = new System.Drawing.Point(0, 392);
+            this.btnInvoice.Name = "btnInvoice";
+            this.btnInvoice.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnInvoice.Size = new System.Drawing.Size(240, 54);
+            this.btnInvoice.TabIndex = 3;
+            this.btnInvoice.Text = "    Invoice";
+            this.btnInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInvoice.UseVisualStyleBackColor = false;
+            this.btnInvoice.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnStaff
             // 
@@ -295,6 +320,7 @@ namespace Jewelry
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlMain.Controls.Add(this.ucReport2);
             this.pnlMain.Controls.Add(this.ucReport1);
             this.pnlMain.Controls.Add(this.ucAddStaff1);
             this.pnlMain.Controls.Add(this.ucAddProduct1);
@@ -305,6 +331,15 @@ namespace Jewelry
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1200, 700);
             this.pnlMain.TabIndex = 6;
+            // 
+            // ucReport2
+            // 
+            this.ucReport2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ucReport2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucReport2.Location = new System.Drawing.Point(0, 0);
+            this.ucReport2.Name = "ucReport2";
+            this.ucReport2.Size = new System.Drawing.Size(1200, 700);
+            this.ucReport2.TabIndex = 5;
             // 
             // ucReport1
             // 
@@ -351,7 +386,7 @@ namespace Jewelry
             this.ucSearch1.Size = new System.Drawing.Size(1200, 700);
             this.ucSearch1.TabIndex = 0;
             // 
-            // frmManager
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -362,7 +397,7 @@ namespace Jewelry
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmManager";
+            this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.frmManager_Load);
@@ -385,7 +420,7 @@ namespace Jewelry
         private System.Windows.Forms.Panel pnlClose;
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.Panel pnlMenu;
-        private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button btnInvoice;
         private System.Windows.Forms.Button btnStaff;
         private System.Windows.Forms.Button btnProduct;
         private System.Windows.Forms.Label lblTitle;
@@ -400,7 +435,9 @@ namespace Jewelry
         private ucCart ucCart1;
         private ucAddProduct ucAddProduct1;
         private ucAddStaff ucAddStaff1;
-        private ucReport ucReport1;
+        private ucInvoice ucReport1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnReport;
+        private ucReport ucReport2;
     }
 }

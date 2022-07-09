@@ -101,7 +101,7 @@ namespace Jewelry
                 }
                 else
                 {
-                    frmManager frm = new frmManager(account.hoTen,account.chucVu);
+                    frmMain frm = new frmMain(account.hoTen,account.chucVu);
                     chucVu = account.chucVu;
                     staff = account.hoTen;
                     id = account.idTaiKhoan;

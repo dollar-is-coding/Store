@@ -64,10 +64,10 @@ namespace JewelryDAO
                 {
                     string strinsert = "insert into ChiTietSanPham values (@idSanPham,@size,@giaBan,@soLuong,1)";
                     SqlParameter[] pars3 = new SqlParameter[4];
-                    pars3[2] = new SqlParameter("idSanPham", DP.idSanPham);
-                    pars3[3] = new SqlParameter("size", DP.size);
-                    pars3[0] = new SqlParameter("giaBan", DP.giaBan);
-                    pars3[1] = new SqlParameter("soLuong", DP.soLuong);
+                    pars3[0] = new SqlParameter("idSanPham", DP.idSanPham);
+                    pars3[1] = new SqlParameter("size", DP.size);
+                    pars3[2] = new SqlParameter("giaBan", DP.giaBan);
+                    pars3[3] = new SqlParameter("soLuong", DP.soLuong);
                     bool insert = DataProvider.ThucThi(strinsert, pars3, connect);
                     connect.Close();
                     return insert;
@@ -96,7 +96,6 @@ namespace JewelryDAO
             {
                 return false;
             }
-
         }
     }
 }

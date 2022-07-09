@@ -14,7 +14,7 @@ namespace JewelryDAO
         {
             try
             {
-                string strInsert = "Insert into CTHDNhapHang values (@idHoaDon,'',@idSanPham,@size,@soLuong,@giaNhap)";
+                string strInsert = "Insert into CTHDNhapHang values (@idHoaDon,@idSanPham,@size,@soLuong,@giaNhap)";
                 SqlConnection connect = DataProvider.TaoKetNoi();
                 SqlParameter[] pars = new SqlParameter[5];
                 pars[0] = new SqlParameter("idHoaDon", IDI.idHoaDon);

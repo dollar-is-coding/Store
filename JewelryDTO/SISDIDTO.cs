@@ -9,7 +9,6 @@ namespace JewelryDTO
    public class SISDIDTO
     {
         public string idHoaDon { get; set; }
-        public string idCTHD { get; set; }
         public string idKhachHang { get; set; }
         public string hoTen { get; set; }
         public string idTaiKhoan { get; set; }
@@ -17,6 +16,6 @@ namespace JewelryDTO
         public float size { get; set; }
         public decimal giaBan { get; set; }
         public int soLuong { get; set; }
-        public DateTime ngayBan { get; set; }
+        public string ngayBan { get; set; }
     }
 }

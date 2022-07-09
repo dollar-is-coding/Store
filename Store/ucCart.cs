@@ -18,7 +18,6 @@ namespace Jewelry
         SalesDetailInvoiceBUS SDIBUS = new SalesDetailInvoiceBUS();
         SISDIBUS BUS = new SISDIBUS();
 
-        List<SalesDetailInvoiceDTO> SDILs;
         List<SISDIDTO> SISDILs;
         List<ProductDTO> PLs;
         ProductBUS PBUS = new ProductBUS();

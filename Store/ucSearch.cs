@@ -23,7 +23,6 @@ namespace Jewelry
         public static SalesDetailInvoiceDTO SDI;
         SalesDetailInvoiceBUS SDIBUS = new SalesDetailInvoiceBUS();
 
-        SalesInvoiceDTO SI;
         SalesInvoiceBUS SIBUS = new SalesInvoiceBUS();
         ProductDetailDTO PD;
         public ucSearch()
@@ -97,8 +96,8 @@ namespace Jewelry
             {
                 lblName.Text = item.tenSanPham;
                 lblSize.Text = item.size.ToString();
-                lblPrice.Text = string.Format("{0:0,0 vnđ}", decimal.Parse(item.giaBan.ToString()));
                 lblQuantity.Text = item.soLuong.ToString();
+                txtPrice.Text = item.giaBan.ToString();
                 nudChoose.Maximum = int.Parse(item.soLuong.ToString());
             }
         }
@@ -118,13 +117,16 @@ namespace Jewelry
             if (radAll.Checked)
             {
                 cboSearch.Enabled = false;
+                txtSearch.Visible = true;
+                btnSearch.Visible = true;
                 LoadChiTietSanPham();
             }
             if (radChoose.Checked)
             {
                 cboSearch.Enabled = true;
+                txtSearch.Visible = false;
+                btnSearch.Visible = false;
                 LoadChiTietSanPhamforChoose();
-                
             }
         }
 
@@ -157,6 +159,7 @@ namespace Jewelry
             SDI.idSanPham = dgvSearch.Rows[dgvSearch.SelectedRows[0].Index].Cells[0].FormattedValue.ToString();
             SDI.size = float.Parse(lblSize.Text);
             SDI.soLuong = int.Parse(nudChoose.Value.ToString());
+            SDI.giaBan = decimal.Parse(txtPrice.Text);
         }
 
         private void LayThongTinCTSP()

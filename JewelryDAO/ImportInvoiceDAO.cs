@@ -40,7 +40,7 @@ namespace JewelryDAO
                 ImportInvoiceDTO HD = new ImportInvoiceDTO();
                 HD.idHoaDon = sdr["idHoaDon"].ToString();
                 HD.idTaiKhoan = sdr["idTaiKhoan"].ToString();
-                HD.ngayNhap = DateTime.Parse(sdr["ngayNhap"].ToString()).Date;
+                //HD.ngayNhap = DateTime.Parse(sdr["ngayNhap"].ToString());
                 ls.Add(HD);
             }
             sdr.Close();

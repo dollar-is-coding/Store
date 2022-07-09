@@ -9,7 +9,6 @@ namespace JewelryDTO
     public class InsertInvoiceDTO
     {
         public string idHoaDon { get; set; }
-        public string idCTHD { get; set; }
         public string idDanhMuc { get; set; }
         public string idSanPham { get; set; }
         public string tenSanPham { get; set; }

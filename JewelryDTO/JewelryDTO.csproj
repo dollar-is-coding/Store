@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="CategoryDTO.cs" />
     <Compile Include="AccountDTO.cs" />
+    <Compile Include="Product4ReportDTO.cs" />
+    <Compile Include="Sales4ReportDTO.cs" />
+    <Compile Include="Import4ReportDTO.cs" />
     <Compile Include="InsertInvoiceDTO.cs" />
     <Compile Include="NewAProductDTO.cs" />
     <Compile Include="PPDDTO.cs" />

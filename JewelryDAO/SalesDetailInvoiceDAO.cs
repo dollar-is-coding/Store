@@ -21,10 +21,10 @@ namespace JewelryDAO
             {
                 SalesDetailInvoiceDTO SDI = new SalesDetailInvoiceDTO();
                 SDI.idHoaDon = sdr["idHoaDon"].ToString();
-                SDI.idCTHD = sdr["idCTHD"].ToString();
                 SDI.idSanPham = sdr["idSanPham"].ToString();
                 SDI.size = float.Parse(sdr["size"].ToString());
                 SDI.soLuong = int.Parse(sdr["soLuong"].ToString());
+                SDI.giaBan = decimal.Parse(sdr["giaBan"].ToString());
                 ls.Add(SDI);
             }
             sdr.Close();
@@ -35,12 +35,13 @@ namespace JewelryDAO
         {
             try
             {
-                string strInsert = "Insert into CTHDBanHang values (@idHoaDon,'',@idSanPham,@size,@soLuong)";
-                SqlParameter[] pars = new SqlParameter[4];
+                string strInsert = "Insert into CTHDBanHang values (@idHoaDon,@idSanPham,@size,@soLuong,@giaBan)";
+                SqlParameter[] pars = new SqlParameter[5];
                 pars[0] = new SqlParameter("idHoaDon", SDI.idHoaDon);
                 pars[1] = new SqlParameter("idSanPham", SDI.idSanPham);
                 pars[2] = new SqlParameter("size", SDI.size);
                 pars[3] = new SqlParameter("soLuong", SDI.soLuong);
+                pars[4] = new SqlParameter("giaBan", SDI.giaBan);
                 SqlConnection connect = DataProvider.TaoKetNoi();
                 bool kq = DataProvider.ThucThi(strInsert, pars, connect);
                 connect.Close();

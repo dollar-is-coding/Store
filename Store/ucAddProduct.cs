@@ -16,7 +16,6 @@ namespace Jewelry
     {
         List<ProductDTO> lsPro;
         List<CategoryDTO> categoryLs;
-        //List<ProductDetailDTO> PDLs;
         List<InsertInvoiceDTO> IILs;
 
         CategoryBUS category = new CategoryBUS();
@@ -40,9 +39,6 @@ namespace Jewelry
         {
             btn_MouseEnter(btnAdd);
         }
-        
-
-        
 
         private void btn_MouseEnter(Button a)
         {
@@ -71,6 +67,7 @@ namespace Jewelry
             LoadHoaDonMoiNhat();
             LoadProduct();
             LoadDGV();
+            
         }
         private void LoadHoaDonMoiNhat()
         {

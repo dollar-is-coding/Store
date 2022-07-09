@@ -14,13 +14,12 @@ namespace JewelryDAO
         {
             List<NewAProductDTO> ls = new List<NewAProductDTO>();
             SqlConnection connect = DataProvider.TaoKetNoi();
-            string query = "Select idHoaDon,idCTHD,SP.idDanhMuc,CTSP.idSanPham,SP.tenSanPham,CTSP.size,CTSP.soLuong,CTHD.giaNhap,CTSP.giaBan from CTHDNhapHang CTHD, ChiTietSanPham CTSP, SanPham SP where CTSP.idSanPham=SP.idSanPham and CTHD.idSanPham=CTSP.idSanPham and CTHD.size=CTSP.size";
+            string query = "Select idHoaDon,SP.idDanhMuc,CTSP.idSanPham,SP.tenSanPham,CTSP.size,CTSP.soLuong,CTHD.giaNhap,CTSP.giaBan from CTHDNhapHang CTHD, ChiTietSanPham CTSP, SanPham SP where CTSP.idSanPham=SP.idSanPham and CTHD.idSanPham=CTSP.idSanPham and CTHD.size=CTSP.size";
             SqlDataReader sdr = DataProvider.TruyVan(query, connect);
             while (sdr.Read())
             {
                 NewAProductDTO aNew = new NewAProductDTO();
                 aNew.idHoaDon = sdr["idHoaDon"].ToString();
-                aNew.idCTHD = sdr["idCTHD"].ToString();
                 aNew.idDanhMuc = sdr["idDanhMuc"].ToString();
                 aNew.idSanPham = sdr["idSanPham"].ToString();
                 aNew.tenSanPham = sdr["tenSanPham"].ToString();

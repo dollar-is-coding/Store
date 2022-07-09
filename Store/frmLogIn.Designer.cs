@@ -154,9 +154,9 @@ namespace Jewelry
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(472, 203);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 21);
+            this.label1.Size = new System.Drawing.Size(101, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Use Name";
+            this.label1.Text = "User Name";
             // 
             // label3
             // 

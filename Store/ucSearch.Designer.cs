@@ -29,8 +29,8 @@ namespace Jewelry
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSearch = new System.Windows.Forms.DataGridView();
             this.colProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,12 +41,9 @@ namespace Jewelry
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.btnAddToCart = new System.Windows.Forms.Button();
             this.lblQuantity = new System.Windows.Forms.Label();
-            this.lblPrice = new System.Windows.Forms.Label();
             this.lblSize = new System.Windows.Forms.Label();
             this.nudChoose = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -54,6 +51,9 @@ namespace Jewelry
             this.radAll = new System.Windows.Forms.RadioButton();
             this.radChoose = new System.Windows.Forms.RadioButton();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudChoose)).BeginInit();
@@ -63,17 +63,17 @@ namespace Jewelry
             // 
             this.dgvSearch.AllowUserToAddRows = false;
             this.dgvSearch.AllowUserToResizeRows = false;
-            this.dgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.dgvSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProductID,
@@ -82,14 +82,14 @@ namespace Jewelry
             this.colPrice,
             this.colCategory,
             this.colQuantity});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearch.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearch.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSearch.Location = new System.Drawing.Point(50, 100);
             this.dgvSearch.MultiSelect = false;
             this.dgvSearch.Name = "dgvSearch";
@@ -109,7 +109,6 @@ namespace Jewelry
             this.colProductID.MinimumWidth = 6;
             this.colProductID.Name = "colProductID";
             this.colProductID.ReadOnly = true;
-            this.colProductID.Width = 98;
             // 
             // colProductName
             // 
@@ -118,7 +117,6 @@ namespace Jewelry
             this.colProductName.MinimumWidth = 6;
             this.colProductName.Name = "colProductName";
             this.colProductName.ReadOnly = true;
-            this.colProductName.Width = 123;
             // 
             // colSize
             // 
@@ -127,7 +125,6 @@ namespace Jewelry
             this.colSize.MinimumWidth = 6;
             this.colSize.Name = "colSize";
             this.colSize.ReadOnly = true;
-            this.colSize.Width = 63;
             // 
             // colPrice
             // 
@@ -136,7 +133,6 @@ namespace Jewelry
             this.colPrice.MinimumWidth = 6;
             this.colPrice.Name = "colPrice";
             this.colPrice.ReadOnly = true;
-            this.colPrice.Width = 71;
             // 
             // colCategory
             // 
@@ -148,7 +144,6 @@ namespace Jewelry
             this.colCategory.ReadOnly = true;
             this.colCategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colCategory.Width = 99;
             // 
             // colQuantity
             // 
@@ -157,17 +152,16 @@ namespace Jewelry
             this.colQuantity.MinimumWidth = 6;
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.ReadOnly = true;
-            this.colQuantity.Width = 93;
             // 
             // pnlSearch
             // 
             this.pnlSearch.BackColor = System.Drawing.Color.Transparent;
+            this.pnlSearch.Controls.Add(this.txtPrice);
             this.pnlSearch.Controls.Add(this.btnAddToCart);
             this.pnlSearch.Controls.Add(this.lblQuantity);
-            this.pnlSearch.Controls.Add(this.lblPrice);
             this.pnlSearch.Controls.Add(this.lblSize);
             this.pnlSearch.Controls.Add(this.nudChoose);
-            this.pnlSearch.Controls.Add(this.label6);
+            this.pnlSearch.Controls.Add(this.label1);
             this.pnlSearch.Controls.Add(this.label5);
             this.pnlSearch.Controls.Add(this.label3);
             this.pnlSearch.Controls.Add(this.label2);
@@ -201,22 +195,11 @@ namespace Jewelry
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.Color.White;
-            this.lblQuantity.Location = new System.Drawing.Point(185, 149);
+            this.lblQuantity.Location = new System.Drawing.Point(185, 103);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(19, 19);
             this.lblQuantity.TabIndex = 4;
             this.lblQuantity.Text = "0";
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(185, 101);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(19, 19);
-            this.lblPrice.TabIndex = 4;
-            this.lblPrice.Text = "0";
             // 
             // lblSize
             // 
@@ -232,7 +215,7 @@ namespace Jewelry
             // nudChoose
             // 
             this.nudChoose.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudChoose.Location = new System.Drawing.Point(189, 195);
+            this.nudChoose.Location = new System.Drawing.Point(189, 197);
             this.nudChoose.Minimum = new decimal(new int[] {
             1,
             0,
@@ -248,45 +231,23 @@ namespace Jewelry
             0});
             this.nudChoose.Click += new System.EventHandler(this.nudChoose_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 197);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 21);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Would you like:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 149);
+            this.label5.Location = new System.Drawing.Point(3, 150);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 21);
+            this.label5.Size = new System.Drawing.Size(55, 21);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Quantity:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 21);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Price:";
+            this.label5.Text = "Price:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 53);
+            this.label2.Location = new System.Drawing.Point(3, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 21);
             this.label2.TabIndex = 1;
@@ -317,6 +278,7 @@ namespace Jewelry
             // 
             // cboSearch
             // 
+            this.cboSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSearch.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSearch.FormattingEnabled = true;
             this.cboSearch.Location = new System.Drawing.Point(163, 38);
@@ -365,6 +327,36 @@ namespace Jewelry
             this.btnSearch.TabIndex = 6;
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 199);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 21);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Would you like:";
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(189, 147);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(171, 28);
+            this.txtPrice.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(3, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 21);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Quantity:";
+            // 
             // ucSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -397,13 +389,10 @@ namespace Jewelry
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox cboSearch;
         private System.Windows.Forms.NumericUpDown nudChoose;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblQuantity;
-        private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.Button btnAddToCart;
         private System.Windows.Forms.RadioButton radAll;
@@ -415,5 +404,8 @@ namespace Jewelry
         private System.Windows.Forms.DataGridViewComboBoxColumn colCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }

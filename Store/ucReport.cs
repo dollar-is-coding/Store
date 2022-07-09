@@ -14,165 +14,85 @@ namespace Jewelry
 {
     public partial class ucReport : UserControl
     {
-        List<ImportInvoiceDTO> lsHDN;
-        List<SalesInvoiceDTO> lsHDB;
-        List<IIIDIDTO> lsIDID;
-        
-        List<ProductDTO> PLs;
-        List<SISDIDTO> lsSISD;
-        List<AccountDTO> ALs;
-
-        ImportInvoiceBUS HDNBUS = new ImportInvoiceBUS();
-        SalesInvoiceBUS HDBBUS = new SalesInvoiceBUS();
-        IIIDIBUS HDIDIDBUS = new IIIDIBUS();
-        SISDIBUS HDSISD = new SISDIBUS();
-        ProductBUS PBUS = new ProductBUS();
-        CustomerBUS CBUS = new CustomerBUS();
-        AccountBUS ABUS = new AccountBUS();
-
         public ucReport()
         {
             InitializeComponent();
         }
 
-        private void ucReport_Load(object sender, EventArgs e)
+        private void btnOk_MouseEnter(object sender, EventArgs e)
         {
-            radSales.Checked = radAll.Checked = true;
-            LoadCTHDBanHangforAll();
+            btnOk.ForeColor = Color.Black;
+            btnOk.FlatAppearance.BorderColor = Color.FromArgb(28, 40, 60);
+            btnOk.BackColor = Color.FromArgb(255, 1, 243);
         }
-        private void rad_CheckedChanged(object sender, EventArgs e)
+
+        private void btnOk_MouseLeave(object sender, EventArgs e)
         {
-            
-            if (frmLogIn.chucVu == "Staff")
+            btnOk.ForeColor = Color.FromArgb(255, 1, 243);
+            btnOk.FlatAppearance.BorderColor = Color.FromArgb(255, 1, 243);
+            btnOk.BackColor = Color.Transparent;
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (radAllProducts.Checked)
             {
-                radImport.Enabled = false;
+                frmViewReport frm = new frmViewReport();
+                frm.TatCaSanPham();
+                frm.ShowDialog();
             }
-            if (radAll.Checked)
-                cboReport.Enabled = false;
-            else if (radChoose.Checked)
-                cboReport.Enabled = true;
+            if (radProducts4Cate.Checked)
+            {
+                frmViewReport frm = new frmViewReport();
+                frm.TatCaSanPhamTheoLoai(cbo.Text);
+                frm.ShowDialog();
+            }
+            if (radImport.Checked)
+            {
+                int month = dtp.Value.Month;
+                int year = dtp.Value.Year;
+                frmViewReport frm = new frmViewReport();
+                frm.TatCaHDNTheoThang(month, year);
+                frm.ShowDialog();
+            }
             if (radSales.Checked)
             {
-                dgvSalesInvoice.BringToFront();
-                dgvImportInvoice.SendToBack();
-                LoadCTHDBanHangforAll();
-                if (radChoose.Checked)
-                {
-                    LoadcboHDB();
-                    LoadTaiKhoanforSale();
-                    LoadTenSanPhamforSales();
-                    LoadCTHDBanHangforChoose();
-                }
+                int month = dtp.Value.Month;
+                int year = dtp.Value.Year;
+                frmViewReport frm = new frmViewReport();
+                frm.TatCaHDBTheoThang(month, year);
+                frm.ShowDialog();
             }
-            else if (radImport.Checked)
+        }
+
+        private void ucReport_Load(object sender, EventArgs e)
+        {
+            CategoryBUS category = new CategoryBUS();
+            List<CategoryDTO> lst = category.LayTatCaDanhMuc();
+            cbo.DataSource = lst;
+            cbo.ValueMember = "idDanhMuc";
+            cbo.DisplayMember = "tenDanhMuc";
+            radAllProducts.Checked = true;
+        }
+
+        private void rad_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radAllProducts.Checked)
             {
-                dgvImportInvoice.BringToFront();
-                dgvSalesInvoice.SendToBack();
-                LoadCTHDNhapHangforAll();
-                if (radChoose.Checked)
-                {
-                    LoadcboHDN();
-                    LoadTaiKhoanforImport();
-                    LoadTenSanPhamforImport();
-                    LoadCTHDNhapHangforChoose();
-                }
+                cbo.Visible = false;
+                dtp.Visible = false;
             }
-        }
-        private void LoadcboHDN()
-        {
-            lsHDN = HDNBUS.LayTatCaHoaDon();
-            cboReport.DataSource = lsHDN;
-            cboReport.DisplayMember = "idHoaDon";
-            cboReport.ValueMember = "idHoaDon";
-        }
-
-        private void LoadcboHDB()
-        {
-            lsHDB = HDBBUS.LayTatCaHDBanHang();
-            cboReport.DataSource = lsHDB;
-            cboReport.DisplayMember = "idHoaDon";
-            cboReport.ValueMember = "idHoaDon";
-        }
-        //private void LoadKhachHang()
-        //{
-        //    List<CustomerDTO> CLs;
-        //    CLs = CBUS.LayTatCaKhachHang();
-        //    colCustomer.DataSource = CLs;
-        //    colCustomer.ValueMember = "idKhachHang";
-        //    colCustomer.DisplayMember = "hoTen";
-        //}
-
-        private void LoadTaiKhoanforSale()
-        {
-            ALs = ABUS.LayTatCaTaiKhoan();
-            colStaffSale.DataSource = ALs;
-            colStaffSale.DisplayMember = "hoTen";
-            colStaffSale.ValueMember = "idTaiKhoan";
-        }
-        private void LoadTaiKhoanforImport()
-        {
-            colStaffImport.DataSource = new List<AccountDTO>(ALs);
-            colStaffImport.DisplayMember = "hoTen";
-            colStaffImport.ValueMember = "idTaiKhoan";
-        }
-        private void LoadTenSanPhamforSales()
-        {
-            PLs = PBUS.LayDanhSachSanPham();
-            colProductSale.DataSource = PLs;
-            colProductSale.DisplayMember = "tenSanPham";
-            colProductSale.ValueMember = "idSanPham";
-        }
-        private void LoadTenSanPhamforImport()
-        {
-            colProductImport.DataSource = new List<ProductDTO>(PLs);
-            colProductImport.DisplayMember = "tenSanPham";
-            colProductImport.ValueMember = "idSanPham";
-        }
-        private void LoadCTHDNhapHangforAll()
-        {
-            LoadTaiKhoanforImport();
-            LoadTenSanPhamforImport();
-            lsIDID = HDIDIDBUS.LayTatCaDanhSachCTHoaDonNhapHang();
-            dgvImportInvoice.DataSource = lsIDID;
-        }
-        private void LoadCTHDBanHangforAll()
-        {
-            dgvSalesInvoice.AutoGenerateColumns = false;
-            LoadTaiKhoanforSale();
-            LoadTenSanPhamforSales();
-            lsSISD = HDSISD.LayTatCaDanhSachCTHDBanHang();
-            dgvSalesInvoice.DataSource = lsSISD;
-        }
-        private void LoadCTHDNhapHangforChoose()
-        {
-            List<IIIDIDTO> HDN = new List<IIIDIDTO>();
-            HDN = HDIDIDBUS.LayTatCaDanhSachCTHoaDonNhapHang(cboReport.SelectedValue.ToString());
-            dgvImportInvoice.DataSource = HDN;
-        }
-        private void LoadCTHDBanHangforChoose()
-        {
-            List<SISDIDTO> HDB = new List<SISDIDTO>();
-            HDB = HDSISD.LayTatCaDanhSachCTHDBanHang(cboReport.SelectedValue.ToString());
-            dgvSalesInvoice.DataSource = HDB;
-        }
-        private void cboReport_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (radImport.Checked && radChoose.Checked)
-                LoadCTHDNhapHangforChoose();
-            if (radSales.Checked && radChoose.Checked)
-                LoadCTHDBanHangforChoose();
-        }
-
-        private void btnReFresh_Click(object sender, EventArgs e)
-        {
-            radImport.Enabled = radSales.Enabled = radAll.Enabled = radChoose.Enabled = true;
-            radSales.Checked = radAll.Checked = true;
-            LoadCTHDBanHangforAll();
-        }
-
-        private void ucReport_Click(object sender, EventArgs e)
-        {
-            
+            if (radProducts4Cate.Checked)
+            {
+                cbo.Visible = true;
+                dtp.Visible = false;
+            } 
+            if (radImport.Checked || radSales.Checked)
+            {
+                dtp.Visible = true;
+                cbo.Visible = false;
+            }
+                
         }
     }
 }
