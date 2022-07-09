@@ -209,13 +209,13 @@ namespace Jewelry
                 lblImportPrice.Visible = false;
             LayThongChiTietSanPham();
             LayThongTinChiTietHD();
-            if (PDBUS.ThemChiTietSanPhamMoi(PD)&& IDIBUS.ThemMotChiTietHoaDonMoi(IDI))
+            if (PDBUS.ThemChiTietSanPhamMoi(PD) && IDIBUS.ThemMotChiTietHoaDonMoi(IDI))
             {
-                MessageBox.Show("Thêm mới thành công");
+                MessageBox.Show("New product was added!", "New product", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDGV();
             }
             else
-                MessageBox.Show("Thêm không thành công!");
+                MessageBox.Show("Fail to new product!", "New product", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void dgvAddProduct_SelectionChanged(object sender, EventArgs e)

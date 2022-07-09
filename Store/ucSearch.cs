@@ -178,7 +178,7 @@ namespace Jewelry
             LayThongTinCTSP();
             if (SDIBUS.ThemMotHDBanHangMoi(SDI)&& PDBUS.CapNhatChiTietSanPham(PD))
             {
-                MessageBox.Show("Thêm thành công!");
+                MessageBox.Show("Product was added to cart!", "Add to cart", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDanhMuc();
                 dgvSearch.AutoGenerateColumns = false;
                 radAll.Checked = true;
@@ -186,7 +186,7 @@ namespace Jewelry
                 LoadChiTietSanPham();
             }
             else
-                MessageBox.Show("thêm không thành công");
+                MessageBox.Show("Fail to add product to cart!", "Add to cart", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
     }

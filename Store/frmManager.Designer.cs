@@ -156,7 +156,7 @@ namespace Jewelry
             this.btnReport.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnReport.Size = new System.Drawing.Size(240, 54);
             this.btnReport.TabIndex = 3;
-            this.btnReport.Text = "    Analystics";
+            this.btnReport.Text = "    Report";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReport.UseVisualStyleBackColor = false;
