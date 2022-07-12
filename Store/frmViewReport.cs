@@ -38,12 +38,30 @@ namespace Jewelry
             this.Close();
         }
 
+        //public void TatCaSanPham()
+        //{
+        //    Product4ReportBUS PPD = new Product4ReportBUS();
+        //    List<Product4ReportDTO> lst = PPD.LayTatCaCTSP();
+        //    this.rvr.LocalReport.ReportEmbeddedResource = "Jewelry.rpAllProducts.rdlc";
+        //    this.rvr.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(LocalReport_SubReportProcessing);
+        //    this.rvr.LocalReport.DataSources.Add(new ReportDataSource("DSSP", lst));
+        //    this.rvr.RefreshReport();
+        //}
+
+        void LocalReport_SubReportProcessing(object sender, SubreportProcessingEventArgs e)
+        {
+            Product4ReportBUS P4R = new Product4ReportBUS();
+            string tenDanhMuc = e.Parameters["paTenDanhMuc"].Values[0].ToString();
+            e.DataSources.Add(new ReportDataSource("DSSP", P4R.LayTatCaCTSP(tenDanhMuc)));
+        }
+
         public void TatCaSanPham()
         {
-            Product4ReportBUS PPD = new Product4ReportBUS();
-            List<Product4ReportDTO> lst = PPD.LayTatCaCTSP();
+            CategoryBUS CBUS = new CategoryBUS();
+            List<CategoryDTO> ls = CBUS.LayTatCaDanhMuc();
             this.rvr.LocalReport.ReportEmbeddedResource = "Jewelry.rpAllProducts.rdlc";
-            this.rvr.LocalReport.DataSources.Add(new ReportDataSource("DSSP", lst));
+            this.rvr.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(LocalReport_SubReportProcessing);
+            this.rvr.LocalReport.DataSources.Add(new ReportDataSource("DSDanhMuc", ls));
             this.rvr.RefreshReport();
         }
 
@@ -77,6 +95,19 @@ namespace Jewelry
             this.rvr.LocalReport.SetParameters(new ReportParameter("parMonth", month.ToString()));
             this.rvr.LocalReport.SetParameters(new ReportParameter("parYear", year.ToString()));
             this.rvr.RefreshReport();
+        }
+
+        public void XuatHDBH()
+        {
+            SalesInvoiceBUS SI = new SalesInvoiceBUS();
+            Sales4ReportBUS S4R = new Sales4ReportBUS();
+            List<Sales4ReportDTO> ls = S4R.XuatHDBH(SI.LayHDLonNhat().idHoaDon.ToString());
+            this.rvr.LocalReport.ReportEmbeddedResource = "Jewelry.rpInvoice.rdlc";
+            this.rvr.LocalReport.DataSources.Add(new ReportDataSource("HDMoi", ls));
+            string total = string.Format("{0:0,0 vnđ}", S4R.tongTien(SI.LayHDLonNhat().idHoaDon.ToString())).ToString();
+            this.rvr.LocalReport.SetParameters(new ReportParameter("paTotal", total));
+            this.rvr.RefreshReport();
+
         }
 
     }

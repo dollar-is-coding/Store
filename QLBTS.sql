@@ -213,56 +213,12 @@ Begin
 	End
 End
 
----- Trigger for inserting CTHDNhapHang table
---Go
---Create trigger insertImportDetailInvoice on CTHDNhapHang for insert as
---Begin
---	if(Select count(*) from CTHDNhapHang,inserted where CTHDNhapHang.idHoaDon = inserted.idHoaDon) = 1
---	Begin
---		Update CTHDNhapHang set idCTHD = 'CTHDN001' from CTHDNhapHang,inserted where CTHDNhapHang.idHoaDon=inserted.idHoaDon
---	End
---	Else
---	Begin
---		declare @lasted int = (select top 1 right(CTHDNhapHang.idCTHD,3) from CTHDNhapHang,inserted where CTHDNhapHang.idHoaDon=inserted.idHoaDon order by CTHDNhapHang.idCTHD desc)
---		if(@lasted > 0 and @lasted <9)
---		update CTHDNhapHang set idCTHD='CTHDN00'+convert(varchar(10),@lasted+1) from CTHDNhapHang,inserted where CTHDNhapHang.idHoaDon=inserted.idHoaDon and CTHDNhapHang.idCTHD=''
---		else if(@lasted >= 9 and @lasted <99)
---		update CTHDNhapHang set idCTHD='CTHDN0'+convert(varchar(10),@lasted+1) from CTHDNhapHang,inserted where CTHDNhapHang.idHoaDon=inserted.idHoaDon and CTHDNhapHang.idCTHD=''
---		else if(@lasted >= 99 and @lasted <999)
---		update CTHDNhapHang set idCTHD='CTHDN'+convert(varchar(10),@lasted+1) from CTHDNhapHang,inserted where CTHDNhapHang.idHoaDon=inserted.idHoaDon and CTHDNhapHang.idCTHD=''
---	End
---End
-
---Insert into CTHDNhapHang values ('HDN003','','SP001',29,10,1500000)
-
----- Trigger for inserting CTHDBanHang table
---Go
---Alter trigger insertSaleDetailInvoice on CTHDBanHang for insert as
---Begin
---	if(Select count(*) from CTHDBanHang,inserted where CTHDBanHang.idHoaDon= inserted.idHoaDon) = 1
---	Begin
---		Update CTHDBanHang set idCTHD = 'CTHDN001' from CTHDBanHang,inserted where CTHDBanHang.idHoaDon=inserted.idHoaDon
---	End
---	Else
---	Begin
---		declare @lasted int = (select top 1 right(CTHDBanHang.idCTHD,3) from CTHDBanHang,inserted where CTHDBanHang.idHoaDon=inserted.idHoaDon order by CTHDBanHang.idCTHD desc)
---		if(@lasted > 0 and @lasted <9)
---		update CTHDBanHang set idCTHD='CTHDN00'+convert(varchar(10),@lasted+1) from CTHDBanHang,inserted where CTHDBanHang.idHoaDon=inserted.idHoaDon and CTHDBanHang.idCTHD=''
---		else if(@lasted >= 9 and @lasted <99)
---		update CTHDBanHang set idCTHD='CTHDN0'+convert(varchar(10),@lasted+1) from CTHDBanHang,inserted where CTHDBanHang.idHoaDon=inserted.idHoaDon and CTHDBanHang.idCTHD=''
---		else if(@lasted >= 99 and @lasted <999)
---		update CTHDBanHang set idCTHD='CTHDN'+convert(varchar(10),@lasted+1) from CTHDBanHang,inserted where CTHDBanHang.idHoaDon=inserted.idHoaDon and CTHDBanHang.idCTHD=''
---	End
---End
-
-
 Insert into TaiKhoan values ('zando','123456','Van-Do Nguyen','Manager','2002/05/07','Male','Cho Moi, An Giang','0383259886',1)
 
 Insert into DanhMuc values ('','Ring')
 Insert into DanhMuc values('','Necklace')
 Insert into DanhMuc values('','Bracelet')
 Insert into DanhMuc values('','Earring')
-delete from DanhMuc
 
 Insert into SanPham values ('','DM001','Daily Stacker Ring')
 Insert into SanPham values ('','DM001','Duet Ring')
@@ -276,10 +232,7 @@ Insert into ChiTietSanPham values ('SP001',27,2500000,10,1)
 Insert into ChiTietSanPham values ('SP003',30,3000000,15,1)
 Insert into ChiTietSanPham values ('SP003',31,3500000,16,1)
 
-Insert into HDNhapHang(idHoaDon) values ('')
-
-select * from HDNhapHang
-Insert into HDNhapHang(idHoaDon,idTaiKhoan) values ('','stf03')
+Insert into HDNhapHang(idHoaDon,idTaiKhoan) values ('','zando')
 
 Insert into CTHDNhapHang values ('HDN001','','SP001',27,20,400000)
 Insert into CTHDNhapHang values ('HDN001','','SP001',28,10,450000)
@@ -293,6 +246,7 @@ Insert into KhachHang values ('','Antonio Moreno Taquería','(5) 555-3932')
 Insert into KhachHang values ('','Around the Horn','(171) 555-7788')	
 Insert into KhachHang values ('','Berglunds snabbköp','0921-12 34 65')
 
+Insert into HDBanHang(idHoaDon) values ('')
 Insert into HDBanHang(idHoaDon,idTaiKhoan,idKhachHang) values ('','zando','KH001')
 Insert into HDBanHang(idHoaDon,idTaiKhoan,idKhachHang) values ('','stf01','KH002')
 Insert into HDBanHang(idHoaDon,idTaiKhoan,idKhachHang) values ('','stf02','KH003')

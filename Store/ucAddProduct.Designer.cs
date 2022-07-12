@@ -55,13 +55,13 @@ namespace Jewelry
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.dgvAddProduct = new System.Windows.Forms.DataGridView();
             this.colInvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colImportPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSalesPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.pnlAddProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInvoiceID)).BeginInit();
@@ -351,7 +351,7 @@ namespace Jewelry
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(7, 95);
             this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(310, 29);
+            this.cboCategory.Size = new System.Drawing.Size(352, 29);
             this.cboCategory.TabIndex = 1;
             this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.cboCategory_SelectedIndexChanged);
             // 
@@ -359,7 +359,7 @@ namespace Jewelry
             // 
             this.dgvAddProduct.AllowUserToAddRows = false;
             this.dgvAddProduct.AllowUserToResizeRows = false;
-            this.dgvAddProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvAddProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvAddProduct.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.dgvAddProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -373,13 +373,13 @@ namespace Jewelry
             this.dgvAddProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colInvoice,
-            this.colCategory,
             this.colProductID,
             this.colProduct,
             this.colSize,
             this.colQuantity,
             this.colImportPrice,
-            this.colSalesPrice});
+            this.colSalesPrice,
+            this.colCategory});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -408,18 +408,6 @@ namespace Jewelry
             this.colInvoice.Name = "colInvoice";
             this.colInvoice.ReadOnly = true;
             this.colInvoice.Width = 87;
-            // 
-            // colCategory
-            // 
-            this.colCategory.DataPropertyName = "idDanhMuc";
-            this.colCategory.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colCategory.HeaderText = "Category";
-            this.colCategory.MinimumWidth = 6;
-            this.colCategory.Name = "colCategory";
-            this.colCategory.ReadOnly = true;
-            this.colCategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colCategory.Width = 99;
             // 
             // colProductID
             // 
@@ -475,6 +463,18 @@ namespace Jewelry
             this.colSalesPrice.ReadOnly = true;
             this.colSalesPrice.Width = 112;
             // 
+            // colCategory
+            // 
+            this.colCategory.DataPropertyName = "idDanhMuc";
+            this.colCategory.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colCategory.HeaderText = "Category";
+            this.colCategory.MinimumWidth = 6;
+            this.colCategory.Name = "colCategory";
+            this.colCategory.ReadOnly = true;
+            this.colCategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colCategory.Width = 99;
+            // 
             // ucAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -522,12 +522,12 @@ namespace Jewelry
         private System.Windows.Forms.Label lblSalesPrice;
         private System.Windows.Forms.Label lblImportPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInvoice;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn colImportPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSalesPrice;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colCategory;
     }
 }

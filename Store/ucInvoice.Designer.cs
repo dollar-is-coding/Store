@@ -45,11 +45,6 @@ namespace Jewelry
             this.radSales = new System.Windows.Forms.RadioButton();
             this.radImport = new System.Windows.Forms.RadioButton();
             this.dgvImportInvoice = new System.Windows.Forms.DataGridView();
-            this.radAll = new System.Windows.Forms.RadioButton();
-            this.radChoose = new System.Windows.Forms.RadioButton();
-            this.cboReport = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.colInvoiceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStaffImport = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colProductImport = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -57,17 +52,17 @@ namespace Jewelry
             this.colQuantityImport = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colImportPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDateImport = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportInvoice)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvSalesInvoice
             // 
             this.dgvSalesInvoice.AllowUserToAddRows = false;
             this.dgvSalesInvoice.AllowUserToResizeRows = false;
-            this.dgvSalesInvoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvSalesInvoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvSalesInvoice.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.dgvSalesInvoice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -191,7 +186,7 @@ namespace Jewelry
             this.radSales.AutoSize = true;
             this.radSales.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radSales.ForeColor = System.Drawing.Color.White;
-            this.radSales.Location = new System.Drawing.Point(3, 3);
+            this.radSales.Location = new System.Drawing.Point(50, 40);
             this.radSales.Name = "radSales";
             this.radSales.Size = new System.Drawing.Size(140, 25);
             this.radSales.TabIndex = 8;
@@ -205,7 +200,7 @@ namespace Jewelry
             this.radImport.AutoSize = true;
             this.radImport.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radImport.ForeColor = System.Drawing.Color.White;
-            this.radImport.Location = new System.Drawing.Point(176, 3);
+            this.radImport.Location = new System.Drawing.Point(234, 40);
             this.radImport.Name = "radImport";
             this.radImport.Size = new System.Drawing.Size(154, 25);
             this.radImport.TabIndex = 8;
@@ -218,7 +213,7 @@ namespace Jewelry
             // 
             this.dgvImportInvoice.AllowUserToAddRows = false;
             this.dgvImportInvoice.AllowUserToResizeRows = false;
-            this.dgvImportInvoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvImportInvoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvImportInvoice.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.dgvImportInvoice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -257,61 +252,6 @@ namespace Jewelry
             this.dgvImportInvoice.Size = new System.Drawing.Size(1100, 550);
             this.dgvImportInvoice.TabIndex = 10;
             // 
-            // radAll
-            // 
-            this.radAll.AutoSize = true;
-            this.radAll.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radAll.ForeColor = System.Drawing.Color.White;
-            this.radAll.Location = new System.Drawing.Point(16, 3);
-            this.radAll.Name = "radAll";
-            this.radAll.Size = new System.Drawing.Size(60, 25);
-            this.radAll.TabIndex = 10;
-            this.radAll.TabStop = true;
-            this.radAll.Text = "ALL";
-            this.radAll.UseVisualStyleBackColor = true;
-            this.radAll.CheckedChanged += new System.EventHandler(this.rad_CheckedChanged);
-            // 
-            // radChoose
-            // 
-            this.radChoose.AutoSize = true;
-            this.radChoose.Location = new System.Drawing.Point(111, 8);
-            this.radChoose.Name = "radChoose";
-            this.radChoose.Size = new System.Drawing.Size(17, 16);
-            this.radChoose.TabIndex = 11;
-            this.radChoose.TabStop = true;
-            this.radChoose.UseVisualStyleBackColor = true;
-            this.radChoose.CheckedChanged += new System.EventHandler(this.rad_CheckedChanged);
-            // 
-            // cboReport
-            // 
-            this.cboReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboReport.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboReport.FormattingEnabled = true;
-            this.cboReport.Location = new System.Drawing.Point(139, 2);
-            this.cboReport.Name = "cboReport";
-            this.cboReport.Size = new System.Drawing.Size(200, 29);
-            this.cboReport.TabIndex = 9;
-            this.cboReport.SelectedValueChanged += new System.EventHandler(this.cboReport_SelectedValueChanged);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.radImport);
-            this.panel1.Controls.Add(this.radSales);
-            this.panel1.Location = new System.Drawing.Point(50, 40);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(342, 50);
-            this.panel1.TabIndex = 12;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.cboReport);
-            this.panel2.Controls.Add(this.radAll);
-            this.panel2.Controls.Add(this.radChoose);
-            this.panel2.Location = new System.Drawing.Point(811, 40);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(339, 50);
-            this.panel2.TabIndex = 13;
-            // 
             // colInvoiceID
             // 
             this.colInvoiceID.DataPropertyName = "idHoaDon";
@@ -319,6 +259,7 @@ namespace Jewelry
             this.colInvoiceID.MinimumWidth = 6;
             this.colInvoiceID.Name = "colInvoiceID";
             this.colInvoiceID.ReadOnly = true;
+            this.colInvoiceID.Width = 87;
             // 
             // colStaffImport
             // 
@@ -330,6 +271,7 @@ namespace Jewelry
             this.colStaffImport.ReadOnly = true;
             this.colStaffImport.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colStaffImport.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colStaffImport.Width = 65;
             // 
             // colProductImport
             // 
@@ -341,6 +283,7 @@ namespace Jewelry
             this.colProductImport.ReadOnly = true;
             this.colProductImport.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colProductImport.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colProductImport.Width = 88;
             // 
             // colSizeImport
             // 
@@ -349,6 +292,7 @@ namespace Jewelry
             this.colSizeImport.MinimumWidth = 6;
             this.colSizeImport.Name = "colSizeImport";
             this.colSizeImport.ReadOnly = true;
+            this.colSizeImport.Width = 63;
             // 
             // colQuantityImport
             // 
@@ -357,6 +301,7 @@ namespace Jewelry
             this.colQuantityImport.MinimumWidth = 6;
             this.colQuantityImport.Name = "colQuantityImport";
             this.colQuantityImport.ReadOnly = true;
+            this.colQuantityImport.Width = 93;
             // 
             // colImportPrice
             // 
@@ -365,6 +310,7 @@ namespace Jewelry
             this.colImportPrice.MinimumWidth = 6;
             this.colImportPrice.Name = "colImportPrice";
             this.colImportPrice.ReadOnly = true;
+            this.colImportPrice.Width = 71;
             // 
             // colDateImport
             // 
@@ -373,27 +319,54 @@ namespace Jewelry
             this.colDateImport.MinimumWidth = 6;
             this.colDateImport.Name = "colDateImport";
             this.colDateImport.ReadOnly = true;
+            this.colDateImport.Width = 69;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(126)))), ((int)(((byte)(120)))));
+            this.txtSearch.Location = new System.Drawing.Point(880, 39);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(230, 28);
+            this.txtSearch.TabIndex = 11;
+            this.txtSearch.Text = "Search invoice ID...";
+            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Image = global::Jewelry.Properties.Resources.search;
+            this.btnSearch.Location = new System.Drawing.Point(1116, 37);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(34, 30);
+            this.btnSearch.TabIndex = 12;
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // ucInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.radSales);
+            this.Controls.Add(this.radImport);
             this.Controls.Add(this.dgvImportInvoice);
             this.Controls.Add(this.dgvSalesInvoice);
             this.Name = "ucInvoice";
             this.Size = new System.Drawing.Size(1200, 700);
             this.Load += new System.EventHandler(this.ucReport_Load);
-            this.DoubleClick += new System.EventHandler(this.ucInvoice_DoubleClick);
+            this.Click += new System.EventHandler(this.ucInvoice_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportInvoice)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -402,11 +375,6 @@ namespace Jewelry
         private System.Windows.Forms.RadioButton radSales;
         private System.Windows.Forms.RadioButton radImport;
         private System.Windows.Forms.DataGridView dgvImportInvoice;
-        private System.Windows.Forms.RadioButton radAll;
-        private System.Windows.Forms.RadioButton radChoose;
-        private System.Windows.Forms.ComboBox cboReport;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceIDSale;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCustomer;
         private System.Windows.Forms.DataGridViewComboBoxColumn colStaffSale;
@@ -422,5 +390,7 @@ namespace Jewelry
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantityImport;
         private System.Windows.Forms.DataGridViewTextBoxColumn colImportPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDateImport;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

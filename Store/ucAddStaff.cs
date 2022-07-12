@@ -109,7 +109,7 @@ namespace Jewelry
                 txtUserName.Text = person.idTaiKhoan;
                 txtPassword.Text = person.matKhau;
                 cboPosition.Text = person.chucVu;
-                dtpDateofBirth.Text = person.ngaySinh;
+                dtpDateofBirth.Text = person.ngaySinh.ToString();
                 cboGender.Text = person.gioiTinh;
                 txtPhone.Text = person.soDienThoai;
                 txtAddress.Text = person.diaChi;
@@ -124,7 +124,7 @@ namespace Jewelry
             person.matKhau = txtPassword.Text;
             person.chucVu = cboPosition.Text;
             string[] item = dtpDateofBirth.Text.ToString().Split('/');
-            person.ngaySinh = item[2] + "/" + item[1] + "/" + item[0];
+            person.ngaySinh = DateTime.Parse(item[2] + "/" + item[1] + "/" + item[0]);
             person.gioiTinh = cboGender.Text;
             person.diaChi = txtAddress.Text;
             person.soDienThoai = txtPhone.Text;
@@ -298,5 +298,6 @@ namespace Jewelry
         {
             dgvAddStaff.Refresh();
         }
+
     }
 }

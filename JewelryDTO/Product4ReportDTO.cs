@@ -11,6 +11,7 @@ namespace JewelryDTO
         public string idSanPham { get; set; }
         public string tenSanPham { get; set; }
         public string tenDanhMuc { get; set; }
+        public string idDanhMuc { get; set; }
         public float size { get; set; }
         public decimal giaBan { get; set; }
         public int soLuong { get; set; }

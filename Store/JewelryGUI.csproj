@@ -141,6 +141,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rpAllProductsSub.rdlc" />
     <EmbeddedResource Include="rpInvoice.rdlc" />
     <EmbeddedResource Include="rpImport4Month.rdlc" />
     <EmbeddedResource Include="rpSales4Month.rdlc" />

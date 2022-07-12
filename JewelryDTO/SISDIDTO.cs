@@ -16,6 +16,6 @@ namespace JewelryDTO
         public float size { get; set; }
         public decimal giaBan { get; set; }
         public int soLuong { get; set; }
-        public string ngayBan { get; set; }
+        public DateTime ngayBan { get; set; }
     }
 }

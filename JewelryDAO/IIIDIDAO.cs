@@ -36,7 +36,7 @@ namespace JewelryDAO
         public List<IIIDIDTO> LayDanhSachCTHoaDonNhapHang(string idHoaDon)
         {
             List<IIIDIDTO> ls = new List<IIIDIDTO>();
-            string query = "select * from HDNhapHang hd,CTHDNhapHang cthd where hd.idHoaDon=cthd.idHoaDon and cthd.idHoaDon=@idHoaDon";
+            string query = "select * from HDNhapHang hd,CTHDNhapHang cthd where hd.idHoaDon=cthd.idHoaDon and cthd.idHoaDon like '%'+@idHoaDon+'%'";
             SqlConnection connect = DataProvider.TaoKetNoi();
             SqlParameter par = new SqlParameter("idHoaDon", idHoaDon);
             SqlDataReader sdr = DataProvider.TruyVan(query, par, connect);

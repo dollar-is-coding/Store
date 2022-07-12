@@ -14,11 +14,12 @@ namespace JewelryDAO
         {
             List<Product4ReportDTO> ls = new List<Product4ReportDTO>();
             SqlConnection connect = DataProvider.TaoKetNoi();
-            string query = "Select SP.idSanPham,tenSanPham,tenDanhMuc,size,giaBan,soLuong from SanPham SP, ChiTietSanPham CTSP, DanhMuc DM where SP.idSanPham=CTSP.idSanPham and SP.idDanhMuc=DM.idDanhMuc and trangThai=1 and soLuong>0";
+            string query = "Select SP.idSanPham,tenSanPham,DM.idDanhMuc,tenDanhMuc,size,giaBan,soLuong from SanPham SP, ChiTietSanPham CTSP, DanhMuc DM where SP.idSanPham=CTSP.idSanPham and SP.idDanhMuc=DM.idDanhMuc and trangThai=1 and soLuong>0";
             SqlDataReader sdr = DataProvider.TruyVan(query, connect);
             while (sdr.Read())
             {
                 Product4ReportDTO P4R = new Product4ReportDTO();
+                P4R.idDanhMuc = sdr["idDanhMuc"].ToString();
                 P4R.tenDanhMuc = sdr["tenDanhMuc"].ToString();
                 P4R.idSanPham = sdr["idSanPham"].ToString();
                 P4R.tenSanPham = sdr["tenSanPham"].ToString();

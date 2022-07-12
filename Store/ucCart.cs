@@ -158,6 +158,9 @@ namespace Jewelry
                 if (SIBUS.CapNhatHDBH(SI))
                 {
                     MessageBox.Show("New invoice is created !", "Create invoice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmViewReport frm = new frmViewReport();
+                    frm.XuatHDBH();
+                    frm.ShowDialog();
                 }
                 SIBUS.ThemHoaDonMoi();
                 LoadTenSanPham();

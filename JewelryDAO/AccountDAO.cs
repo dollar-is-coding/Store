@@ -24,7 +24,7 @@ namespace JewelryDAO
                 account.matKhau = sdr["matKhau"].ToString();
                 account.hoTen = sdr["hoTen"].ToString();
                 account.chucVu = sdr["chucVu"].ToString();
-                account.ngaySinh = sdr["ngaySinh"].ToString();
+                account.ngaySinh = DateTime.Parse(sdr["ngaySinh"].ToString()).Date;
                 account.gioiTinh = sdr["gioiTinh"].ToString();
                 account.diaChi = sdr["diaChi"].ToString();
                 account.soDienThoai = sdr["soDienThoai"].ToString();
@@ -48,7 +48,7 @@ namespace JewelryDAO
                 account.matKhau = sdr["matKhau"].ToString();
                 account.hoTen = sdr["hoTen"].ToString();
                 account.chucVu = sdr["chucVu"].ToString();
-                account.ngaySinh = sdr["ngaySinh"].ToString();
+                account.ngaySinh = DateTime.Parse(sdr["ngaySinh"].ToString()).Date;
                 account.gioiTinh = sdr["gioiTinh"].ToString();
                 account.diaChi = sdr["diaChi"].ToString();
                 account.soDienThoai = sdr["soDienThoai"].ToString();
@@ -72,7 +72,7 @@ namespace JewelryDAO
                 account.matKhau = sdr["matKhau"].ToString();
                 account.hoTen = sdr["hoTen"].ToString();
                 account.chucVu = sdr["chucVu"].ToString();
-                account.ngaySinh = sdr["ngaySinh"].ToString();
+                account.ngaySinh = DateTime.Parse(sdr["ngaySinh"].ToString()).Date;
                 account.gioiTinh = sdr["gioiTinh"].ToString();
                 account.diaChi = sdr["diaChi"].ToString();
                 account.soDienThoai = sdr["soDienThoai"].ToString();

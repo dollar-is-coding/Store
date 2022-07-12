@@ -15,10 +15,15 @@ namespace JewelryBUS
             SISDIDAO SISD = new SISDIDAO();
             return SISD.LayDanhSachCTHDBanHang();
         }
-        public List<SISDIDTO> LayTatCaDanhSachCTHDBanHang(string idHoaDon)
+        public List<SISDIDTO> LayTatCaDanhSachCTHDBanHang(string idTaiKhoan,string idHoaDon)
         {
             SISDIDAO SISD = new SISDIDAO();
-            return SISD.LayDanhSachCTHDBanHang(idHoaDon);
+            return SISD.LayDanhSachCTHDBanHang(idTaiKhoan,idHoaDon);
+        }
+        public List<SISDIDTO> LayTatCaDanhSachCTHDBanHang(string idTaiKhoan)
+        {
+            SISDIDAO SISD = new SISDIDAO();
+            return SISD.LayDanhSachCTHDBanHang(idTaiKhoan);
         }
         public List<SISDIDTO> LayCTSPTuHDBHLonNhat(string idHoaDon)
         {
